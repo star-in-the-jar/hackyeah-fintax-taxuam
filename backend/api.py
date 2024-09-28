@@ -2,6 +2,9 @@ from fastapi import FastAPI
 from .chat import llm, get_chroma
 from pydantic import BaseModel
 from typing import List, Dict
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 
 vectorstore = get_chroma()
 retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
@@ -21,20 +24,24 @@ def query_llm(
     gen = (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
     return "".join(gen)
 
-class Req(BaseModel):
-    elements: List[Msg]
-
 class Msg(BaseModel):
     role: str
     content: str
 
-app = FastAPI()
+class Req(BaseModel):
+    elements: List[Msg]
 
-@app.get("/")
-async def handle(data: History):
-    return {
-        "maciek": "Jest szansa!"
-    }
+
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins="*",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 
 prolog_prompt = [
     {
@@ -77,7 +84,7 @@ async def chat_complete(req: Req):
         }] + user_stuff
     )
 
-    return {
+    return JSONResponse(content={
         "role": "assistant",
         "content": res,
-    }
+    })
