@@ -1,5 +1,6 @@
 import ChatMessageBubble from "@/components/chat/MessageBubble";
 import ChatInput from "./Input";
+import ChatQuestionTile from "./QuestionTile";
 import { Button } from "@/components/ui/button";
 import { FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
@@ -42,11 +43,13 @@ const MessageGroup = (props: { field: Field }) => {
           isCollapsed ? "hidden" : "block",
         ].join(" ")}
       >
+        <ChatQuestionTile field={props.field} />
         <div className="space-y-4 mb-4">
           {props.field.messages.map((message) => {
             return <ChatMessageBubble message={message} />;
           })}
         </div>
+        {/* TUTAJ LOADER */}
         <ChatInput onSend={sendMessage} />
       </div>
     </div>
