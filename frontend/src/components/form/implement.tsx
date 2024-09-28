@@ -1,6 +1,8 @@
+import { AutonomousMessageGroup } from "../chat/MessageGroup";
 import DatePicker from "../ui/datepicker";
 import { Input } from "../ui/input";
 import { produce } from "immer";
+import React from "react";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -122,113 +124,151 @@ export const FormDisplay = (props: {
       />
 
       <DatePicker
-        onSelect={(newDate) =>
-          (props.formData["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
-            formatNewDateToString(newDate))
+        onSelect={(newDate) => {
+          props.onChange(
+            produce(props.formData, (draft) => {
+              draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
+                formatNewDateToString(newDate)
+            })
+          );
+        }
+
         }
       />
 
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Wojewodztwo"
+          "Wojewodztwo"
           ]
         }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Wojewodztwo"
-          ] = e.target.value)
+        onChange={(e) => {
+          props.onChange(
+            produce(props.formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "Wojewodztwo"
+              ] = e.target.value
+            })
+          )
+        }
         }
       />
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Powiat"
+          "Powiat"
           ]
         }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Powiat"
-          ] = e.target.value)
-        }
+        onChange={(e) => {
+          props.onChange(
+            produce(props.formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "Powiat"
+              ] = e.target.value
+            })
+          )
+        }}
       />
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Gmina"
+          "Gmina"
           ]
         }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Gmina"
-          ] = e.target.value)
+        onChange={(e) => {
+          props.onChange(
+            produce(props.formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "Gmina"
+              ] = e.target.value
+            })
+          )
         }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Ulica"
-          ]
-        }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Ulica"
-          ] = e.target.value)
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrDomu"
-          ]
-        }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrDomu"
-          ] = e.target.value)
         }
       />
 
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrLokalu"
+          "Ulica"
           ]
         }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrLokalu"
-          ] = e.target.value)
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "Ulica"
+            ] = e.target.value
+          }))
+        }
+
         }
       />
 
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Miejscowosc"
+          "NrDomu"
           ]
         }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Miejscowosc"
-          ] = e.target.value)
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "NrDomu"
+            ] = e.target.value
+          }))
+        }
         }
       />
 
       <Input
         value={
           props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+          "NrLokalu"
+          ]
+        }
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "NrLokalu"
+            ] = e.target.value
+          }))
+        }
+        }
+      />
+
+      <Input
+        value={
+          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+          "Miejscowosc"
+          ]
+        }
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "Miejscowosc"
+            ] = e.target.value
+          }))
+        }}
+      />
+      <AutonomousMessageGroup
+        label="Moje pole łyse pole"
+      >
+        <Input
+          value={
+            props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
             "KodPocztowy"
-          ]
-        }
-        onChange={(e) =>
-          (props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "KodPocztowy"
-          ] = e.target.value)
-        }
-      />
+            ]
+          }
+          onChange={(e) => {
+            props.onChange(produce(props.formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "KodPocztowy"
+              ] = e.target.value
+            }))
+          }}
+        />
+      </AutonomousMessageGroup>
+
     </div>
   );
 };
