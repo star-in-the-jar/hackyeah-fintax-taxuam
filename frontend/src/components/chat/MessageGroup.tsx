@@ -9,6 +9,7 @@ import { Message } from "@/types";
 
 const MessageGroup = (props: { field: Field }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { updateState } = useStateManager();
 
   const sendMessage = (value: string) => {
@@ -17,11 +18,16 @@ const MessageGroup = (props: { field: Field }) => {
       content: value,
     } as Message;
 
+    setIsLoading(true);
+
     updateState((draft) => {
       const f = draft.messages.find((f) => f.key === props.field.key);
-
       f?.messages.push(obj);
     });
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
   };
 
   return (
@@ -47,11 +53,19 @@ const MessageGroup = (props: { field: Field }) => {
       >
         <ChatQuestionTile field={props.field} />
         <div className="space-y-4 mb-4">
-          {props.field.messages.map((message) => {
-            return <ChatMessageBubble message={message} />;
-          })}
+          {props.field.messages.map((message, index) => (
+            <ChatMessageBubble key={index} message={message} />
+          ))}
         </div>
-        {/* TUTAJ LOADER */}
+        {isLoading && (
+          <div className="bg-white p-3 rounded-lg ml-4 w-fit max-w-xs my-[5px]">
+            <div className="flex space-x-2">
+              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3"></div>
+              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3 delay-100"></div>
+              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3 delay-200"></div>
+            </div>
+          </div>
+        )}
         <ChatInput onSend={sendMessage} />
       </div>
     </div>
