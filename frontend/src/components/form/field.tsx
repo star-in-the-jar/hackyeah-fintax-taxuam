@@ -1,4 +1,5 @@
 import { createContext, FC, useContext } from "react"
+import { partD } from "./parts/partD"
 
 export type Document = Map<string, string>
 
@@ -67,6 +68,7 @@ export const makeOptionsField = (validOptions: Record<string, string>) => {
 
 
 export const Fields: FieldDecl[] = [
+    ...partD,
     // TODO(teawithsand): data dokonania czynnosci
     // TODO(teawithsand): urzad
     {

@@ -1,17 +1,16 @@
 import Chat from "@/components/chat";
+import DocumentFormPreview from "@/components/document/FormPreview";
 import {
   StateManagerContext,
-  useCreateStateManager,
-  useStateManager,
+  useCreateStateManager
 } from "@/state";
-import { useParams } from "react-router-dom";
-import ChatMessageGroup from "@/components/chat/MessageGroup";
-import DocumentFormPreview from "@/components/document/FormPreview";
 import { useState } from "react";
-import IndexTree from "../IndexTree/IndexTree";
+import { useParams } from "react-router-dom";
+import { FormDisplay, NewForm, pcc3 } from "../form/implement";
+import { download, renderXML } from "../form/xmlRender";
 
 const DocumentChatContent = () => {
-  const { state } = useStateManager();
+  const [formData, setFormData] = useState<NewForm>(() => pcc3)
   const { id } = useParams();
 
   // TODO: POTEM PODPIAC
@@ -22,18 +21,16 @@ const DocumentChatContent = () => {
 
   return (
     <Chat title={id} partDetails={samplePart}>
-      <div className="flex justify-between gap-5">
-        <div className="space-y-4">
-          {state.messages.map((iteratedField) => {
-            return (
-              <ChatMessageGroup
-                key={iteratedField.key}
-                field={iteratedField}
-              ></ChatMessageGroup>
-            );
-          })}
-        </div>
-        <IndexTree />
+      <div className="space-y-4">
+        <FormDisplay formData={formData} onChange={(e) => {
+          setFormData(e)
+        }} key={id} />
+        <button onClick={() => {
+          download(
+            renderXML(formData),
+            "file.xml",
+          )
+        }}>EXPORT XML</button>
       </div>
     </Chat>
   );

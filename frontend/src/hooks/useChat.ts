@@ -11,7 +11,7 @@ export const useChat = () => {
           role: "assistant",
           content: "Response from the server",
         } as Message);
-      }, 2000);
+      }, 200);
     });
   };
 

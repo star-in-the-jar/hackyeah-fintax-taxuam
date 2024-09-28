@@ -1,43 +1,66 @@
 import ChatMessageBubble from "@/components/chat/MessageBubble";
+import { Button } from "@/components/ui/button";
+import { useChat } from "@/hooks/useChat";
+import { Message } from "@/types";
+import { ReactNode, useRef, useState } from "react";
+import { FaChevronDown } from "react-icons/fa6";
+import Loader from "../ui/loader";
 import ChatInput from "./Input";
 import ChatQuestionTile from "./QuestionTile";
-import { Button } from "@/components/ui/button";
-import { FaChevronDown } from "react-icons/fa6";
-import { useState } from "react";
-import { Field, useStateManager } from "@/state";
-import { Message } from "@/types";
-import Loader from "../ui/loader";
-import { useChat } from "@/hooks/useChat";
 
-const MessageGroup = (props: { field: Field }) => {
+export const AutonomousMessageGroup = ({ label, children }: {
+  label: string,
+  children?: ReactNode
+}) => {
+  const [messages, setMessages] = useState<Message[]>([])
+  const currentMessagesRef = useRef<Message[]>()
+
+  return <MessageGroup
+    label={label}
+    messages={messages}
+    children={children}
+    onNewMessage={(msg) => {
+      if (!currentMessagesRef.current) {
+        currentMessagesRef.current = messages
+      }
+
+      currentMessagesRef.current = [
+        ...currentMessagesRef.current,
+        msg
+      ]
+
+      setMessages(currentMessagesRef.current)
+    }} />
+}
+
+const MessageGroup = ({
+  messages, onNewMessage,
+  children,
+  label
+}: {
+  messages: Message[],
+  onNewMessage: (message: Message) => void,
+  children?: ReactNode
+  label: string
+}) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { updateState, state } = useStateManager();
   const { sendMessage: chatSendMessage } = useChat();
 
   const sendMessage = (value: string) => {
-    const obj = {
+    setIsLoading(true);
+    onNewMessage({
       role: "user",
       content: value,
-    } as Message;
+    })
 
-    setIsLoading(true);
-
-    updateState((draft) => {
-      const f = draft.messages.find((f) => f.key === props.field.key);
-      f?.messages.push(obj);
-    });
-
-    const field = state.messages.find((f) => f.key === props.field.key);
-    if (!field) return;
-
-    chatSendMessage(field.messages).then((newMessage) => {
-      updateState((draft) => {
-        const f = draft.messages.find((f) => f.key === props.field.key);
-        f?.messages.push(...[obj, newMessage]);
+    chatSendMessage(messages)
+      .then((newMessage) => {
+        onNewMessage(newMessage)
+      })
+      .finally(() => {
+        setIsLoading(false)
       });
-      setIsLoading(false);
-    });
   };
 
   return (
@@ -47,7 +70,7 @@ const MessageGroup = (props: { field: Field }) => {
         variant="ghost"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <span className="text-2xl font-medium" id={props.field.key}>{props.field.key}</span>
+        <span className="text-2xl font-medium">{label}</span>
         <FaChevronDown
           className={[
             "transition-transform",
@@ -61,9 +84,9 @@ const MessageGroup = (props: { field: Field }) => {
           isCollapsed ? "hidden" : "block",
         ].join(" ")}
       >
-        <ChatQuestionTile field={props.field} />
+        {children}
         <div className="space-y-4 mb-4">
-          {props.field.messages.map((message, index) => (
+          {messages.map((message, index) => (
             <ChatMessageBubble key={index} message={message} />
           ))}
         </div>

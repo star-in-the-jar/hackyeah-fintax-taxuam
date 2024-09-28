@@ -10,9 +10,7 @@ const MessageBubble = (props: MessageProps) => {
   if (props.message.role === "assistant")
     return (
       <div className={[commonClassNames].join(" ")}>
-        <h5 className=" text-slate-400/70 font-medium">
-          {constants.CHAT_NAME}
-        </h5>
+        <h5 className=" text-primary/70 font-medium">{constants.CHAT_NAME}</h5>
         <div>{props.message.content}</div>
       </div>
     );
@@ -21,7 +19,7 @@ const MessageBubble = (props: MessageProps) => {
     <div
       className={[
         commonClassNames,
-        "text-white bg-zinc-700 rounded-lg ml-auto",
+        "text-white bg-primary rounded-lg ml-auto",
       ].join(" ")}
     >
       <h5 className="font-medium">Ty</h5>

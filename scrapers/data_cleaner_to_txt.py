@@ -19,7 +19,9 @@ urls = {
     "info_obowiazek_podatkowy_w_podatku_sd" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/obowiazek-podatkowy-sd/",
     "info_sd_zwolnienie_dla_rodziny" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-dla-najblizszej-rodziny-sd/",
     "info_sd_ulga_mieszkaniowa" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/ulga-mieszkaniowa/",
-    "info_sd_zwolniene_nabycie_gospodarstwa_rolnego" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/"
+    "info_sd_zwolniene_nabycie_gospodarstwa_rolnego" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/",
+    "info_pesel" : "https://www.gov.pl/web/gov/czym-jest-numer-pesel",
+    "info_nip" : "https://www.biznes.gov.pl/pl/portal/001406"
 }
 
 current_dir = os.path.dirname(__file__)
