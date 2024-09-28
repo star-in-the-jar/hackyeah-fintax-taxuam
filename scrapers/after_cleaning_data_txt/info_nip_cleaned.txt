@@ -1,0 +1,145 @@
+Numer identyfikacji podatkowej, czyli NIP, to identyfikator podatkowy, dzięki któremu służby skarbowe mogą jednoznacznie zidentyfikować podatnika. Sprawdź, czy musisz go mieć.
+
+Identyfikator podatkowy umożliwia organom podatkowym identyfikację podatników, płatników i inkasentów.
+
+Podatnik to osoba fizyczna, osoba prawna lub jednostka organizacyjna niemająca osobowości prawnej, podlegająca na mocy ustaw podatkowych obowiązkowi podatkowemu.
+
+Płatnik to osoba fizyczna, osoba prawna lub jednostka organizacyjna niemająca osobowości prawnej, obowiązana na podstawie przepisów prawa podatkowego do obliczenia i pobrania od podatnika podatku i wpłacenia go we właściwym terminie organowi podatkowemu. Płatnikiem jest na przykład pracodawca zatrudniający pracowników.
+
+Inkasent to osoba fizyczna, osoba prawna lub jednostka organizacyjna niemająca osobowości prawnej, obowiązana do pobrania od podatnika podatku i wpłacenia go we właściwym terminie organowi podatkowemu. Inkasent nie ma obowiązku obliczenia wysokości podatku (zaliczki na podatek, raty podatku). Inkasentem może być na przykład spółdzielnia mieszkaniowa.
+
+Identyfikatorami podatkowymi są: NIP i PESEL .
+
+Numer PESEL jest identyfikatorem podatkowym dla podatników będących osobami fizycznymi, które:
+
+Ważne! Jeśli prowadzisz działalność gospodarczą, twoim identyfikatorem podatkowym jest numer NIP . Masz obowiązek posługiwać się nim, składając wszelkiego rodzaju deklaracje, zeznania czy dokonując płatności podatków.
+
+NIP jest identyfikatorem podatkowym:
+
+Żeby uzyskać NIP, musisz złożyć zgłoszenie identyfikacyjne NIP-7.
+
+Osoba fizyczna rozpoczynająca działalność gospodarczą zarejestrowaną w CEIDG składa zgłoszenie identyfikacyjne stanowiące podstawę nadania NIP .
+
+To zgłoszenie zostanie automatycznie przesłane do urzędu skarbowego.
+
+Osoba fizyczna prowadząca działalność nierejestrowaną, które nie podlega wpisowi do CEIDG, bądź podatnik VAT składa zgłoszenie identyfikacyjne na formularzu NIP-7 do naczelnika urzędu skarbowego właściwego dla swojego miejsca zamieszkania.
+
+Przedsiębiorcy i płatnicy są obowiązani dokonać zgłoszenia identyfikacyjnego nie później niż w terminie przewidzianym na złożenie pierwszej deklaracji , zeznania, informacji bądź oświadczenia albo wraz z dokonaniem pierwszej wpłaty podatku lub zaliczki na podatek.
+
+Wspólnik spółki jawnej, komandytowej, partnerskiej, komandytowo-akcyjnej , który jest płatnikiem składek na ubezpieczenia czy podatnikiem podatku dochodowego, składa zgłoszenie identyfikacyjne na formularzu NIP-7 do naczelnika urzędu skarbowego właściwego dla swojego miejsca zamieszkania.
+
+W przypadku spółki cywilnej zgłoszenie składają:
+
+Ważne! Spółka cywilna jest zobowiązana do posiadania własnego NIP, ponieważ może być płatnikiem składek na ubezpieczenie społeczne lub może jej przysługiwać status podatnika na gruncie niektórych ustaw podatkowych. Dlatego na spółce cywilnej spoczywa obowiązek ewidencyjny – obowiązek posiadania NIP.
+
+Przeczytaj,
+
+NIP jest nadawany na podstawie danych zawartych w zgłoszeniu identyfikacyjnym. Te dane są przypisane do konkretnego numeru NIP.
+
+Numeru NIP nie można zmienić , jednak gdy dane podane w zgłoszeniu identyfikacyjnym zmieniają się, trzeba je zaktualizować. Aktualizacja powinna nastąpić w terminie 7 dni od dnia, w którym nastąpiła zmiana danych.
+
+Sposób aktualizacji danych jest różny dla różnych podmiotów:
+
+Aktualizację danych do CEIDG zgłaszają:
+
+Uwaga! W przypadku zmiany danych spółki cywilnej, które są ujawnione w zgłoszeniu identyfikacyjnym (na przykład zmiana nazwiska wspólnika figurującego w nazwie spółki cywilnej), spółka dokonuje zgłoszenia niezależnie od zgłoszenia wspólników, na formularzu NIP-2.
+
+Aktualizację do naczelnika właściwego urzędu skarbowego na formularzu NIP-7 zgłaszają:
+
+Przeczytaj:
+
+Podatnicy mają obowiązek podawać identyfikator podatkowy na dokumentach związanych z wykonywaniem zobowiązań podatkowych i niepodatkowych należności budżetowych, do których poboru są obowiązane organy podatkowe lub celne.
+
+Ponadto identyfikator podatkowy należy podawać w każdym przypadku na żądanie:
+
+Płatnicy i inkasenci są obowiązani żądać od podatników (na przykład pracodawca od pracownika) podania identyfikatora podatkowego i podawać go organom podatkowym na dokumentach związanych z wykonywaniem zobowiązań podatkowych i niepodatkowych należności budżetowych, do których poboru są obowiązane organy podatkowe lub celne.
+
+Pamiętaj! Od 1 stycznia 2020 roku w przypadku sprzedaży, która została zarejestrowana na kasie fiskalnej i potwierdzona paragonem, sprzedawca wystawi fakturę wyłącznie, jeżeli paragon zawiera NIP . To oznacza, że klient już w momencie sprzedaży musi określić, czy chce otrzymać fakturę VAT.
+
+Przeczytaj więcej o:
+
+Osoba fizyczna prowadząca działalność gospodarczą podlegającą wpisowi do CEIDG – Centralnej Ewidencji i Informacji o Działalności Gospodarczej – zgłasza zakończenie działalności w CEIDG .
+
+Osoba fizyczna prowadząca działalność niepodlegającą wpisowi do CEIDG przekazuje informację o likwidacji prowadzonej działalności bądź spółki poprzez złożenie NIP-7 .
+
+W przypadku spółki cywilnej wszyscy wspólnicy składają zgłoszenie aktualizacyjne w ramach . Likwidację działalności spółki cywilnej spółka zgłasza niezależnie (od wniosku wspólników do CEIDG) w urzędzie skarbowym, w ramach zgłoszenia aktualizacyjnego NIP-2 .
+
+Przeczytaj:
+
+Zaświadczenie o nadaniu NIP może być potrzebne na przykład wtedy, gdy twoja firma bierze udział w przetargu lub gdy starasz się o kredyt.
+
+O zaświadczenie o nadaniu NIP może poprosić cię również kontrahent, aby sprawdzić czy NIP, którym się posługujesz, został przypisany tobie (lub twojej firmie). Potwierdzenie nadania NIP wydaje naczelnik urzędu skarbowego.
+
+Potwierdzenie nadania NIP jest wydawane niezwłocznie, nie później niż w terminie 3 dni od dnia wpływu poprawnego zgłoszenia identyfikacyjnego do naczelnika urzędu skarbowego.
+
+Przeczytaj, .
+
+Portal nadzorowany jest przez Ministerstwo Rozwoju i Technologii. Partnerzy projektu: Sieć Badawcza Łukasiewicz - Poznański Instytut Technologiczny, Krajowa Izba Gospodarcza. Projekt jest współfinansowany z Programu Polska Cyfrowa ze środków Unii Europejskiej z Europejskiego Funduszu Rozwoju Regionalnego i jest kontynuacją projektu pt.: "Centralna Ewidencja i Informacja o Działalności Gospodarczej" finansowanego z Programu Innowacyjna Gospodarka oraz projektu "Uproszczenie i elektronizacja procedur" finansowanego z Programu Kapitał Ludzki.
+
+Artykuły zamieszczone w serwisie GOV.PL, w których nie podajemy żadnych dodatkowych informacji na temat praw autorskich, należą do informacji publicznych i udostępniamy je bezpłatnie. Korzystanie z nich, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa. Dostępne są w ramach licencji . Serwis Biznes.gov.pl używa plików cookies. Kontynuując przeglądanie naszej witryny bez zmiany ustawień przeglądarki, wyrażasz zgodę na użycie plików cookie. Zawsze możesz zmienić ustawienia przeglądarki i zablokować te pliki.
+
+Na wskazany w formularzu adres e-mail zostanie wysłane potwierdzenie zgłoszenia, informacja o zmianie statusu oraz odpowiedź.
+                        Maksymalny termin odpowiedzi wynosi 7 dni kalendarzowych, 14 dni kalendarzowych w przypadku spraw wymagających konsultacji z
+                        innymi urzędami .
+
+Formularz zapytania urzędowego jest częścią polskiego Pojedynczego Punktu Kontaktowego . Szczegółowy zakres zadań realizowanych przez Punkt Kontaktowy reguluje
+                            dział III ustawy o Centralnej Ewidencji i Informacji o Działalności Gospodarczej i Punktu Informacji dla Przedsiębiorcy.
+                            Więcej informacji znajdziesz na stronie .
+
+Punkt Kontaktowy nie prowadzi doradztwa w indywidualnych sprawach.
+
+dodaj kolejny załącznik
+
+nie prowadzą działalności gospodarczej, na przykład uzyskują dochody z umowy-zlecenia, umowy o pracę czy umowy o dzieło
+
+nie są zarejestrowanymi podatnikami podatku od towarów i usług.
+
+osób fizycznych prowadzących działalność gospodarczą
+
+osób prawnych (fundacji, stowarzyszeń, spółek z ograniczoną odpowiedzialnością, spółek akcyjnych) czy jednostek organizacyjnych nieposiadających osobowości prawnej (spółek jawnych, partnerskich, komandytowych, komandytowo-akcyjnych), które na podstawie ustaw podatkowych są podatnikami
+
+podatników podatku od towarów i usług
+
+innych podmiotów niż osoby fizyczne, osoby prawne czy jednostki organizacyjne, które w świetle ustaw podatkowych są podatnikami (na przykład spółka cywilna w zakresie podatku od towarów i usług)
+
+płatników podatków
+
+płatników składek na ubezpieczenie społeczne oraz ubezpieczenie zdrowotne
+
+wykonujących działalność nieewidencjonowaną.
+
+wszyscy wspólnicy spółki – w ramach wniosku o wpis do CEIDG
+
+spółka cywilna – w ramach .
+
+osoby fizyczne prowadzące działalność gospodarczą podlegającą wpisowi do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG)
+
+wspólnicy spółki cywilnej.
+
+osoby fizyczne prowadzące działalność niepodlegającą wpisowi do CEIDG, czyli
+
+podatnik VAT nieprowadzący działalności gospodarczej podlegającej wpisowi do CEIDG
+
+osoba fizyczna niepodlegająca wpisowi do CEIDG, która prowadzi działalność gospodarczą na własne nazwisko (na przykład komornik)
+
+wspólnik spółki jawnej, komandytowej, partnerskiej, komandytowo-akcyjnej.
+
+.
+
+organów administracji rządowej i samorządowej
+
+organów Krajowej Administracji Skarbowej
+
+przedstawicieli Najwyższej Izby Kontroli
+
+banków i spółdzielczych kas oszczędnościowo-kredytowych
+
+stron czynności cywilnoprawnych
+
+płatników i inkasentów podatków i niepodatkowych należności budżetowych.
+
+.
+
+.
+
+Art. 2, 3, 5, 5a, 6, 8a, 9, 10a, 11, 12
