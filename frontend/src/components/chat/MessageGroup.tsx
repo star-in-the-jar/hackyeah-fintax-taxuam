@@ -27,7 +27,7 @@ const MessageGroup = (props: { field: Field }) => {
   return (
     <div>
       <Button
-        className="flex justify-between items-center w-full mb-1"
+        className="flex justify-between items-center w-full mb-1 py-6"
         variant="ghost"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
