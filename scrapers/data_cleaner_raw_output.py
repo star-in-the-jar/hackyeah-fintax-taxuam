@@ -1,10 +1,6 @@
-import requests
-from bs4 import BeautifulSoup
-import json
 import os
-
-if not os.path.exists("scraped_data"):
-    os.makedirs("scraped_data")
+import json
+from bs4 import BeautifulSoup
 
 urls = {
     "pcc_kupno_auta": "https://www.podatki.gov.pl/pcc-sd/rozliczenie-podatku-pcc-od-kupna-samochodu/",
@@ -26,27 +22,30 @@ urls = {
     "info_sd_zwolniene_nabycie_gospodarstwa_rolnego" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/"
 }
 
-def fetch_paragraphs(url):
-    response = requests.get(url)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, 'html.parser')
+current_dir = os.path.dirname(__file__)
+input_folder = os.path.join(current_dir, "scraped_data")
 
-    paragraphs = [str(paragraph) for paragraph in soup.find_all('p')]
-    return paragraphs
+def clean_html_for_single_url(key):
+    json_file = os.path.join(input_folder, f"data_{key}_html.json")
+    if not os.path.exists(json_file):
+        return f"Plik {json_file} nie istnieje. Pomijanie..."
 
-for name, url in urls.items():
-    try:
-        paragraphs = fetch_paragraphs(url)
-        
-        data = {f"paragraphs_{name}": paragraphs}
-        
-        file_name = f"data_{name}_html.json"
-        file_path = os.path.join("scraped_data", file_name)
-        
-        with open(file_path, 'w', encoding='utf-8') as json_file:
-            json.dump(data, json_file, ensure_ascii=False, indent=4)
-        
-        print(f"Sukces: zapisano dane do pliku {file_name}")
-        
-    except Exception as e:
-        print(f"Błąd podczas pobierania danych dla {name}: {e}")
+    with open(json_file, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+
+    cleaned_text = []
+    for content in data.values():
+        for paragraph in content:
+            soup = BeautifulSoup(paragraph, 'html.parser')
+            for a in soup.find_all('a'):
+                a.decompose()
+            text_p = " ".join([p.get_text(separator=' ', strip=True) for p in soup.find_all('p')])
+            text_li = " ".join([li.get_text(separator=' ', strip=True) for li in soup.find_all('li')])
+            cleaned_paragraph = f"{text_p} {text_li}".strip()
+            if cleaned_paragraph:
+                cleaned_text.append(cleaned_paragraph)
+
+    return "\n\n".join(cleaned_text)
+
+result = clean_html_for_single_url("pcc_kupno_auta")
+print(result)

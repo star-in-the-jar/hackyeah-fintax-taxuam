@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_organy_podatkowe": [
+    "content_info_organy_podatkowe": [
         "<p class=\"introduction\">Nie wiesz który organ jest właściwy w sprawach podatku od czynności cywilnoprawnych? Sprawdź</p>",
         "<p>Organem podatkowym właściwym rzeczowo w sprawach podatku od czynności cywilnoprawnych (PCC) jest naczelnik urzędu skarbowego.</p>",
         "<p>Organem podatkowym właściwym miejscowo w sprawach PCC od umów, których przedmiotem są rzeczy znajdujące się na terytorium Rzeczypospolitej Polskiej lub prawa majątkowe wykonywane w kraju, jest:</p>",
@@ -17,6 +17,18 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-pcc/\">abc PCC</a></li>",
+        "<li>od przeniesienia własności nieruchomości, własnościowego spółdzielczego prawa do lokalu mieszkalnego, spółdzielczego prawa do lokalu użytkowego oraz wynikających z przepisów prawa spółdzielczego: prawa do domu jednorodzinnego i prawa do lokalu w małym domu mieszkalnym, prawa do miejsca postojowego e garażu wielostanowiskowym lub prawa użytkowania wieczystego - naczelnik urzędu skarbowego właściwy ze względu na miejsce położenia nieruchomości,</li>",
+        "<li>od przeniesienia własności rzeczy lub praw majątkowych, innych niż wymienione w pkt. 1, oraz od pozostałych umów - naczelnik urzędu skarbowego właściwy ze względu na miejsce zamieszkania lub siedzibę podatnika, a w przypadku gdy obowiązek zapłaty ciąży solidarnie na kilku podmiotach - naczelnik urzędu skarbowego właściwy ze względu na miejsce zamieszkania lub siedzibę jednego z tych podmiotów,</li>",
+        "<li>od ustanowienia hipoteki – naczelnik urzędu skarbowego właściwy ze względu na miejsce zamieszkania lub siedzibę składającego oświadczenie woli o ustanowieniu tego prawa, a w przypadku, gdy oświadczenie woli składane jest przez kilka podmiotów – naczelnik urzędu skarbowego właściwy ze względu na miejsce zamieszkania lub siedzibę jednego z tych podmiotów,</li>",
+        "<li>od umowy spółki - naczelnik urzędu skarbowego właściwy ze względu na siedzibę spółki.</li>",
+        "<li>których przedmiotem jest wyłącznie przeniesienie własności rzeczy lub praw majątkowych wymienionych w powyższym pkt. 1, organem podatkowym właściwym miejscowo jest naczelnik urzędu skarbowego właściwy ze względu na miejsce położenia nieruchomości - lub prawa, którego wartość jest wyższa a do określenia wartości nieruchomości - naczelnik urzędu skarbowego właściwy ze względu na miejsce położenia nieruchomości;</li>",
+        "<li>których przedmiotem jest przeniesienie własności rzeczy lub praw majątkowych wymienionych w powyższym pkt. 1 i innych rzeczy lub praw majątkowych, w tym rzeczy położonych za granicą i praw tam wykonywanych jest naczelnik urzędu skarbowego właściwy ze względu na położenie nieruchomości na terytorium Rzeczypospolitej Polskiej;</li>",
+        "<li>w pozostałych przypadkach jest naczelnik urzędu skarbowego właściwy ze względu na miejsce zamieszkania lub siedzibę jednej ze stron.</li>"
     ]
 }

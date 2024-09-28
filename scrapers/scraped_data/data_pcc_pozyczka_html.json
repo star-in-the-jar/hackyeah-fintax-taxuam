@@ -1,5 +1,5 @@
 {
-    "paragraphs_pcc_pozyczka": [
+    "content_pcc_pozyczka": [
         "<p class=\"introduction\">Otrzymałeś pożyczkę i musisz rozliczyć podatek? Sprawdź, co będziesz musiał teraz zrobić.</p>",
         "<p><strong>Z tego artykułu dowiesz się:</strong></p>",
         "<p>Jeśli otrzymałeś pożyczkę, to czynność ta podlega opodatkowaniu podatkiem od czynności cywilnoprawnych (PCC), z wyjątkiem przypadków gdy istnieje podstawa prawna do wyłączenia obowiązku zapłaty PCC lub zwolnienia z tego podatku.</p>",
@@ -52,6 +52,33 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li><a data-anchor=\"#p1\" href=\"#p1\">Co podlega obowiązkowi podatkowemu</a></li>",
+        "<li><a data-anchor=\"#p2\" href=\"#p2\">Czym jest podstawa opodatkowania</a></li>",
+        "<li><a data-anchor=\"#p3\" href=\"#p3\">Jak obliczyć podatek</a></li>",
+        "<li><a data-anchor=\"#p4\" href=\"#p4\">Kto i co jest zwolnione od podatku</a></li>",
+        "<li><a data-anchor=\"#p5\" href=\"#p5\">Jaki wypełnić formularz</a></li>",
+        "<li><a data-anchor=\"#p6\" href=\"#p6\">W jaki sposób złożyć deklarację</a></li>",
+        "<li><a data-anchor=\"#p7\" href=\"#p7\">Kiedy i komu złożyć deklarację</a></li>",
+        "<li><a data-anchor=\"#p8\" href=\"#p8\">Jaki jest termin i sposób zapłaty podatku</a></li>",
+        "<li>powołujesz się na fakt zawarcia umowy pożyczki, depozytu nieprawidłowego lub ustanowienia użytkowania nieprawidłowego albo ich zmiany, a należny podatek od tych czynności nie został zapłacony,</li>",
+        "<li>powołujesz się na fakt zawarcia umowy pożyczki z osobą z najbliższej rodziny (małżonkiem, dzieckiem, wnukiem, prawnukiem, rodzicem, dziadkiem, babcią, pasierbem, rodzeństwem, ojczymem, macochą oraz inną osobą uważaną za wstępnych lub wstępnych w rozumieniu ustawy o podatku od spadków i darowizn) i nie udokumentujesz otrzymania tych pieniędzy na swój rachunek bankowy, rachunek prowadzony przez spółdzielczą kasę oszczędnościowo-kredytową albo przekazem pocztowym.</li>",
+        "<li>organizacje pożytku publicznego, jeżeli dokonają czynności (będą biorącymi pożyczkę) wyłącznie w związku z nieodpłatną działalnością pożytku publicznego w rozumieniu przepisów o działalności pożytku publicznego i o wolontariacie.</li>",
+        "<li>zawarta jest między osobami zaliczonymi do I grupy podatkowej i jej wysokość nie przekracza kwoty wolnej od podatku od spadków i darowizn, określonej dla tej grupy podatkowej, tj. 36 120 zł (obowiązuje zasada sumowania wszystkich pożyczek od tej samej osoby z ostatniego roku i 5 lat poprzedzających ten rok; do I grupy zalicza się: małżonka, rodziców, dziadków, pradziadków, dzieci, wnuki, prawnuki, pasierba, ojczyma, macochę, rodzeństwo, teściów, zięcia, synową oraz inne osoby uważane za wstępnych lub wstępnych w rozumieniu ustawy o podatku od spadków i darowizn - wymienione niżej);</li>",
+        "<li>zawarta jest między osobami z najbliższej rodziny i jej przedmiotem są środki pieniężne w wysokości przekraczającej kwotę wolną od podatku (tj. 36 120 zł, liczoną jak wyżej), jeżeli pożyczkobiorca spełni łącznie warunki:\n<ul>\n<li>w nieprzekraczalnym terminie 14 dni od daty zawarcia umowy pożyczki złoży właściwemu organowi podatkowemu deklarację w sprawie podatku od czynności cywilnoprawnych (PCC-3) oraz</li>\n<li>udokumentuje otrzymanie pieniędzy na swój rachunek bankowy, albo jego rachunek prowadzony przez spółdzielczą kasę oszczędnościowo-kredytową lub przekazem pocztowym,</li>\n</ul>\n</li>",
+        "<li>w nieprzekraczalnym terminie 14 dni od daty zawarcia umowy pożyczki złoży właściwemu organowi podatkowemu deklarację w sprawie podatku od czynności cywilnoprawnych (PCC-3) oraz</li>",
+        "<li>udokumentuje otrzymanie pieniędzy na swój rachunek bankowy, albo jego rachunek prowadzony przez spółdzielczą kasę oszczędnościowo-kredytową lub przekazem pocztowym,</li>",
+        "<li>kwota lub wartość pożyczki od osoby spoza I grupy podatkowej nie przekracza 1 000 zł,</li>",
+        "<li>zawarta jest między wspólnikiem (akcjonariuszem) a spółką kapitałową.</li>",
+        "<li>elektronicznie w serwisie <span class=\"text-danger\">e</span>-Urząd Skarbowy w zakładce e-Deklaracje, dla zalogowanych użytkowników konta osoby fizycznej nie wymagają podpisu danymi autoryzującymi ani podpisu kwalifikowanego, lub</li>",
+        "<li>elektronicznie w usłudze e-Deklaracje, podpisując je danymi autoryzacyjnymi albo kwalifikowanym podpisem elektronicznym albo</li>",
+        "<li>papierowo, bezpośrednio we właściwym miejscowo urzędzie skarbowym albo w innym, dowolnym urzędzie skarbowym (z wyłączeniem wyspecjalizowanych urzędów skarbowych) lub za pośrednictwem operatora pocztowego. <a data-udi=\"umb://document/d58e1d4996264f69b0b990040fa3762e\" href=\"/wyszukiwarki/wyszukiwarka-teleadresowa-jednostek-kas/\" title=\"Wyszukiwarka teleadresowa jednostek KAS\">Sprawdź adresy urzędów</a></li>",
+        "<li>ustawa z dnia 9 września 2000 r. o podatku od czynności cywilnoprawnych</li>",
+        "<li>rozporządzenie Ministra Finansów z dnia 17 listopada 2023 r. w sprawie pobierania i zwrotu podatku od czynności cywilnoprawnych</li>",
+        "<li>rozporządzenie Ministra Finansów z dnia 27 maja 2019 r. w sprawie wzoru zbiorczej deklaracji w sprawie podatku od czynności cywilnoprawnych</li>"
     ]
 }

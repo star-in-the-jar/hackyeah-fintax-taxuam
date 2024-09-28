@@ -1,5 +1,5 @@
 {
-    "paragraphs_sd_darowizny": [
+    "content_sd_darowizny": [
         "<p class=\"introduction\">Otrzymałeś darowiznę od najbliższej rodziny lub dalszych krewnych? Sprawdź, co powinieneś teraz zrobić</p>",
         "<p> </p>",
         "<p><strong>Z tego artykułu dowiesz się:</strong></p>",
@@ -42,6 +42,37 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li><a data-anchor=\"#p1\" href=\"#p1\">Czy podlegasz obowiązkowi podatkowemu</a></li>",
+        "<li><a data-anchor=\"#p2\" href=\"#p2\">Kiedy powstaje obowiązek podatkowy</a></li>",
+        "<li><a data-anchor=\"#p3\" href=\"#p3\">Jak obliczyć podatek</a></li>",
+        "<li><a data-anchor=\"#p4\" href=\"#p4\">Z jakiego zwolnienia skorzystać</a></li>",
+        "<li><a data-anchor=\"#p5\" href=\"#p5\">Jaki formularz wypełnić</a></li>",
+        "<li><a data-anchor=\"#p6\" href=\"#p6\">Kiedy i komu złożyć dokumenty</a></li>",
+        "<li><a data-anchor=\"#p7\" href=\"#p7\">Termin i sposób zapłaty podatku</a></li>",
+        "<li>darowizny,</li>",
+        "<li>polecenia darczyńcy,</li>",
+        "<li>36 120 zł – dla osób należących do I grupy podatkowej,</li>",
+        "<li>27 090 zł – dla osób należących do II grupy podatkowej,</li>",
+        "<li>5733 zł – dla osób należących do III grupy podatkowej.</li>",
+        "<li>złożenia przez darczyńcę oświadczenia w formie aktu notarialnego,</li>",
+        "<li>przekazania darowizny obdarowanemu w razie zawarcia umowy bez zachowania formy aktu notarialnego.</li>",
+        "<li>łączna wartość majątku nabytego przez Ciebie ostatnio od tej samej osoby w okresie 5 lat, poprzedzających rok, w którym nastąpiło ostatnie nabycie, przekracza kwotę wolną od podatku;</li>",
+        "<li>jesteś osobą najbliższą (małżonkiem, zstępnym, wstępnym, pasierbem, rodzeństwem, ojczymem albo macochą) i nie spełniłeś warunków do skorzystania ze zwolnienia podatkowego na podstawie art. 4a ustawy, tj. nie zgłosiłeś w terminie 6 miesięcy nabytych rzeczy lub praw majątkowych, a w przypadku gdy przedmiotem nabycia tytułem darowizny lub polecenia darczyńcy były środki pieniężne dodatkowo nie udokumentowałeś ich otrzymania dowodem przekazania na Twój rachunek płatniczy, Twój rachunek, inny niż płatniczy, w banku lub spółdzielczej kasie oszczędnościowo-kredytowej lub przekazem pocztowym.</li>",
+        "<li>wartość rynkowa darowizny nie przekracza kwoty wolnej od podatku (z uwzględnieniem zasady kumulacji wartości majątku nabytego od tej samej osoby w ciągu 5 lat poprzedzających ostatnie nabycie),</li>",
+        "<li>darowizna została dokonana w formie aktu notarialnego.</li>",
+        "<li>co dostajesz (np. samochód, obraz, pieniądze), a także od kogo i jaki stopień pokrewieństwa lub powinowactwa łączy Cię z darczyńcą,</li>",
+        "<li>że darczyńca był właścicielem majątku, który Ci przekazuje (np. umowa sprzedaży samochodu albo dowód rejestracyjny).</li>",
+        "<li>elektronicznie w serwisie <span class=\"text-danger\">e</span>-Urząd Skarbowy w zakładce e-Deklaracje, dla zalogowanych użytkowników konta osoby fizycznej nie wymagają podpisu danymi autoryzującymi ani podpisu kwalifikowanego, lub</li>",
+        "<li>elektronicznie w usłudze e-Deklaracje, podpisując je danymi autoryzacyjnymi albo kwalifikowanym podpisem elektronicznym, albo</li>",
+        "<li>papierowo, bezpośrednio we właściwym miejscowo urzędzie skarbowym albo w innym, dowolnym urzędzie skarbowym (z wyłączeniem wyspecjalizowanych urzędów skarbowych) lub za pośrednictwem operatora pocztowego.</li>",
+        "<li>Ustawa z dnia 28 lipca 1983 r. o podatku od spadków i darowizn</li>",
+        "<li>Rozporządzenie Ministra Finansów z dnia 20 listopada 2015 r. w sprawie wzoru zgłoszenia o nabyciu własności rzeczy lub praw majątkowych</li>",
+        "<li>Rozporządzenie Ministra Finansów z dnia 27 listopada 2015 r. w sprawie zeznania podatkowego składanego przez podatników podatku od spadków i darowizn</li>",
+        "<li>Rozporządzenie Ministra Finansów z dnia 22 sierpnia 2005 r. w sprawie właściwości organów podatkowych</li>"
     ]
 }

@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_obowiazek_podatkowy_w_podatku_sd": [
+    "content_info_obowiazek_podatkowy_w_podatku_sd": [
         "<p class=\"introduction\">Chcesz dowiedzieć się kiedy powstaje obowiązek podatkowy w podatku od spadków i darowizn oraz jakie są obowiązki podatników? Sprawdź</p>",
         "<p>Jeżeli nabycie następuje w częściach, obowiązek podatkowy powstaje z chwilą nabycia poszczególnych części.</p>",
         "<p>Jeżeli nabycie niezgłoszone do opodatkowania stwierdzono następnie pismem, obowiązek podatkowy powstaje z chwilą sporządzenia pisma. Jeżeli pismem takim jest orzeczenie sądu, obowiązek podatkowy powstaje z chwilą uprawomocnienia się orzeczenia. W przypadku gdy nabycie nie zostało zgłoszone do opodatkowania, obowiązek podatkowy powstaje z chwilą powołania się przez podatnika przed organem podatkowym na fakt nabycia [<a data-anchor=\"#ObowPodatk1\" href=\"#ObowPodatk1\"><span><strong>1</strong></span></a>].</p>",
@@ -19,6 +19,32 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/\">abc SD</a></li>",
+        "<li>przy nabyciu w drodze dziedziczenia - z chwilą przyjęcia spadku,</li>",
+        "<li>przy nabyciu w drodze zapisu zwykłego lub dalszego zapisu - z chwilą wykonania zapisu,</li>",
+        "<li>przy nabyciu z polecenia testamentowego - z chwilą wykonania tego polecenia,</li>",
+        "<li>przy nabyciu w drodze zapisu windykacyjnego - z chwilą uprawomocnienia się orzeczenia sądu stwierdzającego nabycie spadku, postanowienia częściowego stwierdzającego nabycie przedmiotu zapisu windykacyjnego, zarejestrowania aktu poświadczenia dziedziczenia lub wydania europejskiego poświadczenia spadkowego,</li>",
+        "<li>przy nabyciu tytułem zachowku - z chwilą zaspokojenia roszczenia,</li>",
+        "<li>przy nabyciu praw do wkładów oszczędnościowych na podstawie dyspozycji wkładem na wypadek śmierci - z chwilą śmierci wkładcy,</li>",
+        "<li>przy nabyciu jednostek uczestnictwa na podstawie dyspozycji uczestnika funduszu inwestycyjnego otwartego albo specjalistycznego funduszu inwestycyjnego otwartego na wypadek jego śmierci - z chwilą śmierci uczestnika funduszu inwestycyjnego,</li>",
+        "<li>przy nabyciu w drodze darowizny - z chwilą złożenia przez darczyńcę oświadczenia w formie aktu notarialnego, a w razie zawarcia umowy bez zachowania przewidzianej formy - z chwilą spełnienia przyrzeczonego świadczenia; jeżeli ze względu na przedmiot darowizny przepisy wymagają szczególnej formy dla oświadczeń obu stron, obowiązek podatkowy powstaje z chwilą złożenia takich oświadczeń,</li>",
+        "<li>przy nabyciu z polecenia darczyńcy - z chwilą wykonania polecenia,</li>",
+        "<li>przy nabyciu w drodze zasiedzenia - z chwilą uprawomocnienia się postanowienia sądu stwierdzającego zasiedzenie,</li>",
+        "<li>przy nabyciu w drodze nieodpłatnego zniesienia współwłasności - z chwilą zawarcia umowy albo ugody lub uprawomocnienia się orzeczenia sądu, jeżeli ich skutkiem jest nieodpłatne zniesienie współwłasności,</li>",
+        "<li>przy nabyciu w drodze nieodpłatnej służebności, renty oraz użytkowania - z chwilą ustanowienia tych praw.</li>",
+        "<li>podatek pobrał notariusz lub nabycie było zwolnione od podatku,</li>",
+        "<li>wartość majątku nabytego łącznie od tej samej osoby w okresie 5 lat, poprzedzających rok, w którym nastąpiło ostatnie nabycie, doliczona do wartości rzeczy i praw majątkowych ostatnio nabytych, nie przekracza kwoty wolnej od podatku,</li>",
+        "<li>jesteś osobą najbliższą i składasz zgłoszenie o nabyciu własności rzeczy lub praw majątkowych SD-Z2, a dodatkowo w przypadku darowizny pieniężnej (polecenia darczyńcy) udokumentujesz jej otrzymanie dowodem przekazania na Twój rachunek płatniczy, na Twój rachunek w banku lub w spółdzielczej kasie oszczędnościowo - kredytowej lub przekazem pocztowym,</li>",
+        "<li>jesteś osobą najbliższą i nabycie następuje na podstawie umowy zawartej w formie aktu notarialnego albo w tej formie zostało złożone oświadczenie woli jednej ze stron.</li>",
+        "<li>nabycie rzeczy i praw majątkowych - w szczególności mogą to być: orzeczenie sądu, testament, umowa, ugoda, zaświadczenie z banku o nabyciu praw do wkładu oszczędnościowego na podstawie dyspozycji wkładcy lub zaświadczenie towarzystwa funduszy inwestycyjnych o nabyciu jednostek uczestnictwa na podstawie dyspozycji uczestnika funduszu inwestycyjnego otwartego albo specjalistycznego funduszu inwestycyjnego otwartego na wypadek jego śmierci,</li>",
+        "<li>posiadanie przez zbywcę tytułu prawnego do rzeczy i praw majątkowych wymienionych w zeznaniu, w szczególności: wypis z księgi wieczystej, umowę sprzedaży, zaświadczenie spółdzielni mieszkaniowej,</li>",
+        "<li>istnienie długów i ciężarów, które obciążają nabyte rzeczy i prawa majątkowe, a przy nabyciu w drodze zasiedzenia - poniesienie nakładów podczas biegu zasiedzenia. W szczególności: faktury dot. kosztów ostatniej choroby oraz pogrzebu spadkodawcy, wypis z księgi wieczystej, który potwierdza obciążenie nieruchomości hipoteką, zaświadczenie spółdzielni mieszkaniowej, które potwierdza istnienie długów związanych ze spółdzielczymi prawami do lokali, zaświadczenie o zastawie sądowym, faktury, które dokumentują poniesienie nakładów podczas biegu zasiedzenia.</li>",
+        "<li><a id=\"ObowPodatk1\"></a>art. 6 ust. 4 ustawy z dnia 28 lipca 1983 r. o podatku od spadków i darowizn</li>",
+        "<li><a id=\"ObowPodatk2\"></a>szczegółowe zasady dot. składania zeznań podatkowych, w tym wspólnego zeznania podatkowego (SD-3 wraz z informacjami o pozostałych podatnikach SD-3/A), określa rozporządzenie Ministra Finansów z dnia 27 listopada 2015 r. w sprawie zeznania podatkowego składanego przez podatników podatku od spadków i darowizn</li>"
     ]
 }
