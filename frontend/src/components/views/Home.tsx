@@ -4,32 +4,44 @@ import ChatInput from "@/components/chat/Input";
 import ChatMessageBubble from "@/components/chat/MessageBubble";
 import { useState } from "react";
 import type { Message } from "@/types";
+import { useChat } from "@/hooks/useChat";
+import Loader from "@/components/ui/loader";
+import { constants } from "@/constants";
 
 const HomeChatContent = () => {
   const [homeChatMessages, setHomeChatMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Cześć, jestem Tax Assistant 👋 Jak mogę ci pomóć?",
+      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóć?`,
     },
   ]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { sendMessage } = useChat();
 
-  const onSend = (value: string) => {
+  const onSend = async (value: string) => {
     const obj = {
       role: "user",
       content: value,
     } as Message;
 
     setHomeChatMessages([...homeChatMessages, obj]);
+
+    setIsLoading(true);
+    const res = await sendMessage(homeChatMessages);
+    setIsLoading(false);
+
+    setHomeChatMessages([...homeChatMessages, obj, res]);
   };
 
   return (
     <Chat>
       <div className="w-full flex flex-col h-full">
-        {homeChatMessages?.map((message) => {
-          return <ChatMessageBubble message={message} />;
+        {homeChatMessages?.map((message, messageIdx) => {
+          return <ChatMessageBubble key={messageIdx} message={message} />;
         })}
+        {isLoading ? <Loader /> : null}
         <div className="mt-auto">
-          <ChatInput onSend={onSend} />
+          <ChatInput isLoading={isLoading} onSend={onSend} />
         </div>
       </div>
     </Chat>

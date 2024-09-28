@@ -6,11 +6,14 @@ import { FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
 import { Field, useStateManager } from "@/state";
 import { Message } from "@/types";
+import Loader from "../ui/loader";
+import { useChat } from "@/hooks/useChat";
 
 const MessageGroup = (props: { field: Field }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { updateState } = useStateManager();
+  const { updateState, state } = useStateManager();
+  const { sendMessage: chatSendMessage } = useChat();
 
   const sendMessage = (value: string) => {
     const obj = {
@@ -25,9 +28,16 @@ const MessageGroup = (props: { field: Field }) => {
       f?.messages.push(obj);
     });
 
-    setTimeout(() => {
+    const field = state.messages.find((f) => f.key === props.field.key);
+    if (!field) return;
+
+    chatSendMessage(field.messages).then((newMessage) => {
+      updateState((draft) => {
+        const f = draft.messages.find((f) => f.key === props.field.key);
+        f?.messages.push(...[obj, newMessage]);
+      });
       setIsLoading(false);
-    }, 5000);
+    });
   };
 
   return (
@@ -57,16 +67,8 @@ const MessageGroup = (props: { field: Field }) => {
             <ChatMessageBubble key={index} message={message} />
           ))}
         </div>
-        {isLoading && (
-          <div className="bg-white p-3 rounded-lg ml-4 w-fit max-w-xs my-[5px]">
-            <div className="flex space-x-2">
-              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3"></div>
-              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3 delay-100"></div>
-              <div className="animate-bounce bg-gray-500 rounded-full h-3 w-3 delay-200"></div>
-            </div>
-          </div>
-        )}
-        <ChatInput onSend={sendMessage} />
+        {isLoading ? <Loader /> : null}
+        <ChatInput isLoading={isLoading} onSend={sendMessage} />
       </div>
     </div>
   );

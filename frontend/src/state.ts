@@ -1,6 +1,7 @@
 import { Draft, produce } from "immer";
 import { createContext, useContext, useMemo, useState } from "react";
 import { Message } from "./types";
+import { constants } from "./constants";
 
 export interface Field {
   key: string;
@@ -29,7 +30,7 @@ const getGroupGreetingMessage = (key: string): Field => ({
   messages: [
     {
       role: "assistant",
-      content: `Cześć, jestem Tax Assistant 👋 W tym chacie mozesz zadać pytania na temat ${key}`,
+      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 W tym chacie mozesz zadać pytania na temat ${key}`,
     } as Message,
   ],
   value: "",

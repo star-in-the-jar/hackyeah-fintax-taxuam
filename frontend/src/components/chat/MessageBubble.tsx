@@ -1,3 +1,4 @@
+import { constants } from "@/constants";
 import type { Message } from "@/types";
 interface MessageProps {
   message: Message;
@@ -9,7 +10,9 @@ const MessageBubble = (props: MessageProps) => {
   if (props.message.role === "assistant")
     return (
       <div className={[commonClassNames].join(" ")}>
-        <h5 className=" text-slate-400/70 font-medium">Tax Assistant</h5>
+        <h5 className=" text-slate-400/70 font-medium">
+          {constants.CHAT_NAME}
+        </h5>
         <div>{props.message.content}</div>
       </div>
     );
