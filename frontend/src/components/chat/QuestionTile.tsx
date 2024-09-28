@@ -10,10 +10,10 @@ const QuestionTile = (props: QuestionTileProps) => {
     console.log(value);
   };
   return (
-    <div className="border p-4 rounded-lg mb-4">
+    <div className="mb-4">
       <ChatInput
         onSend={onSend}
-        placeholder={`Wartość ${props.field.key}`}
+        placeholder={`Wpisz ${props.field.key}`}
         buttonText="Zapisz"
       />
     </div>

@@ -33,6 +33,12 @@ export type FieldDecl = {
     component: FC<{ documentKey: string }>
 }
 
+const partD: FieldDecl[] = [
+    {
+        key: 'P_24',
+        label: 'Podstawa opodatkowania określona zgodnie z art. 6 ustawy (po zaokrągleniu do pełnych złotych'
+    }
+]
 
 export const makeTextField = () => {
     return ({ documentKey }: { documentKey: string }) => {

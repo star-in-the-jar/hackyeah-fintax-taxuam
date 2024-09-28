@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import ChatMessageGroup from "@/components/chat/MessageGroup";
 import DocumentFormPreview from "@/components/document/FormPreview";
 import { useState } from "react";
+import IndexTree from "../IndexTree/IndexTree";
 
 const DocumentChatContent = () => {
   const { state } = useStateManager();
@@ -21,15 +22,18 @@ const DocumentChatContent = () => {
 
   return (
     <Chat title={id} partDetails={samplePart}>
-      <div className="space-y-4">
-        {state.messages.map((iteratedField) => {
-          return (
-            <ChatMessageGroup
-              key={iteratedField.key}
-              field={iteratedField}
-            ></ChatMessageGroup>
-          );
-        })}
+      <div className="flex justify-between gap-5">
+        <div className="space-y-4">
+          {state.messages.map((iteratedField) => {
+            return (
+              <ChatMessageGroup
+                key={iteratedField.key}
+                field={iteratedField}
+              ></ChatMessageGroup>
+            );
+          })}
+        </div>
+        <IndexTree />
       </div>
     </Chat>
   );

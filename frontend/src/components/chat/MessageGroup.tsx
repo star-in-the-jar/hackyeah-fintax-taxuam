@@ -47,7 +47,7 @@ const MessageGroup = (props: { field: Field }) => {
         variant="ghost"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <span className="text-2xl font-medium">{props.field.key}</span>
+        <span className="text-2xl font-medium" id={props.field.key}>{props.field.key}</span>
         <FaChevronDown
           className={[
             "transition-transform",
