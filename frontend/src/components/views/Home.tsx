@@ -12,7 +12,7 @@ const HomeChatContent = () => {
   const [homeChatMessages, setHomeChatMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóć?`,
+      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóc?`,
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
