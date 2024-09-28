@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 const ButtonOptions = () => {
   return (
-    <ul className="flex gap-2 items-center p-4 border rounded-md">
+    <ul className="flex gap-2 items-center p-4 border rounded-md flex-grow">
       {declarationNames.map((declarationName) => {
         return (
           <li key={declarationName}>

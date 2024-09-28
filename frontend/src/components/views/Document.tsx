@@ -1,87 +1,40 @@
 import Chat from "@/components/chat";
+import {
+  StateManagerContext,
+  useCreateStateManager,
+  useStateManager,
+} from "@/state";
 import { useParams } from "react-router-dom";
-import ChatMessageBubble from "@/components/chat/MessageBubble";
+import ChatMessageGroup from "@/components/chat/MessageGroup";
+
+const DocumentChatContent = () => {
+  const { state } = useStateManager();
+  return (
+    <div className="space-y-4">
+      {state.messages.map((iteratedField) => {
+        return (
+          <ChatMessageGroup
+            key={iteratedField.key}
+            field={iteratedField}
+          ></ChatMessageGroup>
+        );
+      })}
+    </div>
+  );
+};
 
 const Document = () => {
   const { id } = useParams();
+  const manager = useCreateStateManager();
 
   return (
-    <div className="container mx-auto max-w-3xl w-full py-10 px-4 lg:px-0 h-[calc(100vh-80px)]">
-      <Chat title={id}>
-        <ChatMessageBubble
-          message={{
-            role: "assistant",
-            content: "Witaj",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "user",
-            content: "Siema gpt",
-          }}
-        />
-        <ChatMessageBubble
-          message={{
-            role: "system",
-            content: "Witaj",
-          }}
-        />
-      </Chat>
-    </div>
+    <StateManagerContext.Provider value={manager}>
+      <div className="container mx-auto max-w-3xl w-full py-10 px-4 lg:px-0 h-screen flex flex-col">
+        <Chat title={id}>
+          <DocumentChatContent />
+        </Chat>
+      </div>
+    </StateManagerContext.Provider>
   );
 };
 
