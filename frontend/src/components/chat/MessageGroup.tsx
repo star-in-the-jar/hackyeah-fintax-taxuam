@@ -26,20 +26,22 @@ const MessageGroup = (props: { field: Field }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-medium mb-4">{props.field.key}</h3>
-        <Button variant="ghost" onClick={() => setIsCollapsed(!isCollapsed)}>
-          <FaChevronDown
-            className={[
-              "transition-transform",
-              !isCollapsed ? "transform rotate-180" : "",
-            ].join(" ")}
-          />
-        </Button>
-      </div>
+      <Button
+        className="flex justify-between items-center w-full mb-1"
+        variant="ghost"
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        <span className="text-2xl font-medium">{props.field.key}</span>
+        <FaChevronDown
+          className={[
+            "transition-transform",
+            !isCollapsed ? "transform rotate-180" : "",
+          ].join(" ")}
+        />
+      </Button>
       <div
         className={[
-          "ml-2 pl-2 border-l",
+          "ml-4 pl-4 border-l",
           isCollapsed ? "hidden" : "block",
         ].join(" ")}
       >
