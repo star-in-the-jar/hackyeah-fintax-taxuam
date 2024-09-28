@@ -7,7 +7,7 @@ import {
 import { useParams } from "react-router-dom";
 import ChatMessageGroup from "@/components/chat/MessageGroup";
 import DocumentFormPreview from "@/components/document/FormPreview";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const DocumentChatContent = () => {
   const { state } = useStateManager();
