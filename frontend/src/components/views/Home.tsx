@@ -51,7 +51,13 @@ const HomeChatContent = () => {
 const Home = () => {
   return (
     <div className="container mx-auto max-w-3xl w-full py-10 px-4 lg:px-0 flex flex-col h-screen">
-      <h1 className="text-4xl text-center mb-8">Tax Assistant</h1>
+      <div className="flex gap-x-4 items-center justify-center mb-8">
+        <img
+          className="w-10"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/204px-Herb_Polski.svg.png"
+        />
+        <h1 className="text-4xl text-center">{constants.CHAT_NAME}</h1>
+      </div>
 
       <div className="mb-4">
         <h3 className="text-2xl mb-2">Wybierz deklarację</h3>
