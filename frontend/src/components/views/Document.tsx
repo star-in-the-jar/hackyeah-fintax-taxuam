@@ -6,9 +6,11 @@ import {
 } from "@/state";
 import { useParams } from "react-router-dom";
 import ChatMessageGroup from "@/components/chat/MessageGroup";
+import DocumentFormPreview from "@/components/document/FormPreview";
 
 const DocumentChatContent = () => {
   const { state } = useStateManager();
+
   return (
     <div className="space-y-4">
       {state.messages.map((iteratedField) => {
@@ -33,6 +35,8 @@ const Document = () => {
         <Chat title={id}>
           <DocumentChatContent />
         </Chat>
+
+        <DocumentFormPreview />
       </div>
     </StateManagerContext.Provider>
   );

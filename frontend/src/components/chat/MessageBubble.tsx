@@ -3,13 +3,14 @@ interface MessageProps {
   message: Message;
 }
 const MessageBubble = (props: MessageProps) => {
-  const commonClassNames = "p-4 max-w-lg";
+  const commonClassNames = "p-4 max-w-lg w-full";
   if (props.message.role === "system") return <></>;
 
   if (props.message.role === "assistant")
     return (
       <div className={[commonClassNames].join(" ")}>
-        {props.message.content}
+        <h5 className=" text-slate-400/70 font-medium">Tax Assistant</h5>
+        <div>{props.message.content}</div>
       </div>
     );
 
@@ -20,7 +21,8 @@ const MessageBubble = (props: MessageProps) => {
         "text-white bg-zinc-700 rounded-lg ml-auto",
       ].join(" ")}
     >
-      {props.message.content}
+      <h5 className="font-medium">Ty</h5>
+      <div>{props.message.content}</div>
     </div>
   );
 };

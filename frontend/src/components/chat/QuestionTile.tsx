@@ -11,10 +11,11 @@ const QuestionTile = (props: QuestionTileProps) => {
   };
   return (
     <div className="border p-4 rounded-lg mb-4">
-      <p className="mb-1">
-        Wartość klucza <span className="font-medium">{props.field.key}</span>
-      </p>
-      <ChatInput onSend={onSend} buttonText="Zapisz" />
+      <ChatInput
+        onSend={onSend}
+        placeholder={`Wartość ${props.field.key}`}
+        buttonText="Zapisz"
+      />
     </div>
   );
 };
