@@ -1,5 +1,6 @@
-from chat import llm
+from chat import llm, get_chroma
 from typing import List, Dict
+from pprint import pprint
 
 def query_llm(
     messages: List[Dict[str, str]]
@@ -13,6 +14,10 @@ def query_llm(
     gen = (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
     return "".join(gen)
 
+vectorstore = get_chroma()
+retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
+def query_rag(query):
+    return '\n\n'.join(c.page_content for c in retriever.invoke(query))
 
 prolog_answer = [
     {
@@ -20,12 +25,17 @@ prolog_answer = [
         "content": "\n".join([
             "Jesteś asystenetm, który pomaga użytkownikowi wypełnić deklarację podatkową.",
             "Odpowiadasz na pytania tylko wykorzystująć wiedzę, którą dostaniesz opisaną jako kontekst. Nie wymyślasz odpowiedzi.",
-            "Jeśli czegoś nie wiesz, albo nie jesteś pewien to zakomunikuj to użytkownikowi. Nie wysyłaj użytkownikowi swoich domysłów i podejrzeń. Informuj go tylko jeśli jesteś czegoś pewien."
+            "Jeśli czegoś nie wiesz. Nie wysyłaj użytkownikowi swoich domysłów i podejrzeń. Informuj go tylko jeśli jesteś czegoś pewien.",
+            "Komunikuj się z użytkownikiem w jego języku.",
         ]),
     }
 ]
 
 def maciek():
+    user = """Wczoraj kupiłem na giełdzie samochodowej Fiata 126p rok prod. 1975, kolor zielony. Przejechane ma
+1000000 km, idzie jak przecinak, nic nie stuka, nic nie puka, dosłownie igła. Zapłaciłem za niego 1000
+zł ale jego wartość jest wyższa o 2000 zł i co mam z tym zrobić ?"""
+    ctx = query_rag(user)
     res = query_llm(
         prolog_answer + [
             {
@@ -33,7 +43,7 @@ def maciek():
                 "content": "\n".join([
                     "Kontekst:",
                     "---",
-                    "PESEL to numer identifikacyjny, który wraz z nazwiskiem identyfikuje każdą osobę.",
+                    ctx,
                     "---",
                     "Wypełniana deklaracja: PCC-3",
                     "Nazwa deklaracji: DEKLARACJA W SPRAWIE PODATKU OD CZYNNOŚCI CYWILNOPRAWNYCH",
@@ -43,20 +53,11 @@ def maciek():
             },
             {
                 "role": "user",
-                "content": "Co powinieniem wpisać w polu PESEL?"
-            },
-            {
-                "role": "assistant",
-                "content": "W polu PESEL powinieneś wpisać swój numer identyfikacyjny PESEL, który identyfikuje Ciebie jako osobę."
-            },
-            {
-                "role": "user",
-                "content": "Czym jest PESEL i gdzie mogę go znaleźć?",
+                "content": user
             },
         ]
     )
-
-    print(res)
+    return res
 
 if __name__ == "__main__":
-    maciek()
+    pprint(maciek())

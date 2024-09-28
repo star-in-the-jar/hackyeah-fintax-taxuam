@@ -5,6 +5,9 @@ from openai import OpenAI
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
+import glob
+import sys
+from pprint import pprint
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
@@ -33,7 +36,9 @@ def get_chroma():
     return Chroma(embedding_function=embeddings, persist_directory=STORE_DIR)
 
 def build_chroma():
-    texts = []
+    texts = glob.glob("./after_cleaning_data_txt/*.txt")
+    pprint(texts)
+    # sys.exit(1)
     chunks = []
 
     for doc in texts:
