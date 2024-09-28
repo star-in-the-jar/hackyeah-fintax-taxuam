@@ -13,7 +13,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-const DatePicker = () => {
+interface Props {
+  onSelect: (date: Date) => void;
+}
+
+const DatePicker = (props: Props) => {
+  const handleChange = (newValue: Date) => {
+    setDate(newValue);
+    props.onSelect(newValue);
+  };
   const [date, setDate] = React.useState<Date>();
 
   return (

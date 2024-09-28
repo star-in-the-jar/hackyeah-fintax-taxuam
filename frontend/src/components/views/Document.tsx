@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import ChatMessageGroup from "@/components/chat/MessageGroup";
 import DocumentFormPreview from "@/components/document/FormPreview";
 import { useState } from "react";
+import { FormDisplay, pcc3 } from "../form/newForm";
 
 const DocumentChatContent = () => {
   const { state } = useStateManager();
@@ -22,6 +23,7 @@ const DocumentChatContent = () => {
   return (
     <Chat title={id} partDetails={samplePart}>
       <div className="space-y-4">
+        <FormDisplay formData={pcc3} key={id} />
         {state.messages.map((iteratedField) => {
           return (
             <ChatMessageGroup
