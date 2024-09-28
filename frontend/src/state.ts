@@ -31,6 +31,11 @@ export const useCreateStateManager = (): StateManager => {
         messages: [],
         value: "",
       },
+      {
+        key: "Imię",
+        messages: [],
+        value: "",
+      },
     ],
   }));
 

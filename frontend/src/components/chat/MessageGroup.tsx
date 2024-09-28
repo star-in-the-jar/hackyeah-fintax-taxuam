@@ -8,7 +8,7 @@ import { Field, useStateManager } from "@/state";
 import { Message } from "@/types";
 
 const MessageGroup = (props: { field: Field }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const { updateState } = useStateManager();
 
   const sendMessage = (value: string) => {
@@ -27,7 +27,7 @@ const MessageGroup = (props: { field: Field }) => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h3 className="text-xl mb-4">{props.field.key}</h3>
+        <h3 className="text-2xl font-medium mb-4">{props.field.key}</h3>
         <Button variant="ghost" onClick={() => setIsCollapsed(!isCollapsed)}>
           <FaChevronDown
             className={[

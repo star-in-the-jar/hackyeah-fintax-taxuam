@@ -4,6 +4,8 @@ import { useState } from "react";
 
 interface ChatProps {
   onSend: (value: string) => void;
+  placeholder?: string;
+  buttonText?: string;
 }
 
 const ChatInput = (props: ChatProps) => {
@@ -25,10 +27,10 @@ const ChatInput = (props: ChatProps) => {
             handleOnSend();
           }
         }}
-        placeholder="Czym jest PESEL?"
+        placeholder={props.placeholder || "Type a message..."}
       />
       <Button variant="outline" onClick={handleOnSend}>
-        Send
+        {props.buttonText || "Send"}
       </Button>
     </div>
   );
