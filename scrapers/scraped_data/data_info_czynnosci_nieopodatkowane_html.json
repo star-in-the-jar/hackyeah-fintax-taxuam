@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_czynnosci_nieopodatkowane": [
+    "content_info_czynnosci_nieopodatkowane": [
         "<p class=\"introduction\">Zastanawiasz się, czy musisz płacić podatek PCC? Sprawdź, które czynności nie są opodatkowane podatkiem od czynności cywilnoprawnych</p>",
         "<p>Wśród czynności cywilnoprawnych, które nie podlegają opodatkowaniu podatkiem od czynności cywilnoprawnych (PCC) można wymienić<span><a href=\"#Art.2uPCC\"><sup>1</sup></a></span>:</p>",
         "<p><sup><a id=\"Art.2uPCC\"></a>[1]</sup> wymienione w art. 2 ustawy o PCC</p>",
@@ -15,6 +15,25 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-pcc/\">abc PCC</a></li>",
+        "<li><strong>czynności cywilnoprawne</strong>, inne niż umowa spółki i jej zmiany:\n<ol>\n<li>w zakresie, w jakim są opodatkowane podatkiem od towarów i usług,</li>\n<li>jeżeli przynajmniej jedna ze stron jest zwolniona od podatku od towarów i usług z tytułu dokonania tej czynności, z wyjątkiem:  \n<ol>\n<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>\n<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>\n</ol>\n</li>\n<li>niepodlegające podatkowi od towarów i usług na podstawie art. 8c ust. 1 ustawy z dnia 11 marca 2004 r. o podatku od towarów i usług, z wyjątkiem:\n<ol>\n<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>\n<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>\n</ol>\n</li>\n</ol>\n</li>",
+        "<li>w zakresie, w jakim są opodatkowane podatkiem od towarów i usług,</li>",
+        "<li>jeżeli przynajmniej jedna ze stron jest zwolniona od podatku od towarów i usług z tytułu dokonania tej czynności, z wyjątkiem:  \n<ol>\n<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>\n<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>\n</ol>\n</li>",
+        "<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>",
+        "<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>",
+        "<li>niepodlegające podatkowi od towarów i usług na podstawie art. 8c ust. 1 ustawy z dnia 11 marca 2004 r. o podatku od towarów i usług, z wyjątkiem:\n<ol>\n<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>\n<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>\n</ol>\n</li>",
+        "<li>umów sprzedaży i zamiany, których przedmiotem jest nieruchomość lub jej część, albo prawo użytkowania wieczystego, spółdzielcze własnościowe prawo do lokalu, prawo do domu jednorodzinnego w spółdzielni mieszkaniowej lub prawo do miejsca postojowego w garażu wielostanowiskowym lub udział w tych prawach,</li>",
+        "<li>umów sprzedaży udziałów i akcji w spółkach handlowych,</li>",
+        "<li><strong>umowy spółki i ich zmiany</strong> związane z:\n<ol>\n<li>łączeniem spółek kapitałowych,</li>\n<li>przekształceniem spółki kapitałowej w inną spółkę kapitałową,</li>\n<li>wniesieniem do spółki kapitałowej, w zamian za jej udziały lub akcje:\n<ol>\n<li>przedsiębiorstwa spółki kapitałowej lub jego zorganizowanej części,</li>\n<li>udziałów lub akcji innej spółki kapitałowej dających w niej większość głosów albo kolejnych udziałów lub akcji, w przypadku gdy spółka, do której są wnoszone te udziały lub akcje, posiada już większość głosów.</li>\n</ol>\n</li>\n</ol>\n</li>",
+        "<li>łączeniem spółek kapitałowych,</li>",
+        "<li>przekształceniem spółki kapitałowej w inną spółkę kapitałową,</li>",
+        "<li>wniesieniem do spółki kapitałowej, w zamian za jej udziały lub akcje:\n<ol>\n<li>przedsiębiorstwa spółki kapitałowej lub jego zorganizowanej części,</li>\n<li>udziałów lub akcji innej spółki kapitałowej dających w niej większość głosów albo kolejnych udziałów lub akcji, w przypadku gdy spółka, do której są wnoszone te udziały lub akcje, posiada już większość głosów.</li>\n</ol>\n</li>",
+        "<li>przedsiębiorstwa spółki kapitałowej lub jego zorganizowanej części,</li>",
+        "<li>udziałów lub akcji innej spółki kapitałowej dających w niej większość głosów albo kolejnych udziałów lub akcji, w przypadku gdy spółka, do której są wnoszone te udziały lub akcje, posiada już większość głosów.</li>"
     ]
 }

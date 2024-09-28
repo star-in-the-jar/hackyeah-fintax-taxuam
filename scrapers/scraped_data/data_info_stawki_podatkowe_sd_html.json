@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_stawki_podatkowe_sd": [
+    "content_info_stawki_podatkowe_sd": [
         "<p class=\"introduction\">Informacje dotyczące stawek podatkowych w podatku od spadków i darowizn: kwoty wolne od podatku, skala podatkowa</p>",
         "<p><strong>Z tego artykułu dowiesz się o:</strong></p>",
         "<p><strong>Kwoty wolne od podatku SD</strong></p>",
@@ -61,6 +61,17 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/\">abc SD</a></li>",
+        "<li>Kwota wolna od podatku SD</li>",
+        "<li>Grupa podatkowa SD</li>",
+        "<li>Skala podatkowa SD</li>",
+        "<li>36 120 zł – jeżeli nabywcą jest osoba zaliczona do pierwszej grupy podatkowej,</li>",
+        "<li>27 090 zł – jeżeli nabywcą jest osoba zaliczona do drugiej grupy podatkowej,</li>",
+        "<li>5733 zł – jeżeli nabywcą jest osoba zaliczona do trzeciej grupy podatkowej.</li>"
     ]
 }

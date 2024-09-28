@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_podatnik_i_platnik_pcc": [
+    "content_info_podatnik_i_platnik_pcc": [
         "<p class=\"introduction\">Nie wiesz, kto jest podatnikiem, a kto płatnikiem podatku od czynności cywilnoprawnych? Sprawdź, na kim ciąży obowiązek podatkowy</p>",
         "<p>Podatnikami PCC są osoby fizyczne, osoby prawne i jednostki organizacyjne niemające osobowości prawnej, będące stronami czynności cywilnoprawnych, z tym że podatnikiem jest przy:</p>",
         "<p>Jeżeli obowiązek podatkowy ciąży na kilku podmiotach (np. dwie osoby kupują samochód) albo na stronach umowy zamiany, albo wspólnikach spółki cywilnej - są oni solidarnie zobowiązani do zapłaty podatku.</p>",
@@ -17,6 +17,20 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-pcc/\">abc PCC</a></li>",
+        "<li>umowie sprzedaży - kupujący,</li>",
+        "<li>umowie zamiany – strony czynności,</li>",
+        "<li>umowie darowizny – obdarowany,</li>",
+        "<li>umowie dożywocia - nabywca własności nieruchomości,</li>",
+        "<li>umowie o dział spadku lub o zniesienie współwłasności – podmiot, który nabywa rzeczy lub prawa majątkowe ponad udział w spadku lub we współwłasności,</li>",
+        "<li>ustanowieniu odpłatnego użytkowania, w tym również nieprawidłowego oraz odpłatnej służebności - użytkownik lub nabywający prawo służebności,</li>",
+        "<li>umowie pożyczki i umowie depozytu nieprawidłowego - biorący pożyczkę lub przechowawca,</li>",
+        "<li>ustanowieniu hipoteki - składający oświadczenia woli o ustanowieniu hipoteki,</li>",
+        "<li>umowie spółki cywilnej - wspólnicy, a przy pozostałych umowach spółki - spółka.</li>"
     ]
 }
