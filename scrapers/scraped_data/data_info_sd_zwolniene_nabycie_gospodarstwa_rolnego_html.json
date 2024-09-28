@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_sd_zwolniene_nabycie_gospodarstwa_rolnego": [
+    "content_info_sd_zwolniene_nabycie_gospodarstwa_rolnego": [
         "<p class=\"introduction\">Nabyłeś na własność grunty stanowiące gospodarstwo rolne? Sprawdź, czy przysługuje Ci zwolnienie od podatku od spadków i darowizn.</p>",
         "<p>Zwolnione jest <strong>nabycie własności gruntów</strong>, które stanowią gospodarstwo rolne w rozumieniu przepisów o podatku rolnym, wraz z drzewami i innymi roślinami, które są ich częścią składową.</p>",
         "<p>Skorzystać ze zwolnienia można pod warunkiem, że:</p>",
@@ -16,6 +16,16 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/\">abc SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/\">Ulgi i zwolnienia w podatku od spadków i darowizn</a></li>",
+        "<li>w wyniku nabycia zostanie utworzone lub powiększone gospodarstwo rolne, a jego powierzchnia po utworzeniu lub po powiększeniu będzie nie mniejsza niż 11 ha i nie większa niż 300 ha oraz</li>",
+        "<li>gospodarstwo to będzie prowadzone przez nabywcę przez okres co najmniej 5 lat od nabycia<sup>[<a data-anchor=\"#Gospodarstwo1\" href=\"#Gospodarstwo1\">1</a>]</sup><span></span>.</li>",
+        "<li><a id=\"Gospodarstwo1\"></a>art. 4 ust. 1 pkt 1 ustawy</li>",
+        "<li><a id=\"Gospodarstwo2\"></a>o której mowa w rozporządzeniu Komisji (UE) nr 1408/2013 z dnia 18 grudnia 2013 r. w sprawie stosowania art. 107 i 108 Traktatu o funkcjonowaniu Unii Europejskiej do pomocy de minimis w sektorze rolnym</li>"
     ]
 }

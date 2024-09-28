@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_sd_zwolnienie_dla_rodziny": [
+    "content_info_sd_zwolnienie_dla_rodziny": [
         "<p class=\"introduction\">Dostałeś spadek lub darowiznę? Sprawdź, kiedy możesz skorzystać ze zwolnienia od podatku od spadków i darowizn dla najbliższej rodziny.</p>",
         "<p><strong style=\"background-color: initial;\">Z tego artykułu dowiesz się:</strong></p>",
         "<p>Jeśli,</p>",
@@ -29,6 +29,35 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/\">abc SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/\">Ulgi i zwolnienia w podatku od spadków i darowizn</a></li>",
+        "<li><a data-anchor=\"#1\" href=\"#1\">Kiedy przysługuje zwolnienie</a></li>",
+        "<li><a data-anchor=\"#2\" href=\"#2\">Kto podlega zwolnieniu</a></li>",
+        "<li><a data-anchor=\"#3\" href=\"#3\">Jakie są warunki do skorzystania ze zwolnienia</a></li>",
+        "<li><a data-anchor=\"#6\" href=\"#3\">Kiedy nie dokonujesz zgłoszenia</a></li>",
+        "<li><a data-anchor=\"#4\" href=\"#4\">Jak złożyć formularz</a></li>",
+        "<li><a data-anchor=\"#5\" href=\"#5\">Gdzie i komu złożyć formularz</a></li>",
+        "<li>otrzymałeś spadek,</li>",
+        "<li>otrzymałeś darowiznę,</li>",
+        "<li>nabyłeś własność rzeczy i inne prawa majątkowe</li>",
+        "<li>małżonka,</li>",
+        "<li>zstępnych: dzieci, wnuków, prawnuków,</li>",
+        "<li>wstępnych: rodziców, dziadków pradziadków,</li>",
+        "<li>pasierbów;</li>",
+        "<li>rodzeństwo,</li>",
+        "<li>ojczyma oraz macochę. </li>",
+        "<li>uprawomocnienia się postanowienia sądu stwierdzającego nabycie spadku, albo</li>",
+        "<li>zarejestrowania aktu poświadczenia dziedziczenia przez notariusza, albo</li>",
+        "<li>wydania europejskiego poświadczenia spadkowego.</li>",
+        "<li>wartość majątku nabytego łącznie od tej samej osoby lub po tej samej osobie w okresie 5 lat, poprzedzających rok, w którym nastąpiło ostatnie nabycie, doliczona do wartości rzeczy i praw majątkowych ostatnio nabytych, nie przekracza kwoty 36 120 zł lub</li>",
+        "<li>nabycie następuje na podstawie umowy zawartej w formie aktu notarialnego albo w tej formie zostało złożone oświadczenie woli jednej ze stron.</li>",
+        "<li>elektronicznie w usłudze e-Deklaracje, podpisując je danymi autoryzacyjnymi albo kwalifikowanym podpisem elektronicznym, albo</li>",
+        "<li>papierowo, bezpośrednio we właściwym miejscowo urzędzie skarbowym albo w innym, dowolnym urzędzie skarbowym (z wyłączeniem wyspecjalizowanych urzędów skarbowych) lub za pośrednictwem operatora pocztowego.</li>",
+        "<li>Ustawa z dnia 28 lipca 1983 r. o podatku od spadków i darowizn</li>"
     ]
 }

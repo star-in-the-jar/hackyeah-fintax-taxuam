@@ -1,5 +1,5 @@
 {
-    "paragraphs_info_obowiazek_podatkowy": [
+    "content_info_obowiazek_podatkowy": [
         "<p class=\"introduction\">Chcesz dowiedzieć się, jak powstaje obowiązek podatkowy w podatku od czynności cywilnoprawnych oraz jakie są obowiązki podatników? Sprawdź</p>",
         "<p>Obowiązek podatkowy powstaje:</p>",
         "<p>Jeżeli zawarcie umowy przenoszącej własność następuje w wykonaniu zobowiązania, które wynika z uprzednio zawartej umowy zobowiązującej do przeniesienia własności - obowiązek podatkowy powstaje z chwilą zawarcia umowy przenoszącej własność.</p>",
@@ -15,6 +15,17 @@
         "<p><strong><a class=\"btn btn-outline-primary light-text\" data-anchor=\"#\" data-udi=\"umb://document/9decbc0a9b834eeea0957649a90c5604\" href=\"/skontaktuj-sie-z-nami/\">Skontaktuj się z nami</a></strong></p>",
         "<p> </p>",
         "<p> </p>",
-        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>"
+        "<p>Treści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.</p>",
+        "<li>\n<a href=\"/en/\">EN</a>\n</li>",
+        "<li>\n<a href=\"/uk/\">UK</a>\n</li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/\">Podatki.gov.pl</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/\">PCC, SD</a></li>",
+        "<li class=\"breadcrumb-item\"><a href=\"/pcc-sd/abc-pcc/\">abc PCC</a></li>",
+        "<li>z chwilą dokonania czynności cywilnoprawnej (np. zawarcia umowy);</li>",
+        "<li>z chwilą każdorazowej wypłaty środków pieniężnych, jeżeli umowa pożyczki określa, że wypłata środków pieniężnych nastąpi niejednokrotnie i ich suma nie jest znana w chwili zawarcia umowy;</li>",
+        "<li>z chwilą podjęcia uchwały o podwyższeniu kapitału spółki mającej osobowość prawną,</li>",
+        "<li>z chwilą złożenia oświadczenia o ustanowieniu hipoteki lub zawarcia umowy ustanowienia hipoteki,</li>",
+        "<li>z chwilą uprawomocnienia się orzeczenia sądu, doręczenia wyroku sądu polubownego lub zawarcia ugody,</li>",
+        "<li>z chwilą powołania się przez podatnika na fakt dokonania czynności cywilnoprawnej - jeżeli podatnik nie złożył deklaracji w sprawie podatku od czynności cywilnoprawnych w terminie 5 lat od końca roku, w którym upłynął termin płatności podatku, a następnie powołuje się przed organem podatkowym lub organem kontroli skarbowej na fakt jej dokonania.</li>"
     ]
 }
