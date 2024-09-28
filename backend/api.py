@@ -21,11 +21,12 @@ def query_llm(
     gen = (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
     return "".join(gen)
 
-class History(BaseModel):
-    elements: List[BaseModel]
+class Req(BaseModel):
+    elements: List[Msg]
 
-class HistoryElement(BaseModel):
+class Msg(BaseModel):
     role: str
+    content: str
 
 app = FastAPI()
 
@@ -35,18 +36,46 @@ async def handle(data: History):
         "maciek": "Jest szansa!"
     }
 
-@app.get("/test")
-async def handle():
-    res = query_llm([
+prolog_prompt = [
+    {
+        "role": "system",
+        "content": "\n".join([
+            "Jesteś asystenetm, który pomaga użytkownikowi wypełnić deklarację podatkową.",
+            "Odpowiadasz na pytania tylko wykorzystująć wiedzę, którą dostaniesz opisaną jako kontekst. Nie wymyślasz odpowiedzi.",
+            "Jeśli czegoś nie wiesz. Nie wysyłaj użytkownikowi swoich domysłów i podejrzeń. Informuj go tylko jeśli jesteś czegoś pewien.",
+            "Komunikuj się z użytkownikiem w jego języku.",
+        ]),
+    }
+]
+
+@app.post("/chat-complete")
+async def chat_complete(req: Req):
+    ctx = ""
+    if len(req.elements) > 0:
+        last_message = req.elements[-1].content
+        ctx = query_rag(last_message)
+
+    user_stuff = [
         {
-            "role": "system",
-            "content": "Jesteś asystentem piszącym wiersze. Piszesz wiersze na tematy zdane ci przez urzytkownika."
-        },
-        {
-            "role": "user",
-            "content": "Napisz wiersz o AI bielik - polskim czacie GPT",
-        }
-    ])
+            "role": e.role,
+            "content": e.content
+        } for e in req.elements
+    ]
+
+    res = query_llm(
+        prolog_prompt + [{
+            "role": "assistant",
+            "content": "\n".join([
+                "Kontekst:",
+                "---",
+                ctx,
+                "---",
+                "Wypełniana deklaracja: PCC-3",
+                "Nazwa deklaracji: DEKLARACJA W SPRAWIE PODATKU OD CZYNNOŚCI CYWILNOPRAWNYCH",
+                "---"
+            ])
+        }] + user_stuff
+    )
 
     return {
         "role": "assistant",
