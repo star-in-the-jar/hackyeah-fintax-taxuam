@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { FormDisplay, NewForm, pcc3 } from "../form/implement";
+import { download, renderXML } from "../form/xmlRender";
 
 const DocumentChatContent = () => {
   const [formData, setFormData] = useState<NewForm>(() => pcc3)
@@ -24,6 +25,12 @@ const DocumentChatContent = () => {
         <FormDisplay formData={formData} onChange={(e) => {
           setFormData(e)
         }} key={id} />
+        <button onClick={() => {
+          download(
+            renderXML(formData),
+            "file.xml",
+          )
+        }}>EXPORT XML</button>
       </div>
     </Chat>
   );

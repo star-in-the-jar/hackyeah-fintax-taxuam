@@ -36,6 +36,9 @@ export interface Podmiot {
 
 export interface NewForm {
   Podmiot: Podmiot;
+  opis: string,
+  kwotaPodatek1Proc: string,
+  kwotaPodatek2Proc: string,
 }
 
 export const pcc3: NewForm = {
@@ -74,6 +77,10 @@ export const pcc3: NewForm = {
       },
     },
   },
+  kwotaPodatek1Proc: "0",
+  kwotaPodatek2Proc: "0",
+  opis: "",
+
 };
 
 const formatNewDateToString = (newDate: Date) => {
@@ -247,6 +254,41 @@ export const FormDisplay = (props: {
             draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
               "Miejscowosc"
             ] = e.target.value
+          }))
+        }}
+      />
+
+
+      <Input
+        value={
+          props.formData.opis
+        }
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft.opis = e.target.value
+          }))
+        }}
+      />
+
+      <Input
+        value={
+          props.formData.kwotaPodatek1Proc
+        }
+        pattern="\d+"
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft.opis = e.target.value
+          }))
+        }}
+      />
+      <Input
+        value={
+          props.formData.kwotaPodatek2Proc
+        }
+        pattern="\d+"
+        onChange={(e) => {
+          props.onChange(produce(props.formData, draft => {
+            draft.opis = e.target.value
           }))
         }}
       />

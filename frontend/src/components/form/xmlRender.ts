@@ -1,3 +1,5 @@
+import { NewForm } from "./implement";
+
 const entityEncode = (s: string) => {
   var el = document.createElement("div");
   el.innerText = el.textContent = s;
@@ -30,9 +32,30 @@ export const download = (content: string, fileName: string) => {
   }, 15000);
 };
 
-export const renderXML = (data: any) => {
-  return `
-    <?xml version="1.0" encoding="UTF-8"?>
+const renderKwotaPodatkow = (data: NewForm) => {
+  let res = ``;
+  let sum = 0
+  if (data.kwotaPodatek1Proc && data.kwotaPodatek1Proc !== "") {
+    const val = Math.ceil(parseFloat(data.kwotaPodatek1Proc) * 0.01)
+    sum += val
+    res += `<P_24>${entityEncode(data.kwotaPodatek1Proc)}</P_24>
+        <P_25>${entityEncode(
+          val.toString()
+        )}</P_25>`;
+  }
+  if (data.kwotaPodatek2Proc && data.kwotaPodatek2Proc !== "") {
+    const val = Math.ceil(parseFloat(data.kwotaPodatek2Proc) * 0.02)
+    sum += val
+    res += `<P_26>${entityEncode(data.kwotaPodatek2Proc)}</P_26>
+        <P_27>${entityEncode(
+          val.toString()
+        )}</P_27>`;
+  }
+  return res;
+};
+
+export const renderXML = (data: NewForm) => {
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <Deklaracja xmlns="http://crd.gov.pl/wzor/2023/12/13/13064/">
     <Naglowek>
         <KodFormularza kodSystemowy="PCC-3 (6)" kodPodatku="PCC" rodzajZobowiazania="Z"
@@ -44,22 +67,48 @@ export const renderXML = (data: any) => {
     </Naglowek>
     <Podmiot1 rola="Podatnik">
         <OsobaFizyczna>
-            <PESEL>${entityEncode(data.pesel)}</PESEL>
-            <ImiePierwsze>KAMIL</ImiePierwsze>
-            <Nazwisko>WIRTUALNY</Nazwisko>
-            <DataUrodzenia>1954-12-18</DataUrodzenia>
+            <PESEL>${entityEncode(data.Podmiot.OsobaFizyczna.PESEL)}</PESEL>
+            <ImiePierwsze>${entityEncode(
+              data.Podmiot.OsobaFizyczna.ImiePierwsze.toLocaleUpperCase()
+            )}</ImiePierwsze>
+            <Nazwisko>${entityEncode(
+              data.Podmiot.OsobaFizyczna.Nazwisko.toLocaleUpperCase()
+            )}</Nazwisko>
+            <DataUrodzenia>${entityEncode(
+              data.Podmiot.OsobaFizyczna.DataUrodzenia
+            )}</DataUrodzenia>
         </OsobaFizyczna>
         <AdresZamieszkaniaSiedziby rodzajAdresu="RAD">
             <AdresPol>
                 <KodKraju>PL</KodKraju>
-                <Wojewodztwo>ŚLĄSKIE</Wojewodztwo>
-                <Powiat>M. KATOWICE</Powiat>
-                <Gmina>M. KATOWICE</Gmina>
-                <Ulica>ALPEJSKA</Ulica>
-                <NrDomu>6</NrDomu>
-                <NrLokalu>66</NrLokalu>
-                <Miejscowosc>KATOWICE</Miejscowosc>
-                <KodPocztowy>66-666</KodPocztowy>
+                <Wojewodztwo>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Wojewodztwo
+                )}</Wojewodztwo>
+                <Powiat>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Powiat
+                )}</Powiat>
+                <Gmina>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Gmina
+                )}</Gmina>
+                <Ulica>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Ulica
+                )}</Ulica>
+                <NrDomu>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrDomu
+                )}</NrDomu>
+                ${
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrLokalu
+                    ? `<NrLokalu>${entityEncode(
+                        data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrLokalu
+                      )}</NrLokalu>`
+                    : ""
+                }
+                <Miejscowosc>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Miejscowosc
+                )}</Miejscowosc>
+                <KodPocztowy>${entityEncode(
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.KodPocztowy
+                )}</KodPocztowy>
             </AdresPol>
         </AdresZamieszkaniaSiedziby>
     </Podmiot1>
@@ -68,11 +117,8 @@ export const renderXML = (data: any) => {
         <P_20>1</P_20>
         <P_21>1</P_21>
         <P_22>1</P_22>
-        <P_23>Sprzedałem auto</P_23>
-        <P_24>10000</P_24>
-        <P_25>100</P_25>
-        <P_46>100</P_46>
-        <P_53>100</P_53>
+        <P_23>${entityEncode(data.opis)}</P_23>
+        ${renderKwotaPodatkow(data)}
         <P_62>1</P_62>
     </PozycjeSzczegolowe>
 <Pouczenia>1</Pouczenia>
