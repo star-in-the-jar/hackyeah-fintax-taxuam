@@ -10,7 +10,7 @@ import ChatMessageGroup from "@/components/chat/MessageGroup";
 const DocumentChatContent = () => {
   const { state } = useStateManager();
   return (
-    <div>
+    <div className="space-y-4">
       {state.messages.map((iteratedField) => {
         return (
           <ChatMessageGroup
