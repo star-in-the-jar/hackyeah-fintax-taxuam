@@ -23,19 +23,23 @@ export const StateManagerContext = createContext<StateManager | null>(null);
 /**
  * Use only *ONCE* in whole app!!!
  */
+
+const getGroupGreetingMessage = (key: string): Field => ({
+  key: key,
+  messages: [
+    {
+      role: "assistant",
+      content: `Cześć, jestem Tax Assistant 👋 W tym chacie mozesz zadać pytania na temat ${key}`,
+    } as Message,
+  ],
+  value: "",
+});
+
 export const useCreateStateManager = (): StateManager => {
   const [state, setState] = useState<State>(() => ({
     messages: [
-      {
-        key: "PESEL",
-        messages: [],
-        value: "",
-      },
-      {
-        key: "Imię",
-        messages: [],
-        value: "",
-      },
+      getGroupGreetingMessage("PESEL"),
+      getGroupGreetingMessage("Imie"),
     ],
   }));
 
