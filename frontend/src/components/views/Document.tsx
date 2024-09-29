@@ -15,6 +15,7 @@ import { Link, useParams } from "react-router-dom";
 import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
 import IndexTree from "../IndexTree/IndexTree";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 interface TabContentProps {
   formData: NewForm;
@@ -68,10 +69,11 @@ const TabFormContent = ({
             target="_blank"
             className={[
               "ml-2 w-full",
-              buttonVariants({ variant: "secondary" })
+              buttonVariants({ variant: "secondary" }),
+              "inline-flex itmes-center gap-x-2"
             ].join(" ")}
           >
-            IMPORT XML
+            PRZEŚLIJ DEKLARACJĘ <FaArrowRightToBracket />
           </a>
         </div>
       </div>
