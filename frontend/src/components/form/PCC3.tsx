@@ -134,18 +134,6 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
           value={formData["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"]}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup label="Data urodzenia">
-        <DatePicker
-          onSelect={(newDate) => {
-            onChange(
-              produce(formData, (draft) => {
-                draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
-                  formatNewDateToString(newDate);
-              })
-            );
-          }}
-        />
-      </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Województwo">
         <Input
           value={
