@@ -2,7 +2,7 @@ import ChatMessageBubble from "@/components/chat/MessageBubble";
 import { Button } from "@/components/ui/button";
 import { useChat } from "@/hooks/useChat";
 import { Message } from "@/types";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useMemo, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import Loader from "../ui/loader";
 import ChatInput from "./Input";
@@ -14,14 +14,23 @@ export const AutonomousMessageGroup = ({
   label: string;
   children?: ReactNode;
 }) => {
+  const [tempMessage, setTempMessage] = useState<Message | null>(null)
   const [messages, setMessages] = useState<Message[]>([]);
   const currentMessagesRef = useRef<Message[]>();
+
+  const realMessages = useMemo(() => {
+    if (!tempMessage) return messages
+    return [...messages, tempMessage]
+  }, [messages, tempMessage])
 
   return (
     <MessageGroup
       label={label}
-      messages={messages}
+      messages={realMessages}
       children={children}
+      onTempMessage={(msg) => {
+        setTempMessage(msg)
+      }}
       onNewMessage={(msg) => {
         if (!currentMessagesRef.current) {
           currentMessagesRef.current = messages;
@@ -38,11 +47,13 @@ export const AutonomousMessageGroup = ({
 const MessageGroup = ({
   messages,
   onNewMessage,
+  onTempMessage,
   children,
   label,
 }: {
   messages: Message[];
   onNewMessage: (message: Message) => void;
+  onTempMessage: (message: Message | null) => void,
   children?: ReactNode;
   label: string;
 }) => {
@@ -57,11 +68,20 @@ const MessageGroup = ({
       content: value,
     });
 
-    chatSendMessage(messages)
+    chatSendMessage([...messages, {
+      role: "user",
+      content: value,
+    }], (text) => {
+      onTempMessage({
+        role: "assistant",
+        content: text,
+      })
+    })
       .then((newMessage) => {
         onNewMessage(newMessage);
       })
       .finally(() => {
+        onTempMessage(null)
         setIsLoading(false);
       });
   };

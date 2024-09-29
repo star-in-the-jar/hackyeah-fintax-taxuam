@@ -27,7 +27,12 @@ const HomeChatContent = () => {
     setHomeChatMessages([...homeChatMessages, obj]);
 
     setIsLoading(true);
-    const res = await sendMessage(homeChatMessages);
+    const res = await sendMessage(homeChatMessages, (text) => {
+      setHomeChatMessages([...homeChatMessages, obj, {
+        role: "user",
+        content: text,
+      }]);
+    });
     setIsLoading(false);
 
     setHomeChatMessages([...homeChatMessages, obj, res]);

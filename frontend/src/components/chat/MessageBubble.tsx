@@ -1,5 +1,9 @@
 import { constants } from "@/constants";
 import type { Message } from "@/types";
+import Markdown from 'react-markdown'
+
+
+
 interface MessageProps {
   message: Message;
 }
@@ -11,7 +15,7 @@ const MessageBubble = (props: MessageProps) => {
     return (
       <div className={[commonClassNames].join(" ")}>
         <h5 className=" text-primary/70 font-medium">{constants.CHAT_NAME}</h5>
-        <div>{props.message.content}</div>
+        <div className="markdown-base"><Markdown>{props.message.content}</Markdown></div>
       </div>
     );
 
