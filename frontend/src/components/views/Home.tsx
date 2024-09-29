@@ -12,7 +12,7 @@ const HomeChatContent = () => {
   const [homeChatMessages, setHomeChatMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóć?`,
+      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóc?`,
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +56,9 @@ const Home = () => {
           className="w-10"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/204px-Herb_Polski.svg.png"
         />
-        <h1 className="text-4xl text-center">{constants.CHAT_NAME}</h1>
+        <h1 className="text-4xl text-center text-primary font-medium">
+          {constants.CHAT_NAME}
+        </h1>
       </div>
 
       <div className="mb-4">
