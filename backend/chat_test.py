@@ -32,9 +32,7 @@ prolog_answer = [
 ]
 
 def maciek():
-    user = """Wczoraj kupiłem na giełdzie samochodowej Fiata 126p rok prod. 1975, kolor zielony. Przejechane ma
-1000000 km, idzie jak przecinak, nic nie stuka, nic nie puka, dosłownie igła. Zapłaciłem za niego 1000
-zł ale jego wartość jest wyższa o 2000 zł i co mam z tym zrobić ?"""
+    user = """Jak rozliczyć spadek?"""
     ctx = query_rag(user)
     res = query_llm(
         prolog_answer + [
@@ -45,10 +43,6 @@ zł ale jego wartość jest wyższa o 2000 zł i co mam z tym zrobić ?"""
                     "---",
                     ctx,
                     "---",
-                    "Wypełniana deklaracja: PCC-3",
-                    "Nazwa deklaracji: DEKLARACJA W SPRAWIE PODATKU OD CZYNNOŚCI CYWILNOPRAWNYCH",
-                    "Opis deklaracji: PCC-3 to deklaracja składana",
-                    "---"
                 ])
             },
             {

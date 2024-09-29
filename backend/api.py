@@ -77,9 +77,6 @@ async def chat_complete(req: Req):
                 "---",
                 ctx,
                 "---",
-                "Wypełniana deklaracja: PCC-3",
-                "Nazwa deklaracji: DEKLARACJA W SPRAWIE PODATKU OD CZYNNOŚCI CYWILNOPRAWNYCH",
-                "---"
             ])
         }] + user_stuff
     )
