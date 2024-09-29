@@ -6,42 +6,45 @@ import { ReactNode, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import Loader from "../ui/loader";
 import ChatInput from "./Input";
-import ChatQuestionTile from "./QuestionTile";
 
-export const AutonomousMessageGroup = ({ label, children }: {
-  label: string,
-  children?: ReactNode
+export const AutonomousMessageGroup = ({
+  label,
+  children,
+}: {
+  label: string;
+  children?: ReactNode;
 }) => {
-  const [messages, setMessages] = useState<Message[]>([])
-  const currentMessagesRef = useRef<Message[]>()
+  const [messages, setMessages] = useState<Message[]>([]);
+  const currentMessagesRef = useRef<Message[]>();
 
-  return <MessageGroup
-    label={label}
-    messages={messages}
-    children={children}
-    onNewMessage={(msg) => {
-      if (!currentMessagesRef.current) {
-        currentMessagesRef.current = messages
-      }
+  return (
+    <MessageGroup
+      label={label}
+      messages={messages}
+      children={children}
+      onNewMessage={(msg) => {
+        if (!currentMessagesRef.current) {
+          currentMessagesRef.current = messages;
+        }
 
-      currentMessagesRef.current = [
-        ...currentMessagesRef.current,
-        msg
-      ]
+        currentMessagesRef.current = [...currentMessagesRef.current, msg];
 
-      setMessages(currentMessagesRef.current)
-    }} />
-}
+        setMessages(currentMessagesRef.current);
+      }}
+    />
+  );
+};
 
 const MessageGroup = ({
-  messages, onNewMessage,
+  messages,
+  onNewMessage,
   children,
-  label
+  label,
 }: {
-  messages: Message[],
-  onNewMessage: (message: Message) => void,
-  children?: ReactNode
-  label: string
+  messages: Message[];
+  onNewMessage: (message: Message) => void;
+  children?: ReactNode;
+  label: string;
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,16 +55,21 @@ const MessageGroup = ({
     onNewMessage({
       role: "user",
       content: value,
-    })
+    });
 
     chatSendMessage(messages)
       .then((newMessage) => {
-        onNewMessage(newMessage)
+        onNewMessage(newMessage);
       })
       .finally(() => {
-        setIsLoading(false)
+        setIsLoading(false);
       });
   };
+
+  const ChatMessages = () =>
+    messages.map((message, idx) => (
+      <ChatMessageBubble key={idx} message={message} />
+    ));
 
   return (
     <div>
@@ -71,7 +79,9 @@ const MessageGroup = ({
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <div className="flex justify-between w-full pr-5">
-          <h2 id={label} className="text-2xl font-medium">{label}</h2>
+          <h2 id={label} className="text-2xl font-medium">
+            {label}
+          </h2>
           <div>{children}</div>
         </div>
         <FaChevronDown
@@ -88,9 +98,7 @@ const MessageGroup = ({
         ].join(" ")}
       >
         <div className="space-y-3">
-          {messages.map((message, index) => (
-            <ChatMessageBubble key={index} message={message} />
-          ))}
+          <ChatMessages />
         </div>
         {isLoading ? <Loader /> : null}
         <ChatInput isLoading={isLoading} onSend={sendMessage} />
