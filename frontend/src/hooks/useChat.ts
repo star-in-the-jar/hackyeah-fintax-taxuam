@@ -1,7 +1,12 @@
 import { fetchChatStream } from "@/api";
 import { Message } from "@/types";
 
-export const useChat = () => {
+export type UseChatOpts = {
+  declaration?: string,
+  field?: string
+}
+
+export const useChat = (opts?: UseChatOpts) => {
   const sendMessage = async (
     messages: Message[],
     cb: (text: string) => void
@@ -12,6 +17,9 @@ export const useChat = () => {
     if (!cb) throw new Error("NIE DZIALA");
     return fetchChatStream(
       {
+        declaration: "",
+        field: "",
+        ...(opts ?? {}),
         elements: messages,
       },
       cb

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .chat import llm, get_chroma
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Optional
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -35,6 +35,8 @@ class Msg(BaseModel):
     content: str
 
 class Req(BaseModel):
+    field: Optional[str]
+    declaration: Optional[str]
     elements: List[Msg]
 
 
@@ -56,7 +58,9 @@ prolog_prompt = [
             "Jesteś asystenetm, który pomaga użytkownikowi wypełnić deklarację podatkową.",
             "Odpowiadasz na pytania tylko wykorzystująć wiedzę, którą dostaniesz opisaną jako kontekst. Nie wymyślasz odpowiedzi.",
             "Jeśli czegoś nie wiesz. Nie wysyłaj użytkownikowi swoich domysłów i podejrzeń. Informuj go tylko jeśli jesteś czegoś pewien.",
-            "Komunikuj się z użytkownikiem w jego języku.",
+            "Komunikuj się z użytkownikiem w wybranym przez niego języku.",
+            "Jeśli obecnie wypełniana deklaracja jest tą, którą użytkownik ma wypełnić, to go o tym poinformuj.",
+            "Jeśli użytkownik obecnie wypełnia inną deklarację, niż tą, którą powinien wypełniać, to mu o tym powiedz."
         ]),
     }
 ]
@@ -75,6 +79,10 @@ async def chat_complete_stream(req: Req):
         } for e in req.elements
     ]
 
+    declaration = req.declaration or ""
+    declaration = declaration or "n/a"
+    declaration = f"Obecnie wypełniana deklaracja: {declaration}"
+
     res = query_llm(
         stream=True,
         messages=prolog_prompt + [{
@@ -84,6 +92,7 @@ async def chat_complete_stream(req: Req):
                 "---",
                 ctx,
                 "---",
+                declaration
             ])
         }] + user_stuff
     )

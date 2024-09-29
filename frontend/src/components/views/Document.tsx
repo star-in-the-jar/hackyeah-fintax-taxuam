@@ -1,20 +1,20 @@
 import Chat from "@/components/chat";
+import ChatInput from "@/components/chat/Input";
+import ChatMessageBubble from "@/components/chat/MessageBubble";
 import DocumentFormPreview from "@/components/document/FormPreview";
+import DocumentTabs from "@/components/document/Tabs";
+import { Button, buttonVariants } from "@/components/ui/button";
+import Loader from "@/components/ui/loader";
+import { constants } from "@/constants";
+import { useChat } from "@/hooks/useChat";
 import { StateManagerContext, useCreateStateManager } from "@/state";
-import { useEffect, useRef, useState } from "react";
+import { Message } from "@/types";
+import { useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useParams } from "react-router-dom";
 import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
-import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import DocumentTabs from "@/components/document/Tabs";
-import { Message } from "@/types";
-import { useChat } from "@/hooks/useChat";
-import ChatMessageBubble from "@/components/chat/MessageBubble";
-import Loader from "@/components/ui/loader";
-import ChatInput from "@/components/chat/Input";
 
 interface TabContentProps {
   formData: NewForm;
@@ -72,11 +72,13 @@ const TabChatContent = ({
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
-  const { sendMessage } = useChat();
+  const { sendMessage } = useChat({
+    declaration: "PCC-3"
+  });
 
   const [ref, setRef] = useState<HTMLElement | null>(null);
 
-  const handleScroll = () => {
+  const handleScroll = (force = false) => {
     if (!ref) return
 
     const isNearBottom = () => {
@@ -86,7 +88,7 @@ const TabChatContent = ({
       return position > height - threshold;
     }
 
-    if (isNearBottom()) {
+    if (isNearBottom() || force) {
       ref.scroll({
         top: ref.scrollHeight,
         left: 0,
@@ -103,7 +105,7 @@ const TabChatContent = ({
 
     handleScroll()
     setDocumentChatMessages([...documentChatMessages, obj]);
-    handleScroll()
+    handleScroll(true)
 
     setIsLoading(true);
     const res = await sendMessage([...documentChatMessages, obj], (text) => {
@@ -115,7 +117,7 @@ const TabChatContent = ({
           content: text,
         },
       ]);
-      handleScroll()
+      handleScroll(true)
     });
     setIsLoading(false);
 

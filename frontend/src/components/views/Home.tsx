@@ -18,7 +18,26 @@ const HomeChatContent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { sendMessage } = useChat();
 
-  const formRef = useRef<HTMLDivElement>(null);
+  const [ref, setRef] = useState<HTMLElement | null>(null);
+
+  const handleScroll = (force = false) => {
+    if (!ref) return
+
+    const isNearBottom = () => {
+      const threshold = 150;
+      const position = ref.scrollTop + ref.offsetHeight;
+      const height = ref.scrollHeight;
+      return position > height - threshold;
+    }
+
+    if (isNearBottom() || force) {
+      ref.scroll({
+        top: ref.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
 
   const onSend = async (value: string) => {
     const obj = {
@@ -26,32 +45,31 @@ const HomeChatContent = () => {
       content: value,
     } as Message;
 
+    handleScroll(true)
     setHomeChatMessages([...homeChatMessages, obj]);
 
     setIsLoading(true);
-    const res = await sendMessage(homeChatMessages, (text) => {
+    const res = await sendMessage([...homeChatMessages, obj], (text) => {
       setHomeChatMessages([
         ...homeChatMessages,
         obj,
         {
-          role: "user",
+          role: "assistant",
           content: text,
         },
       ]);
+      handleScroll(true)
     });
     setIsLoading(false);
 
     setHomeChatMessages([...homeChatMessages, obj, res]);
-
-    if (formRef.current) {
-      formRef.current.scrollTop = formRef.current.scrollHeight;
-    }
+    handleScroll(true)
   };
 
   return (
     <Chat>
       <div className="w-full flex flex-col h-full">
-        <div ref={formRef} className="pb-10 overflow-y-auto">
+        <div ref={setRef} className="pb-10 overflow-y-auto">
           {homeChatMessages?.map((message, messageIdx) => {
             return <ChatMessageBubble key={messageIdx} message={message} />;
           })}

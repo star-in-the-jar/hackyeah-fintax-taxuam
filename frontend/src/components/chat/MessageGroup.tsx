@@ -1,11 +1,7 @@
 import ChatMessageBubble from "@/components/chat/MessageBubble";
-import { Button } from "@/components/ui/button";
 import { useChat } from "@/hooks/useChat";
 import { Message } from "@/types";
 import { ReactNode, useMemo, useRef, useState } from "react";
-import { FaChevronDown } from "react-icons/fa6";
-import Loader from "../ui/loader";
-import ChatInput from "./Input";
 
 export const AutonomousMessageGroup = ({
   label,

@@ -6,6 +6,8 @@ endpointBase = "http://localhost:8000";
 
 export type ChatFetchCompletion = {
   elements: Message[];
+  declaration?: string,
+  field?: string
 };
 
 export const fetchChatCompletion = async (
