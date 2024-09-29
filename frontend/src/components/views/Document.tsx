@@ -50,7 +50,6 @@ const TabFormContent = ({
           <IndexTree formData={formData} />
         </div>
         <Button
-          disabled
           onClick={() => {
             download(renderXML(formData), "file.xml");
           }}
