@@ -21,7 +21,7 @@ const ChatInput = (props: ChatProps) => {
   const memoInputPlaceholder = useMemo(() => {
     if (props.isLoading) return "Przetwarzamy twoją wiadomość...";
 
-    return props.placeholder || "Type a message...";
+    return props.placeholder || "Zadaj mi pytanie...";
   }, [props.isLoading]);
 
   return (

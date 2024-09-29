@@ -66,11 +66,14 @@ const MessageGroup = ({
   return (
     <div>
       <Button
-        className="flex justify-between items-center w-full mb-1 py-6"
+        className="flex justify-between items-center w-full py-7 my-2"
         variant="ghost"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <span className="text-2xl font-medium">{label}</span>
+        <div className="flex justify-between w-full pr-5">
+          <h2 id={label} className="text-2xl font-medium">{label}</h2>
+          <div>{children}</div>
+        </div>
         <FaChevronDown
           className={[
             "transition-transform",
@@ -84,8 +87,7 @@ const MessageGroup = ({
           isCollapsed ? "hidden" : "block",
         ].join(" ")}
       >
-        {children}
-        <div className="space-y-4 mb-4">
+        <div className="space-y-3">
           {messages.map((message, index) => (
             <ChatMessageBubble key={index} message={message} />
           ))}

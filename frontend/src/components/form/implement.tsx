@@ -79,7 +79,7 @@ export const pcc3: NewForm = {
   },
   kwotaPodatek1Proc: "0",
   kwotaPodatek2Proc: "0",
-  opis: "",
+  opis: "Przykładowy opis",
 
 };
 
@@ -90,227 +90,250 @@ const formatNewDateToString = (newDate: Date) => {
   return `${year}-${month}-${day}`;
 };
 
-export const FormDisplay = (props: {
+interface FormDisplay {
   formData: NewForm;
   onChange: (newData: NewForm) => void;
-}) => {
+}
+
+export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
   return (
     <div>
-      <Input
-        value={props.formData.Podmiot.OsobaFizyczna.PESEL}
-        onChange={
-          (e) => {
-            props.onChange(
-              produce(props.formData, (draft) => {
-                draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
+      <AutonomousMessageGroup
+        label="PESEL"
+      >
+        <Input
+          value={formData.Podmiot.OsobaFizyczna.PESEL}
+          onChange={
+            (e) => {
+              onChange(
+                produce(formData, (draft) => {
+                  draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
+                })
+              );
+            }
+            // (formData["Podmiot"]["OsobaFizyczna"]["PESEL"] = e.target.value)
+          }
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Imię"
+      >
+        <Input
+          value={formData.Podmiot.OsobaFizyczna.ImiePierwsze}
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.Podmiot.OsobaFizyczna.ImiePierwsze = e.target.value;
+              })
+            );
+          }}
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Nazwisko"
+      >
+        <Input
+          value={formData.Podmiot.OsobaFizyczna.Nazwisko}
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.Podmiot.OsobaFizyczna.Nazwisko = e.target.value;
+              })
+            );
+          }}
+        /></AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Data urodzenia"
+      >
+        <DatePicker
+          onSelect={(newDate) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
+                  formatNewDateToString(newDate)
               })
             );
           }
-          // (props.formData["Podmiot"]["OsobaFizyczna"]["PESEL"] = e.target.value)
-        }
-      />
-      <Input
-        value={props.formData.Podmiot.OsobaFizyczna.ImiePierwsze}
-        onChange={(e) => {
-          props.onChange(
-            produce(props.formData, (draft) => {
-              draft.Podmiot.OsobaFizyczna.ImiePierwsze = e.target.value;
-            })
-          );
-        }}
-      />
-      <Input
-        value={props.formData.Podmiot.OsobaFizyczna.Nazwisko}
-        onChange={(e) => {
-          props.onChange(
-            produce(props.formData, (draft) => {
-              draft.Podmiot.OsobaFizyczna.Nazwisko = e.target.value;
-            })
-          );
-        }}
-      />
 
-      <DatePicker
-        onSelect={(newDate) => {
-          props.onChange(
-            produce(props.formData, (draft) => {
-              draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
-                formatNewDateToString(newDate)
-            })
-          );
-        }
-
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "Wojewodztwo"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(
-            produce(props.formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "Wojewodztwo"
-              ] = e.target.value
-            })
-          )
-        }
-        }
-      />
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "Powiat"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(
-            produce(props.formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "Powiat"
-              ] = e.target.value
-            })
-          )
-        }}
-      />
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "Gmina"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(
-            produce(props.formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "Gmina"
-              ] = e.target.value
-            })
-          )
-        }
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "Ulica"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Ulica"
-            ] = e.target.value
-          }))
-        }
-
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "NrDomu"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "NrDomu"
-            ] = e.target.value
-          }))
-        }
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "NrLokalu"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "NrLokalu"
-            ] = e.target.value
-          }))
-        }
-        }
-      />
-
-      <Input
-        value={
-          props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-          "Miejscowosc"
-          ]
-        }
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Miejscowosc"
-            ] = e.target.value
-          }))
-        }}
-      />
-
-
-      <Input
-        value={
-          props.formData.opis
-        }
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft.opis = e.target.value
-          }))
-        }}
-      />
-
-      <Input
-        value={
-          props.formData.kwotaPodatek1Proc
-        }
-        pattern="\d+"
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft.opis = e.target.value
-          }))
-        }}
-      />
-      <Input
-        value={
-          props.formData.kwotaPodatek2Proc
-        }
-        pattern="\d+"
-        onChange={(e) => {
-          props.onChange(produce(props.formData, draft => {
-            draft.opis = e.target.value
-          }))
-        }}
-      />
+          }
+        /></AutonomousMessageGroup>
       <AutonomousMessageGroup
-        label="Moje pole łyse pole"
+        label="Województwo"
       >
         <Input
           value={
-            props.formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "KodPocztowy"
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "Wojewodztwo"
             ]
           }
           onChange={(e) => {
-            props.onChange(produce(props.formData, draft => {
+            onChange(
+              produce(formData, draft => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Wojewodztwo"
+                ] = e.target.value
+              })
+            )
+          }
+          }
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Powiat"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "Powiat"
+            ]
+          }
+          onChange={(e) => {
+            onChange(
+              produce(formData, draft => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Powiat"
+                ] = e.target.value
+              })
+            )
+          }}
+        /></AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Gmina"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "Gmina"
+            ]
+          }
+          onChange={(e) => {
+            onChange(
+              produce(formData, draft => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Gmina"
+                ] = e.target.value
+              })
+            )
+          }
+          }
+        /></AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Ulica"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "Ulica"
+            ]
+          }
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
               draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "KodPocztowy"
+                "Ulica"
               ] = e.target.value
+            }))
+          }
+          }
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Nr domu"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "NrDomu"
+            ]
+          }
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "NrDomu"
+              ] = e.target.value
+            }))
+          }
+          }
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Nr lokalu"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "NrLokalu"
+            ]
+          }
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "NrLokalu"
+              ] = e.target.value
+            }))
+          }
+          }
+        /></AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Miejscowość"
+      >
+        <Input
+          value={
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+            "Miejscowosc"
+            ]
+          }
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                "Miejscowosc"
+              ] = e.target.value
+            }))
+          }}
+        /></AutonomousMessageGroup>
+
+      <AutonomousMessageGroup
+        label="Opis"
+      >
+        <Input
+          value={
+            formData.opis
+          }
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft.opis = e.target.value
+            }))
+          }}
+        /></AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="Stawka Podatku 1%"
+      >      <Input
+          value={
+            formData.kwotaPodatek1Proc
+          }
+          pattern="\d+"
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft.kwotaPodatek1Proc = e.target.value
             }))
           }}
         />
       </AutonomousMessageGroup>
 
-    </div>
+      <AutonomousMessageGroup
+        label="Stawka podatku 2%"
+      >
+        <Input
+          value={
+            formData.kwotaPodatek2Proc
+          }
+          pattern="\d+"
+          onChange={(e) => {
+            onChange(produce(formData, draft => {
+              draft.kwotaPodatek2Proc = e.target.value
+            }))
+          }}
+        />
+      </AutonomousMessageGroup>
+    </div >
   );
 };
