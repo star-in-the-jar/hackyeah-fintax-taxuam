@@ -21,13 +21,15 @@ function Combobox({
   options,
   placeholder,
   onChange,
+  initValue,
 }: {
   options: string[];
   placeholder: string;
   onChange: (value: string) => void;
+  initValue?: string;
 }) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(initValue ?? "");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -36,9 +38,11 @@ function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className="w-full justify-between overflow-hidden text-ellipsis"
         >
-          {value
+          {initValue
+            ? initValue.toUpperCase()
+            : value
             ? options.find((option) => option === value)
             : "Wybierz opcję..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />

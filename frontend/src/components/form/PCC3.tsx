@@ -6,6 +6,7 @@ import { miasta } from "@/mocks/miasta";
 import Combobox from "../ui/combobox";
 import { powiaty } from "@/mocks/powiaty";
 import { wojewodztwa } from "@/mocks/wojewodztwa";
+import { urzedySkarboweNazwy } from "@/mocks/urzedy-skarbowe-id";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -38,6 +39,7 @@ export interface Podmiot {
 }
 
 export interface NewForm {
+  UrzadSkarbowy: string;
   Podmiot: Podmiot;
   opis: string;
   kwotaPodatek1Proc: string;
@@ -45,6 +47,7 @@ export interface NewForm {
 }
 
 export const pcc3: NewForm = {
+  UrzadSkarbowy: "Urząd Skarbowy w Katowicach",
   Podmiot: {
     OsobaFizyczna: {
       PESEL: "54121832134",
@@ -87,6 +90,20 @@ interface FormDisplay {
 export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
   return (
     <div id="form-display">
+      <AutonomousMessageGroup label="Urząd skarbowy">
+        <Combobox
+          placeholder="Urząd skarbowy"
+          options={urzedySkarboweNazwy}
+          initValue={formData.UrzadSkarbowy}
+          onChange={(newValue) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["UrzadSkarbowy"] = newValue;
+              })
+            );
+          }}
+        />
+      </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Imię">
         <Input
           value={formData.Podmiot.OsobaFizyczna.ImiePierwsze}

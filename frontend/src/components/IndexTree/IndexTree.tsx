@@ -6,6 +6,7 @@ const nodes: TreeNode[] = [
   {
     title: "B: Dane podatnika dokonującego zapłaty",
     children: [
+      { isLeaf: true, title: "Urząd skarbowy" },
       { isLeaf: true, title: "Imię" },
       { isLeaf: true, title: "Nazwisko" },
       { isLeaf: true, title: "PESEL" },
@@ -72,6 +73,8 @@ const renderNodes = ({ nodes, parentKey, formData }: RenderNodesParams) =>
       value = formData.kwotaPodatek2Proc;
     } else if (indicator === "Kod pocztowy") {
       value = formData.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.KodPocztowy;
+    } else if (indicator === "Urząd skarbowy") {
+      value = formData.UrzadSkarbowy;
     }
 
     return (
