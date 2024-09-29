@@ -74,7 +74,26 @@ const TabChatContent = ({
   const [isLoading, setIsLoading] = useState(false);
   const { sendMessage } = useChat();
 
-  const formRef = useRef<HTMLDivElement>(null);
+  const [ref, setRef] = useState<HTMLElement | null>(null);
+
+  const handleScroll = () => {
+    if (!ref) return
+
+    const isNearBottom = () => {
+      const threshold = 150;
+      const position = ref.scrollTop + ref.offsetHeight;
+      const height = ref.scrollHeight;
+      return position > height - threshold;
+    }
+
+    if (isNearBottom()) {
+      ref.scroll({
+        top: ref.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
 
   const onSend = async (value: string) => {
     const obj = {
@@ -82,7 +101,9 @@ const TabChatContent = ({
       content: value,
     } as Message;
 
+    handleScroll()
     setDocumentChatMessages([...documentChatMessages, obj]);
+    handleScroll()
 
     setIsLoading(true);
     const res = await sendMessage([...documentChatMessages, obj], (text) => {
@@ -94,14 +115,13 @@ const TabChatContent = ({
           content: text,
         },
       ]);
+      handleScroll()
     });
     setIsLoading(false);
 
     setDocumentChatMessages([...documentChatMessages, obj, res]);
 
-    if (formRef.current) {
-      formRef.current.scrollTop = formRef.current.scrollHeight;
-    }
+    handleScroll()
   };
 
   return (
@@ -111,7 +131,7 @@ const TabChatContent = ({
         isSelected ? "flex" : "hidden",
       ].join(" ")}
     >
-      <div className="overflow-y-auto pb-10" ref={formRef}>
+      <div className="overflow-y-auto pb-10" ref={setRef}>
         {documentChatMessages?.map((message, messageIdx) => {
           return <ChatMessageBubble key={messageIdx} message={message} />;
         })}
