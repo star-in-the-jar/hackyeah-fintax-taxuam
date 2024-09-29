@@ -51,7 +51,7 @@ const TabFormContent = ({
         />
       </div>
       <div className="sticky top-4 hidden md:block">
-        <div className="mb-10">
+        <div className="mb-1">
           <IndexTree formData={formData} />
         </div>
         <div className="flex flex-row flex-nowrap">
@@ -215,12 +215,13 @@ const Document = () => {
   return (
     <StateManagerContext.Provider value={manager}>
       <div className="container mx-auto max-w-4xl w-full py-10 px-4 lg:px-0 h-screen flex flex-col">
-        <div className="grid grid-cols-3 gap-x-2 items-center mb-8 ">
-          <div className="col-span-1">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-x-2 items-center mb-8 ">
+          <div className="col-span-1 md:text-left text-center md:mb-0 mb-6">
             <Link
               className={[
                 buttonVariants({ variant: "link" }),
                 "inline-flex gap-x-2 items-center",
+                "text-xl md:text-[length:inherit]"
               ].join(" ")}
               to="/"
             >
