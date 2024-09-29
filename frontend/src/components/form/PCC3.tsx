@@ -42,20 +42,7 @@ export interface NewForm {
 }
 
 export const pcc3: NewForm = {
-  // Naglowek: {
-  //   KodFormularza: {
-  //     kodSystemowy: "PCC-3 (6)",
-  //     kodPodatku: "PCC",
-  //     rodzajZobowiazania: "Z",
-  //     wersjaSchemy: "1-0E",
-  //     value: "PCC-3",
-  //   },
-  //   WariantFormularza: "6",
-  //   Data: "2024-07-29",
-  //   KodUrzedu: "0271",
-  // },
   Podmiot: {
-    // rola: "Podatnik",
     OsobaFizyczna: {
       PESEL: "54121832134",
       ImiePierwsze: "KAMIL",
@@ -124,16 +111,13 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
       <AutonomousMessageGroup label="PESEL">
         <Input
           value={formData.Podmiot.OsobaFizyczna.PESEL}
-          onChange={
-            (e) => {
-              onChange(
-                produce(formData, (draft) => {
-                  draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
-                })
-              );
-            }
-            // (formData["Podmiot"]["OsobaFizyczna"]["PESEL"] = e.target.value)
-          }
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
+              })
+            );
+          }}
         />
       </AutonomousMessageGroup>
 
@@ -148,6 +132,18 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
             );
           }}
           value={formData["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"]}
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Data urodzenia">
+        <DatePicker
+          onSelect={(newDate) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
+                  formatNewDateToString(newDate);
+              })
+            );
+          }}
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Województwo">

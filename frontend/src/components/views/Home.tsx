@@ -50,7 +50,7 @@ const HomeChatContent = () => {
 
 const Home = () => {
   return (
-    <div className="container mx-auto max-w-3xl w-full py-10 px-4 lg:px-0 flex flex-col h-screen">
+    <div className="container mx-auto max-w-4xl w-full py-10 px-4 lg:px-0 flex flex-col h-screen">
       <div className="flex gap-x-4 items-center justify-center mb-8">
         <img
           className="w-10"

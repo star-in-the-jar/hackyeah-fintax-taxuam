@@ -15,7 +15,7 @@ const nodes: TreeNode[] = [
       { title: 'Gmina' },
       { title: 'Nr domu' },
       { title: 'Nr lokalu' },
-      { title: 'Miescowość' },
+      { title: 'Miejscowość' },
       { title: 'Opis' },
       { title: "Kod pocztowy" },
 

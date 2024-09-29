@@ -61,7 +61,7 @@ const Chat = (props: ChatProps) => {
   const DEFAULT_CHAT_TITLE = "Chat";
   return (
     <div className="border w-full min-h-[490px] rounded-md p-4 flex flex-col h-full">
-      <div className="mb-10">
+      <div className="mb-5">
         <h3 className="text-2xl mb-2 text-center">
           {props.title || DEFAULT_CHAT_TITLE}
         </h3>

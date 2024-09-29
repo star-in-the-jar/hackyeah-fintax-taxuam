@@ -3,7 +3,7 @@ import DocumentFormPreview from "@/components/document/FormPreview";
 import { StateManagerContext, useCreateStateManager } from "@/state";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FormDisplay, NewForm, pcc3 } from "../form/implement";
+import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
 import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
@@ -17,7 +17,7 @@ const DocumentChatContent = () => {
   return (
     <Chat title={id} formData={formData}>
       <div className="space-y-4 flex justify-between">
-        <div className="">
+        <div>
           <FormDisplay
             formData={formData}
             onChange={(e) => {
@@ -48,7 +48,7 @@ const Document = () => {
 
   return (
     <StateManagerContext.Provider value={manager}>
-      <div className="container mx-auto max-w-3xl w-full py-10 px-4 lg:px-0 h-screen flex flex-col">
+      <div className="container mx-auto max-w-4xl w-full py-10 px-4 lg:px-0 h-screen flex flex-col">
         <div className="grid grid-cols-3 gap-x-2 items-center mb-8 ">
           <div className="col-span-1">
             <Link
