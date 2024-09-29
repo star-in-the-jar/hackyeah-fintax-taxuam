@@ -7,6 +7,7 @@ import Combobox from "../ui/combobox";
 import { powiaty } from "@/mocks/powiaty";
 import { wojewodztwa } from "@/mocks/wojewodztwa";
 import { urzedySkarboweNazwy } from "@/mocks/urzedy-skarbowe-id";
+import { useLocationOptions } from "../ui/hooks/useLocationOptions";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -88,6 +89,9 @@ interface FormDisplay {
 }
 
 export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
+  const { selected, setSelected, cities, districts, voivodeships } =
+    useLocationOptions();
+
   return (
     <div id="form-display">
       <AutonomousMessageGroup label="Urząd skarbowy">
@@ -157,7 +161,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
       <AutonomousMessageGroup label="Województwo">
         <Combobox
           placeholder="Wojęwództwo"
-          options={wojewodztwa}
+          options={voivodeships}
           onChange={(newValue) => {
             onChange(
               produce(formData, (draft) => {
@@ -166,13 +170,36 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
                 ] = newValue;
               })
             );
+            setSelected({
+              type: "setVoivodeship",
+              payload: newValue,
+            });
+          }}
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Miejscowość">
+        <Combobox
+          placeholder="Miejscowosc"
+          options={cities}
+          onChange={(newValue) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Miejscowosc"
+                ] = newValue;
+              })
+            );
+            setSelected({
+              type: "setCity",
+              payload: newValue,
+            });
           }}
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Powiat">
         <Combobox
           placeholder="Powiat"
-          options={powiaty}
+          options={districts}
           onChange={(newValue) => {
             onChange(
               produce(formData, (draft) => {
@@ -181,6 +208,10 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
                 ] = newValue;
               })
             );
+            setSelected({
+              type: "setDistrict",
+              payload: newValue,
+            });
           }}
         />
       </AutonomousMessageGroup>
@@ -251,21 +282,6 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "NrLokalu"
                 ] = e.target.value;
-              })
-            );
-          }}
-        />
-      </AutonomousMessageGroup>
-      <AutonomousMessageGroup label="Miejscowość">
-        <Combobox
-          placeholder="Miejscowosc"
-          options={miasta}
-          onChange={(newValue) => {
-            onChange(
-              produce(formData, (draft) => {
-                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Miejscowosc"
-                ] = newValue;
               })
             );
           }}

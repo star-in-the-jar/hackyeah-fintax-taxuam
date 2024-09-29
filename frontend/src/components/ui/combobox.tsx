@@ -38,13 +38,15 @@ function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between overflow-hidden text-ellipsis"
+          className="w-full justify-between"
         >
-          {initValue
-            ? initValue.toUpperCase()
-            : value
-            ? options.find((option) => option === value)
-            : "Wybierz opcję..."}
+          <span className="overflow-hidden text-ellipsis">
+            {initValue
+              ? initValue.toUpperCase()
+              : value
+              ? options.find((option) => option === value)
+              : "Wybierz opcję..."}
+          </span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
