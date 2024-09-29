@@ -1,11 +1,8 @@
-import { useEffect, useMemo, useReducer, useState } from "react";
-import {
-  prawdziweDaneLokacji,
-  type Lokacja,
-} from "@/mocks/prawdziweDaneLokacji";
+import { prawdziweDaneLokacji } from "@/mocks/prawdziweDaneLokacji";
+import { useMemo, useReducer } from "react";
 
 export const useLocationOptions = () => {
-  const reducer = (state, action) => {
+  const reducer = (state: any, action: any) => {
     const locationName = action.payload;
 
     const location = prawdziweDaneLokacji.find(
