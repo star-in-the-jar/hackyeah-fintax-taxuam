@@ -32,7 +32,7 @@ const TabFormContent = ({
   return (
     <div
       className={[
-        "space-y-4 grid grid-cols-2 items-start",
+        "space-y-4 grid grid-cols-2 gap-x-4 items-start",
         isSelected ? "block" : "hidden",
       ].join(" ")}
     >
@@ -45,7 +45,7 @@ const TabFormContent = ({
           key={id}
         />
       </div>
-      <div className="sticky top-16">
+      <div className="sticky top-4">
         <div className="mb-10">
           <IndexTree formData={formData} />
         </div>

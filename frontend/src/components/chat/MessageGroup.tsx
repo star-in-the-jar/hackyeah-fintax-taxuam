@@ -99,13 +99,11 @@ const MessageGroup = ({
 
   return (
     <div>
-      <div className="flex justify-between items-center w-full mb-4">
-        <div className="flex justify-between w-full pr-5 gap-5">
-          <p id={label} className="text-lg font-medium text-nowrap">
-            {label}
-          </p>
-          <div onClick={(e) => e.stopPropagation()}>{children}</div>
-        </div>
+      <div className="grid grid-cols-2 gap-x-2 items-center w-full mb-4">
+        <p id={label} className="text-lg font-medium text-nowrap">
+          {label}
+        </p>
+        <div onClick={(e) => e.stopPropagation()}>{children}</div>
       </div>
     </div>
   );
