@@ -17,6 +17,7 @@ const nodes: TreeNode[] = [
       { title: 'Nr lokalu' },
       { title: 'Miescowość' },
       { title: 'Opis' },
+      { title: "Kod pocztowy" },
 
     ]
   },

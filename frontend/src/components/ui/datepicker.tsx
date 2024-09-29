@@ -15,6 +15,7 @@ import {
 
 interface Props {
   onSelect: (date: Date) => void;
+  value?: string;
 }
 
 const DatePicker = (props: Props) => {
@@ -22,7 +23,9 @@ const DatePicker = (props: Props) => {
     setDate(newValue);
     props.onSelect(newValue);
   };
-  const [date, setDate] = React.useState<Date>();
+  const [date, setDate] = React.useState<Date>(
+    isNaN(Date.parse(props.value)) ? null : new Date(props.value)
+  );
 
   return (
     <Popover>

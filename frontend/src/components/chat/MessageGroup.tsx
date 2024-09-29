@@ -82,7 +82,7 @@ const MessageGroup = ({
           <h2 id={label} className="text-2xl font-medium">
             {label}
           </h2>
-          <div>{children}</div>
+          <div onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
         <FaChevronDown
           className={[

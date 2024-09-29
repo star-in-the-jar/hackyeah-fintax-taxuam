@@ -13,7 +13,7 @@ interface ChatProps {
   formData?: NewForm;
 }
 
-const fieldsToIgnoreCount = ["rodzajAdresu", ""];
+const fieldsToIgnoreCount = ["rodzajAdresu", "KodKraju"];
 
 const Chat = (props: ChatProps) => {
   const [totalCounter, setTotalCounter] = useState(0);
@@ -25,14 +25,16 @@ const Chat = (props: ChatProps) => {
       setTotalCounter((prev) => prev + 1);
       if (ref !== "") setCompletedCounter((prev) => prev + 1);
     } else {
-      Object.values(ref).forEach((value) =>
-        computeProgressByFieldValues(value)
-      );
+      Object.entries(ref).forEach(([key, value]) => {
+        if (fieldsToIgnoreCount.includes(key)) return;
+        computeProgressByFieldValues(value);
+      });
     }
   };
 
-  const computedProgress = useEffect(() => {
+  useEffect(() => {
     if (!props.formData) return;
+    console.log(props.formData);
     setTotalCounter(0);
     setCompletedCounter(0);
 
