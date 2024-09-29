@@ -56,7 +56,7 @@ const MessageGroup = ({
   return (
     <div>
       <div className="grid grid-cols-2 gap-x-2 items-center w-full mb-4">
-        <p id={label} className="text-lg font-medium text-nowrap flex flex-row items-center gap-1">
+        <p id={label} className="text-lg font-medium text-nowrap flex flex-nowrap flex-row items-center gap-1 mr-1">
           {label}{labelExt}
         </p>
         <div onClick={(e) => e.stopPropagation()}>{children}</div>

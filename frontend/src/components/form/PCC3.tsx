@@ -89,7 +89,7 @@ interface FormDisplay {
 }
 
 export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
-  const { setSelected, gminy, districts, voivodeships } = useLocationOptions();
+  const { setSelected, voivodeships } = useLocationOptions();
 
   return (
     <div id="form-display">

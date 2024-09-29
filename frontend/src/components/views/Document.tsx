@@ -34,7 +34,7 @@ const TabFormContent = ({
   return (
     <div
       className={[
-        "space-y-4 grid grid-cols-2 gap-x-4 items-start",
+        "space-y-4 grid md:grid-cols-2 grid-cols-1 gap-x-4 items-start",
         isSelected ? "block" : "hidden",
       ].join(" ")}
     >
@@ -50,7 +50,7 @@ const TabFormContent = ({
           key={id}
         />
       </div>
-      <div className="sticky top-4">
+      <div className="sticky top-4 hidden md:block">
         <div className="mb-10">
           <IndexTree formData={formData} />
         </div>
@@ -173,8 +173,8 @@ const DocumentChatContent = () => {
     <>
       <div className="mb-4">
         <DocumentTabs
-        selected={selected}
-        onChange={(newTab) => setSelected(newTab)} />
+          selected={selected}
+          onChange={(newTab) => setSelected(newTab)} />
       </div>
 
       <Chat title={id} formData={formData}>
