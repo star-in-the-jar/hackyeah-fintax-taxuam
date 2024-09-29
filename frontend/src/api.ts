@@ -2,7 +2,7 @@ import { Message } from "@/types";
 
 let endpointBase = "";
 
-endpointBase = "http://localhost:8000"
+endpointBase = "http://localhost:8000";
 
 export type ChatFetchCompletion = {
   elements: Message[];
@@ -15,10 +15,30 @@ export const fetchChatCompletion = async (
     method: "post",
     body: JSON.stringify(data),
     headers: {
-        "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   });
 
   const content = await res.json();
   return content;
+};
+
+export const fetchChatStream = async (
+  data: ChatFetchCompletion,
+  onNewData: (totalText: string) => void | Promise<void>
+) => {
+  const res = await fetch(endpointBase + "/chat-complete-stream", {
+    method: "post",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const stream = res.body?.pipeThrough(new TextDecoderStream());
+  let sum = "";
+  for await (const part of stream as any) {
+    sum += part;
+    await onNewData(sum);
+  }
 };

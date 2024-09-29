@@ -3,7 +3,8 @@ from typing import List, Dict
 from pprint import pprint
 
 def query_llm(
-    messages: List[Dict[str, str]]
+    messages: List[Dict[str, str]],
+    stream=False
 ):
     completion = llm.chat.completions.create(
         messages=messages,
@@ -11,8 +12,13 @@ def query_llm(
         stream=True,
         max_tokens=1024
     )
-    gen = (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
-    return "".join(gen)
+    if not stream:
+        gen = (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
+        return "".join(gen)
+    else:
+        def gen():
+            yield from (m.choices[0].delta.content for m in completion if not m.choices[0].finish_reason)
+        return gen()
 
 vectorstore = get_chroma()
 retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
@@ -32,10 +38,11 @@ prolog_answer = [
 ]
 
 def maciek():
-    user = """Jak rozliczyć spadek?"""
+    user = """Jak rozliczyć spadek?"""
     ctx = query_rag(user)
     res = query_llm(
-        prolog_answer + [
+        stream=True,
+        messages=prolog_answer + [
             {
                 "role": "assistant",
                 "content": "\n".join([
@@ -51,7 +58,12 @@ def maciek():
             },
         ]
     )
-    return res
+    print(type(res))
+
+    for part in res:
+        print(type(part))
+        print(part, end="")
+    print()
 
 if __name__ == "__main__":
     pprint(maciek())
