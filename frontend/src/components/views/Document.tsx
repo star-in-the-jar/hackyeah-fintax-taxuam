@@ -3,7 +3,7 @@ import DocumentFormPreview from "@/components/document/FormPreview";
 import { StateManagerContext, useCreateStateManager } from "@/state";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FormDisplay, NewForm, pcc3, pd } from "../form/PCC3";
+import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
 import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
@@ -27,7 +27,7 @@ const DocumentChatContent = () => {
           />
         </div>
         <div className="sticky top-0 h-full overflow-y-auto">
-          <IndexTree />
+          <IndexTree formData={formData} />
         </div>
       </div>
       <Button
