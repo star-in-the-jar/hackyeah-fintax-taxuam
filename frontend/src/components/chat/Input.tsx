@@ -35,7 +35,6 @@ const ChatInput = (props: ChatProps) => {
             handleOnSend();
           }
         }}
-        ref={inputRef}
         placeholder={memoInputPlaceholder}
       />
       <Button
