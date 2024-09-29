@@ -23,19 +23,22 @@ const DatePicker = (props: Props) => {
     setDate(newValue);
     props.onSelect(newValue);
   };
-  const [date, setDate] = React.useState<Date>(
-    () => new Date()
-  );
+  const [date, setDate] = React.useState<Date>(() => new Date());
 
   return (
     <Popover>
-      <PopoverTrigger asChild className={[cn(
-        "w-full justify-start text-left font-normal",
-        !date && "text-muted-foreground"
-      ), buttonVariants({ variant: "outline" })].join(" ")}>
-
+      <PopoverTrigger
+        asChild
+        className={[
+          cn(
+            "w-full justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          ),
+          buttonVariants({ variant: "outline" }),
+        ].join(" ")}
+      >
         <div>
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </div>
       </PopoverTrigger>

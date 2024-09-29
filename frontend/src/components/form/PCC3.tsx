@@ -2,6 +2,10 @@ import { AutonomousMessageGroup } from "../chat/MessageGroup";
 import DatePicker from "../ui/datepicker";
 import { Input } from "../ui/input";
 import { produce } from "immer";
+import { miasta } from "@/mocks/miasta";
+import Combobox from "../ui/combobox";
+import { powiaty } from "@/mocks/powiaty";
+import { wojewodztwa } from "@/mocks/wojewodztwa";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -134,36 +138,30 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Województwo">
-        <Input
-          value={
-            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Wojewodztwo"
-            ]
-          }
-          onChange={(e) => {
+        <Combobox
+          placeholder="Wojęwództwo"
+          options={wojewodztwa}
+          onChange={(newValue) => {
             onChange(
               produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Wojewodztwo"
-                ] = e.target.value;
+                ] = newValue;
               })
             );
           }}
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Powiat">
-        <Input
-          value={
-            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Powiat"
-            ]
-          }
-          onChange={(e) => {
+        <Combobox
+          placeholder="Powiat"
+          options={powiaty}
+          onChange={(newValue) => {
             onChange(
               produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Powiat"
-                ] = e.target.value;
+                ] = newValue;
               })
             );
           }}
@@ -242,23 +240,21 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Miejscowość">
-        <Input
-          value={
-            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Miejscowosc"
-            ]
-          }
-          onChange={(e) => {
+        <Combobox
+          placeholder="Miejscowosc"
+          options={miasta}
+          onChange={(newValue) => {
             onChange(
               produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Miejscowosc"
-                ] = e.target.value;
+                ] = newValue;
               })
             );
           }}
         />
       </AutonomousMessageGroup>
+
       <AutonomousMessageGroup label="Kod pocztowy">
         <Input
           value={
