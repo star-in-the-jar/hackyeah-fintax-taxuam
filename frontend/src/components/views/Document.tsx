@@ -54,14 +54,26 @@ const TabFormContent = ({
         <div className="mb-10">
           <IndexTree formData={formData} />
         </div>
-        <Button
-          onClick={() => {
-            download(renderXML(formData), "file.xml");
-          }}
-          className="ml-2 w-full"
-        >
-          EXPORT XML
-        </Button>
+        <div className="flex flex-row flex-nowrap">
+          <Button
+            onClick={() => {
+              download(renderXML(formData), "file.xml");
+            }}
+            className="ml-2 w-full mb-2"
+          >
+            EXPORT XML
+          </Button>
+          <a
+            href="https://klient-eformularz.mf.gov.pl/declaration/form/422f3471-b5cb-4f25-9f81-2f43c497ec51"
+            target="_blank"
+            className={[
+              "ml-2 w-full",
+              buttonVariants({ variant: "secondary" })
+            ].join(" ")}
+          >
+            IMPORT XML
+          </a>
+        </div>
       </div>
     </div>
   );
