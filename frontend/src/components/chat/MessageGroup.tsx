@@ -99,35 +99,13 @@ const MessageGroup = ({
 
   return (
     <div>
-      <Button
-        className="flex justify-between items-center w-full py-7 my-2"
-        variant="ghost"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
+      <div className="flex justify-between items-center w-full mb-4">
         <div className="flex justify-between w-full pr-5 gap-5">
-          <h2 id={label} className="text-2xl font-medium">
+          <p id={label} className="text-lg font-medium text-nowrap">
             {label}
-          </h2>
+          </p>
           <div onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
-        <FaChevronDown
-          className={[
-            "transition-transform",
-            !isCollapsed ? "transform rotate-180" : "",
-          ].join(" ")}
-        />
-      </Button>
-      <div
-        className={[
-          "ml-4 pl-4 border-l",
-          isCollapsed ? "hidden" : "block",
-        ].join(" ")}
-      >
-        <div className="space-y-3">
-          <ChatMessages />
-        </div>
-        {isLoading ? <Loader /> : null}
-        <ChatInput isLoading={isLoading} onSend={sendMessage} />
       </div>
     </div>
   );

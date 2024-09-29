@@ -9,35 +9,130 @@ import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import DocumentTabs from "@/components/document/Tabs";
+import { Message } from "@/types";
+import { useChat } from "@/hooks/useChat";
+import ChatMessageBubble from "@/components/chat/MessageBubble";
+import Loader from "@/components/ui/loader";
+import ChatInput from "@/components/chat/Input";
+
+interface TabContentProps {
+  formData: NewForm;
+  onChange: (formData: NewForm) => void;
+  isSelected?: boolean;
+}
+
+const TabFormContent = ({
+  formData,
+  onChange,
+  isSelected,
+}: TabContentProps) => {
+  const { id } = useParams();
+
+  return (
+    <div
+      className={[
+        "space-y-4 grid grid-cols-2 items-start",
+        isSelected ? "block" : "hidden",
+      ].join(" ")}
+    >
+      <div>
+        <FormDisplay
+          formData={formData}
+          onChange={(e) => {
+            onChange(e);
+          }}
+          key={id}
+        />
+      </div>
+      <div className="sticky top-16">
+        <IndexTree formData={formData} />
+      </div>
+    </div>
+  );
+};
+
+const TabChatContent = ({
+  isSelected,
+}: Pick<TabContentProps, "isSelected">) => {
+  const [documentChatMessages, setDocumentChatMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content: `Cześć, jestem ${constants.CHAT_NAME} 👋 Jak mogę ci pomóc?`,
+    },
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { sendMessage } = useChat();
+
+  const onSend = async (value: string) => {
+    const obj = {
+      role: "user",
+      content: value,
+    } as Message;
+
+    setDocumentChatMessages([...documentChatMessages, obj]);
+
+    setIsLoading(true);
+    const res = await sendMessage(documentChatMessages, (text) => {
+      setDocumentChatMessages([
+        ...documentChatMessages,
+        obj,
+        {
+          role: "user",
+          content: text,
+        },
+      ]);
+    });
+    setIsLoading(false);
+
+    setDocumentChatMessages([...documentChatMessages, obj, res]);
+  };
+
+  return (
+    <div
+      className={[
+        "w-full flex-col flex-grow h-[90%]",
+        isSelected ? "flex" : "hidden",
+      ].join(" ")}
+    >
+      {documentChatMessages?.map((message, messageIdx) => {
+        return <ChatMessageBubble key={messageIdx} message={message} />;
+      })}
+      {isLoading ? <Loader /> : null}
+      <div className="mt-auto">
+        <ChatInput isLoading={isLoading} onSend={onSend} />
+      </div>
+    </div>
+  );
+};
 
 const DocumentChatContent = () => {
   const [formData, setFormData] = useState<NewForm>(() => pcc3);
   const { id } = useParams();
 
+  const [selected, setSelected] = useState<"chat" | "form">("form");
+
   return (
     <Chat title={id} formData={formData}>
-      <div className="space-y-4 flex justify-between">
-        <div>
-          <FormDisplay
-            formData={formData}
-            onChange={(e) => {
-              setFormData(e);
-            }}
-            key={id}
-          />
-        </div>
-        <div className="sticky top-0 h-full overflow-y-auto">
-          <IndexTree formData={formData} />
-        </div>
-      </div>
-      <Button
-        disabled
-        onClick={() => {
-          download(renderXML(formData), "file.xml");
+      <DocumentTabs onChange={(newTab) => setSelected(newTab)} />
+      <TabFormContent
+        isSelected={selected === "form"}
+        formData={formData}
+        onChange={(e) => {
+          setFormData(e);
         }}
-      >
-        EXPORT XML
-      </Button>
+      />
+      <TabChatContent isSelected={selected === "chat"} />
+      <div className={selected === "chat" ? "hidden" : "block"}>
+        <Button
+          disabled
+          onClick={() => {
+            download(renderXML(formData), "file.xml");
+          }}
+        >
+          EXPORT XML
+        </Button>
+      </div>
     </Chat>
   );
 };
