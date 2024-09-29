@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { Progress } from "@/components/ui/progress";
+import { NewForm } from "@/components/form/implement";
 
 interface PartDetails {
   totalStepsAmount: number;
@@ -9,33 +10,50 @@ interface PartDetails {
 interface ChatProps {
   title?: string;
   children?: ReactNode;
-  partDetails?: PartDetails;
+  formData?: NewForm;
 }
 
+const fieldsToIgnoreCount = ["rodzajAdresu", "KodKraju"];
+
 const Chat = (props: ChatProps) => {
+  const [totalCounter, setTotalCounter] = useState(0);
+  const [completedCounter, setCompletedCounter] = useState(0);
+  const computeProgressByFieldValues = (
+    ref: string | Record<PropertyKey, unknown>
+  ) => {
+    if (typeof ref === "string") {
+      setTotalCounter((prev) => prev + 1);
+      if (ref !== "") setCompletedCounter((prev) => prev + 1);
+    } else {
+      Object.entries(ref).forEach(([key, value]) => {
+        if (fieldsToIgnoreCount.includes(key)) return;
+        computeProgressByFieldValues(value);
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (!props.formData) return;
+    console.log(props.formData);
+    setTotalCounter(0);
+    setCompletedCounter(0);
+
+    computeProgressByFieldValues(props.formData);
+  }, [props.formData]);
+
   const getProgressPercentage = () => {
-    if (props.partDetails?.completedStepsAmount === undefined) return null;
-    const computedProgress =
-      (props.partDetails.completedStepsAmount /
-        props.partDetails.totalStepsAmount) *
-      100;
-    const roundedProgress = Math.min(100, computedProgress);
+    if (totalCounter === 0) return null;
+    const percentageProgress = (completedCounter / totalCounter) * 100;
+    const roundedProgress = Math.min(100, percentageProgress);
     return Math.max(0, roundedProgress);
   };
 
   const getReadableProgress = () => {
-    if (!props.partDetails?.totalStepsAmount) return null;
+    if (totalCounter === 0) return null;
     return (
       <>
-        Wypełniono{" "}
-        <span className="font-semibold">
-          {props.partDetails?.completedStepsAmount}
-        </span>{" "}
-        z{" "}
-        <span className="font-semibold">
-          {props.partDetails?.totalStepsAmount}
-        </span>{" "}
-        pól
+        Wypełniono <span className="font-semibold">{completedCounter}</span> z{" "}
+        <span className="font-semibold">{totalCounter}</span> pól
       </>
     );
   };
@@ -48,7 +66,7 @@ const Chat = (props: ChatProps) => {
           {props.title || DEFAULT_CHAT_TITLE}
         </h3>
 
-        {props.partDetails?.totalStepsAmount ? (
+        {totalCounter !== 0 ? (
           <div className="max-w-sm w-full mx-auto text-zinc-600/70">
             <h5 className="text-sm mb-2 text-center">
               {getReadableProgress()}

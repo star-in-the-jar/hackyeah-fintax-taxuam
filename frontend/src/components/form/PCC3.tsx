@@ -36,9 +36,9 @@ export interface Podmiot {
 
 export interface NewForm {
   Podmiot: Podmiot;
-  opis: string,
-  kwotaPodatek1Proc: string,
-  kwotaPodatek2Proc: string,
+  opis: string;
+  kwotaPodatek1Proc: string;
+  kwotaPodatek2Proc: string;
 }
 
 export const pcc3: NewForm = {
@@ -67,7 +67,6 @@ export const pcc3: NewForm = {
   kwotaPodatek1Proc: "0",
   kwotaPodatek2Proc: "0",
   opis: "Przykładowy opis",
-
 };
 
 const formatNewDateToString = (newDate: Date) => {
@@ -84,10 +83,8 @@ interface FormDisplay {
 
 export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
   return (
-    <div id='form-display'>
-      <AutonomousMessageGroup
-        label="Imię"
-      >
+    <div id="form-display">
+      <AutonomousMessageGroup label="Imię">
         <Input
           value={formData.Podmiot.OsobaFizyczna.ImiePierwsze}
           onChange={(e) => {
@@ -99,9 +96,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
           }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Nazwisko"
-      >
+      <AutonomousMessageGroup label="Nazwisko">
         <Input
           value={formData.Podmiot.OsobaFizyczna.Nazwisko}
           onChange={(e) => {
@@ -113,216 +108,217 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
           }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="PESEL"
-      >
+      <AutonomousMessageGroup label="PESEL">
         <Input
           value={formData.Podmiot.OsobaFizyczna.PESEL}
-          onChange={
-            (e) => {
-              onChange(
-                produce(formData, (draft) => {
-                  draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
-                })
-              );
-            }
-          }
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
+              })
+            );
+          }}
         />
       </AutonomousMessageGroup>
 
-      <AutonomousMessageGroup
-        label="Data urodzenia"
-      >
-          <DatePicker
-            onSelect={(newDate) => {
-              onChange(
-                produce(formData, (draft) => {
-                  draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
-                    formatNewDateToString(newDate)
-                })
-              );
-            }
-
-            }
-          />
+      <AutonomousMessageGroup label="Data urodzenia">
+        <DatePicker
+          onSelect={(newDate) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"] =
+                  formatNewDateToString(newDate);
+              })
+            );
+          }}
+          value={formData["Podmiot"]["OsobaFizyczna"]["DataUrodzenia"]}
+        />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Województwo"
-      >
+      <AutonomousMessageGroup label="Województwo">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Wojewodztwo"
+              "Wojewodztwo"
             ]
           }
           onChange={(e) => {
             onChange(
-              produce(formData, draft => {
+              produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Wojewodztwo"
-                ] = e.target.value
+                ] = e.target.value;
               })
-            )
-          }
-          }
+            );
+          }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Powiat"
-      >
+      <AutonomousMessageGroup label="Powiat">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Powiat"
+              "Powiat"
             ]
           }
           onChange={(e) => {
             onChange(
-              produce(formData, draft => {
+              produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Powiat"
-                ] = e.target.value
+                ] = e.target.value;
               })
-            )
+            );
           }}
-        /></AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Gmina"
-      >
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Gmina">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Gmina"
+              "Gmina"
             ]
           }
           onChange={(e) => {
             onChange(
-              produce(formData, draft => {
+              produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
                   "Gmina"
-                ] = e.target.value
+                ] = e.target.value;
               })
-            )
-          }
-          }
-        /></AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Ulica"
-      >
-        <Input
-          value={
-            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Ulica"
-            ]
-          }
-          onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "Ulica"
-              ] = e.target.value
-            }))
-          }
-          }
+            );
+          }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Nr domu"
-      >
+      <AutonomousMessageGroup label="Ulica">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrDomu"
+              "Ulica"
             ]
           }
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "NrDomu"
-              ] = e.target.value
-            }))
-          }
-          }
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Ulica"
+                ] = e.target.value;
+              })
+            );
+          }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Nr lokalu"
-      >
+      <AutonomousMessageGroup label="Nr domu">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "NrLokalu"
+              "NrDomu"
             ]
           }
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "NrLokalu"
-              ] = e.target.value
-            }))
-          }
-          }
-        /></AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Miejscowość"
-      >
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "NrDomu"
+                ] = e.target.value;
+              })
+            );
+          }}
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Nr lokalu">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-            "Miejscowosc"
+              "NrLokalu"
             ]
           }
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                "Miejscowosc"
-              ] = e.target.value
-            }))
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "NrLokalu"
+                ] = e.target.value;
+              })
+            );
           }}
-        /></AutonomousMessageGroup>
-
-      <AutonomousMessageGroup
-        label="Opis"
-      >
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Miejscowość">
         <Input
           value={
-            formData.opis
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "Miejscowosc"
+            ]
           }
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft.opis = e.target.value
-            }))
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Miejscowosc"
+                ] = e.target.value;
+              })
+            );
           }}
-        /></AutonomousMessageGroup>
-      <AutonomousMessageGroup
-        label="Stawka Podatku 1%"
-      >      <Input
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Kod pocztowy">
+        <Input
           value={
-            formData.kwotaPodatek1Proc
+            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+              "KodPocztowy"
+            ]
           }
-          pattern="\d+"
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft.kwotaPodatek1Proc = e.target.value
-            }))
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "KodPocztowy"
+                ] = e.target.value;
+              })
+            );
           }}
         />
       </AutonomousMessageGroup>
 
-      <AutonomousMessageGroup
-        label="Stawka podatku 2%"
-      >
+      <AutonomousMessageGroup label="Opis">
         <Input
-          value={
-            formData.kwotaPodatek2Proc
-          }
-          pattern="\d+"
+          value={formData.opis}
           onChange={(e) => {
-            onChange(produce(formData, draft => {
-              draft.kwotaPodatek2Proc = e.target.value
-            }))
+            onChange(
+              produce(formData, (draft) => {
+                draft.opis = e.target.value;
+              })
+            );
           }}
         />
       </AutonomousMessageGroup>
-    </div >
+      <AutonomousMessageGroup label="Stawka Podatku 1%">
+        {" "}
+        <Input
+          value={formData.kwotaPodatek1Proc}
+          pattern="\d+"
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.kwotaPodatek1Proc = e.target.value;
+              })
+            );
+          }}
+        />
+      </AutonomousMessageGroup>
+
+      <AutonomousMessageGroup label="Stawka podatku 2%">
+        <Input
+          value={formData.kwotaPodatek2Proc}
+          pattern="\d+"
+          onChange={(e) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft.kwotaPodatek2Proc = e.target.value;
+              })
+            );
+          }}
+        />
+      </AutonomousMessageGroup>
+    </div>
   );
 };

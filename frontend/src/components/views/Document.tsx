@@ -14,15 +14,9 @@ const DocumentChatContent = () => {
   const [formData, setFormData] = useState<NewForm>(() => pcc3);
   const { id } = useParams();
 
-  // TODO: POTEM PODPIAC
-  const [samplePart, setSamplePart] = useState({
-    totalStepsAmount: 27,
-    completedStepsAmount: 2,
-  });
-
   return (
-    <Chat title={id} partDetails={samplePart}>
-      <div className="space-y-4 flex justify-between gap-5">
+    <Chat title={id} formData={formData}>
+      <div className="space-y-4 flex justify-between">
         <div>
           <FormDisplay
             formData={formData}
@@ -31,20 +25,19 @@ const DocumentChatContent = () => {
             }}
             key={id}
           />
-
         </div>
         <div className="sticky top-0 h-full overflow-y-auto">
-            <IndexTree />
-          </div>
+          <IndexTree />
+        </div>
       </div>
       <Button
-            disabled
-            onClick={() => {
-              download(renderXML(formData), "file.xml");
-            }}
-          >
-            EXPORT XML
-          </Button>
+        disabled
+        onClick={() => {
+          download(renderXML(formData), "file.xml");
+        }}
+      >
+        EXPORT XML
+      </Button>
     </Chat>
   );
 };
