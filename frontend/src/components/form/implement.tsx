@@ -97,24 +97,7 @@ interface FormDisplay {
 
 export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
   return (
-    <div>
-      <AutonomousMessageGroup
-        label="PESEL"
-      >
-        <Input
-          value={formData.Podmiot.OsobaFizyczna.PESEL}
-          onChange={
-            (e) => {
-              onChange(
-                produce(formData, (draft) => {
-                  draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
-                })
-              );
-            }
-            // (formData["Podmiot"]["OsobaFizyczna"]["PESEL"] = e.target.value)
-          }
-        />
-      </AutonomousMessageGroup>
+    <div id='form-display'>
       <AutonomousMessageGroup
         label="Imię"
       >
@@ -141,7 +124,26 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
               })
             );
           }}
-        /></AutonomousMessageGroup>
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup
+        label="PESEL"
+      >
+        <Input
+          value={formData.Podmiot.OsobaFizyczna.PESEL}
+          onChange={
+            (e) => {
+              onChange(
+                produce(formData, (draft) => {
+                  draft.Podmiot.OsobaFizyczna.PESEL = e.target.value;
+                })
+              );
+            }
+            // (formData["Podmiot"]["OsobaFizyczna"]["PESEL"] = e.target.value)
+          }
+        />
+      </AutonomousMessageGroup>
+
       <AutonomousMessageGroup
         label="Data urodzenia"
       >

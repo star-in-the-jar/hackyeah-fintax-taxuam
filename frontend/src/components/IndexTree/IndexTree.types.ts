@@ -1,5 +1,4 @@
 export interface TreeNode {
-  href: string;
   title: string;
   children?: TreeNode[];
 }
