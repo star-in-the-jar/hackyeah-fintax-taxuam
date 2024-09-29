@@ -1,11 +1,6 @@
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 import { NewForm } from "../form/PCC3";
-
-interface PartDetails {
-  totalStepsAmount: number;
-  completedStepsAmount: number;
-}
 
 interface ChatProps {
   title?: string;
