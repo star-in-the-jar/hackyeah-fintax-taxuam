@@ -43,7 +43,7 @@ const DatePicker = (props: Props) => {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={handleChange}
+          onSelect={handleChange as any}
           initialFocus
         />
       </PopoverContent>

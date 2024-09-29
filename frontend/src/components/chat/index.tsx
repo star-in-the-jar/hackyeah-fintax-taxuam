@@ -22,7 +22,7 @@ const Chat = (props: ChatProps) => {
     } else {
       Object.entries(ref).forEach(([key, value]) => {
         if (fieldsToIgnoreCount.includes(key)) return;
-        computeProgressByFieldValues(value);
+        computeProgressByFieldValues(value as any);
       });
     }
   };
@@ -32,7 +32,7 @@ const Chat = (props: ChatProps) => {
     setTotalCounter(0);
     setCompletedCounter(0);
 
-    computeProgressByFieldValues(props.formData);
+    computeProgressByFieldValues(props.formData as any);
   }, [props.formData]);
 
   const getProgressPercentage = () => {

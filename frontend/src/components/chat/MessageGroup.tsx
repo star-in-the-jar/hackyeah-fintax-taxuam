@@ -1,7 +1,5 @@
-import ChatMessageBubble from "@/components/chat/MessageBubble";
-import { useChat } from "@/hooks/useChat";
-import { Message } from "@/types";
 import { ReactNode, useMemo, useRef, useState } from "react";
+import { Message } from "../../types";
 
 export const AutonomousMessageGroup = ({
   label,
@@ -41,9 +39,6 @@ export const AutonomousMessageGroup = ({
 };
 
 const MessageGroup = ({
-  messages,
-  onNewMessage,
-  onTempMessage,
   children,
   label,
 }: {
@@ -53,46 +48,6 @@ const MessageGroup = ({
   children?: ReactNode;
   label: string;
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const { sendMessage: chatSendMessage } = useChat();
-
-  const sendMessage = (value: string) => {
-    setIsLoading(true);
-    onNewMessage({
-      role: "user",
-      content: value,
-    });
-
-    chatSendMessage(
-      [
-        ...messages,
-        {
-          role: "user",
-          content: value,
-        },
-      ],
-      (text) => {
-        onTempMessage({
-          role: "assistant",
-          content: text,
-        });
-      }
-    )
-      .then((newMessage) => {
-        onNewMessage(newMessage);
-      })
-      .finally(() => {
-        onTempMessage(null);
-        setIsLoading(false);
-      });
-  };
-
-  const ChatMessages = () =>
-    messages.map((message, idx) => (
-      <ChatMessageBubble key={idx} message={message} />
-    ));
-
   return (
     <div>
       <div className="grid grid-cols-2 gap-x-2 items-center w-full mb-4">

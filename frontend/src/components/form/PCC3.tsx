@@ -2,7 +2,6 @@ import { AutonomousMessageGroup } from "../chat/MessageGroup";
 import DatePicker from "../ui/datepicker";
 import { Input } from "../ui/input";
 import { produce } from "immer";
-import React from "react";
 
 export interface OsobaFizyczna {
   PESEL: string;

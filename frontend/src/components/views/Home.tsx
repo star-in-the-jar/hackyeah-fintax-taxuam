@@ -1,12 +1,12 @@
-import DocumentButtonOptions from "@/components/document/ButtonOptions";
 import Chat from "@/components/chat";
 import ChatInput from "@/components/chat/Input";
 import ChatMessageBubble from "@/components/chat/MessageBubble";
-import { useRef, useState } from "react";
-import type { Message } from "@/types";
-import { useChat } from "@/hooks/useChat";
+import DocumentButtonOptions from "@/components/document/ButtonOptions";
 import Loader from "@/components/ui/loader";
 import { constants } from "@/constants";
+import { useChat } from "@/hooks/useChat";
+import type { Message } from "@/types";
+import { useState } from "react";
 
 const HomeChatContent = () => {
   const [homeChatMessages, setHomeChatMessages] = useState<Message[]>([

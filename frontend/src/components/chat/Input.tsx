@@ -1,6 +1,6 @@
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useMemo, useRef, useState } from "react";
+import { Input } from "@/components/ui/input";
+import { useMemo, useState } from "react";
 
 interface ChatProps {
   onSend: (value: string) => void;
@@ -30,11 +30,11 @@ const ChatInput = (props: ChatProps) => {
         value={messageValue}
         onChange={(e) => setMessageValue(e.target.value)}
         disabled={props.isLoading}
-        onKeyUp={(e: KeyboardEvent) => {
+        onKeyUp={((e: KeyboardEvent) => {
           if (e.key === "Enter") {
             handleOnSend();
           }
-        }}
+        }) as any}
         placeholder={memoInputPlaceholder}
       />
       <Button
