@@ -1,4 +1,4 @@
-import { NewForm } from "./implement";
+import { NewForm } from "./PCC3";
 
 const entityEncode = (s: string) => {
   var el = document.createElement("div");
