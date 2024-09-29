@@ -4,7 +4,9 @@ from pydantic import BaseModel
 from typing import List, Dict, Optional
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi import HTTPException
 
 vectorstore = get_chroma()
 retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
@@ -49,8 +51,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+front_path = "../frontend/dist"
+app.mount("/", StaticFiles(directory=front_path, html = True), name="dist")
 
-
+@app.exception_handler(404)
+def on_not_found(x, y):
+    return HTMLResponse(
+        content=open(front_path + "/index.html", "rt").read()
+    )
+    
 prolog_prompt = [
     {
         "role": "system",

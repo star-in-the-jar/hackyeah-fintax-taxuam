@@ -2,7 +2,7 @@ import { Message } from "@/types";
 
 let endpointBase = "";
 
-endpointBase = "http://localhost:8000";
+//endpointBase = "http://localhost:8000";
 
 export type ChatFetchCompletion = {
   elements: Message[];
