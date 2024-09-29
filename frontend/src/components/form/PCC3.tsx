@@ -178,61 +178,47 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
       </AutonomousMessageGroup>
 
       <AutonomousMessageGroup label="Powiat">
-        <Combobox
-          placeholder="Powiat"
-          options={districts}
-          onChange={(newValue) => {
+        <Input
+          value={formData.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Powiat}
+          onChange={(e) => {
             onChange(
               produce(formData, (draft) => {
-                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Powiat"
-                ] = newValue;
+                draft.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Powiat =
+                  e.target.value;
               })
             );
-            setSelected({
-              type: "setDistrict",
-              payload: newValue,
-            });
           }}
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Gmina">
-        <Combobox
-          placeholder="Gmina"
-          options={gminy}
-          onChange={(newValue) => {
+        <Input
+          value={formData.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Gmina}
+          onChange={(e) => {
             onChange(
               produce(formData, (draft) => {
-                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Gmina"
-                ] = newValue;
+                draft.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Gmina =
+                  e.target.value;
               })
             );
-            setSelected({
-              type: "setGmina",
-              payload: newValue,
-            });
           }}
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Miejscowość">
         <Input
           value={
-            formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Miejscowosc"
-            ]
+            formData.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Miejscowosc
           }
           onChange={(e) => {
             onChange(
               produce(formData, (draft) => {
-                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Miejscowosc"
-                ] = e.target.value;
+                draft.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Miejscowosc =
+                  e.target.value;
               })
             );
           }}
         />
       </AutonomousMessageGroup>
+
       <AutonomousMessageGroup label="Ulica">
         <Input
           value={
