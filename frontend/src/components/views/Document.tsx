@@ -9,7 +9,7 @@ import { constants } from "@/constants";
 import { useChat } from "@/hooks/useChat";
 import { StateManagerContext, useCreateStateManager } from "@/state";
 import { Message } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useParams } from "react-router-dom";
 import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
@@ -20,11 +20,13 @@ interface TabContentProps {
   formData: NewForm;
   onChange: (formData: NewForm) => void;
   isSelected?: boolean;
+  onGoAi: (message: Message) => void
 }
 
 const TabFormContent = ({
   formData,
   onChange,
+  onGoAi,
   isSelected,
 }: TabContentProps) => {
   const { id } = useParams();
@@ -39,6 +41,9 @@ const TabFormContent = ({
       <div>
         <FormDisplay
           formData={formData}
+          goAi={(msg) => {
+            onGoAi(msg)
+          }}
           onChange={(e) => {
             onChange(e);
           }}
@@ -64,7 +69,11 @@ const TabFormContent = ({
 
 const TabChatContent = ({
   isSelected,
-}: Pick<TabContentProps, "isSelected">) => {
+  messageToAppend
+}: {
+  isSelected: boolean,
+  messageToAppend?: Message | undefined
+}) => {
   const [documentChatMessages, setDocumentChatMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -75,6 +84,7 @@ const TabChatContent = ({
   const { sendMessage } = useChat({
     declaration: "PCC-3"
   });
+
 
   const [ref, setRef] = useState<HTMLElement | null>(null);
 
@@ -126,6 +136,13 @@ const TabChatContent = ({
     handleScroll()
   };
 
+
+  useEffect(() => {
+    if (messageToAppend) {
+      onSend(messageToAppend.content)
+    }
+  }, [messageToAppend])
+
   return (
     <div
       className={[
@@ -151,7 +168,7 @@ const DocumentChatContent = () => {
   const { id } = useParams();
 
   const [selected, setSelected] = useState<"chat" | "form">("form");
-
+  const [messageToAppend, setMessageToAppend] = useState<Message | undefined>(undefined)
   return (
     <>
       <div className="mb-4">
@@ -160,13 +177,19 @@ const DocumentChatContent = () => {
 
       <Chat title={id} formData={formData}>
         <TabFormContent
+          onGoAi={(msg) => {
+            setSelected("chat")
+            setMessageToAppend(msg)
+          }}
           isSelected={selected === "form"}
           formData={formData}
           onChange={(e) => {
             setFormData(e);
           }}
         />
-        <TabChatContent isSelected={selected === "chat"} />
+        <TabChatContent
+          messageToAppend={messageToAppend}
+          isSelected={selected === "chat"} />
       </Chat>
     </>
   );

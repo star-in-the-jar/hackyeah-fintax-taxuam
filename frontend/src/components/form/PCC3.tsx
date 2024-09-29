@@ -5,6 +5,8 @@ import Combobox from "../ui/combobox";
 import DatePicker from "../ui/datepicker";
 import { useLocationOptions } from "../ui/hooks/useLocationOptions";
 import { Input } from "../ui/input";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import { Message } from "../../types";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -83,9 +85,10 @@ const formatNewDateToString = (newDate: Date) => {
 interface FormDisplay {
   formData: NewForm;
   onChange: (newData: NewForm) => void;
+  goAi: (message: Message) => void
 }
 
-export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
+export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
   const { setSelected, gminy, districts, voivodeships } = useLocationOptions();
 
   return (
@@ -128,7 +131,19 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
           }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup label="PESEL">
+      <AutonomousMessageGroup label="PESEL" labelExt={
+        <AiFillQuestionCircle
+        className="text-primary cursor-pointer"
+        style={{
+          fontSize: "1.8rem"
+        }}
+        onClick={() => {
+          goAi({
+            role: "user",
+            content: "Czym jest numer PESEL i gdzie mogę go znaleźć?"
+          })
+        }} />
+      }>
         <Input
           value={formData.Podmiot.OsobaFizyczna.PESEL}
           onChange={(e) => {
@@ -220,7 +235,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Ulica"
+            "Ulica"
             ]
           }
           onChange={(e) => {
@@ -238,7 +253,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "NrDomu"
+            "NrDomu"
             ]
           }
           onChange={(e) => {
@@ -256,7 +271,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "NrLokalu"
+            "NrLokalu"
             ]
           }
           onChange={(e) => {
@@ -275,7 +290,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "KodPocztowy"
+            "KodPocztowy"
             ]
           }
           onChange={(e) => {
