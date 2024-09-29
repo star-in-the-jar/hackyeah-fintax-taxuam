@@ -1,3 +1,4 @@
+import { urzedySkarboweNazwy } from "../../mocks/urzedy-skarbowe-id";
 import { NewForm } from "./PCC3";
 
 const entityEncode = (s: string) => {
@@ -34,26 +35,25 @@ export const download = (content: string, fileName: string) => {
 
 const renderKwotaPodatkow = (data: NewForm) => {
   let res = [];
-  let sum = 0
+  let sum = 0;
   if (data.kwotaPodatek1Proc && data.kwotaPodatek1Proc !== "") {
-    const val = Math.ceil(parseFloat(data.kwotaPodatek1Proc) * 0.01)
-    sum += val
+    const val = Math.ceil(parseFloat(data.kwotaPodatek1Proc) * 0.01);
+    sum += val;
     res.push(`<P_24>${entityEncode(data.kwotaPodatek1Proc)}</P_24>
-        <P_25>${entityEncode(
-          val.toString()
-        )}</P_25>`);
+        <P_25>${entityEncode(val.toString())}</P_25>`);
   }
   if (data.kwotaPodatek2Proc && data.kwotaPodatek2Proc !== "") {
-    const val = Math.ceil(parseFloat(data.kwotaPodatek2Proc) * 0.02)
-    sum += val
+    const val = Math.ceil(parseFloat(data.kwotaPodatek2Proc) * 0.02);
+    sum += val;
     res.push(`<P_26>${entityEncode(data.kwotaPodatek2Proc)}</P_26>
-        <P_27>${entityEncode(
-          val.toString()
-        )}</P_27>`);
+        <P_27>${entityEncode(val.toString())}</P_27>`);
   }
   return res.join("\n");
 };
 
+const urzadDoKodu: { [key: string]: string } = Object.fromEntries(
+  [...Object.entries(urzedySkarboweNazwy)].map(([k, v]) => [v, k])
+);
 export const renderXML = (data: NewForm) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <Deklaracja xmlns="http://crd.gov.pl/wzor/2023/12/13/13064/">
@@ -63,7 +63,7 @@ export const renderXML = (data: NewForm) => {
         <WariantFormularza>6</WariantFormularza>
         <CelZlozenia poz="P_6">1</CelZlozenia>
         <Data poz="P_4">2024-07-29</Data>
-        <KodUrzedu>0271</KodUrzedu>
+        <KodUrzedu>${urzadDoKodu["data.UrzadSkarbowy"] ?? "0271"}</KodUrzedu>
     </Naglowek>
     <Podmiot1 rola="Podatnik">
         <OsobaFizyczna>
@@ -82,32 +82,32 @@ export const renderXML = (data: NewForm) => {
             <AdresPol>
                 <KodKraju>PL</KodKraju>
                 <Wojewodztwo>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Wojewodztwo
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Wojewodztwo.toLocaleUpperCase()
                 )}</Wojewodztwo>
                 <Powiat>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Powiat
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Powiat.toLocaleUpperCase()
                 )}</Powiat>
                 <Gmina>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Gmina
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Gmina.toLocaleUpperCase()
                 )}</Gmina>
                 <Ulica>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Ulica
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Ulica.toLocaleUpperCase()
                 )}</Ulica>
                 <NrDomu>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrDomu
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrDomu.toLocaleUpperCase()
                 )}</NrDomu>
                 ${
                   data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrLokalu
                     ? `<NrLokalu>${entityEncode(
-                        data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrLokalu
+                        data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.NrLokalu.toLocaleUpperCase()
                       )}</NrLokalu>`
                     : ""
                 }
                 <Miejscowosc>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Miejscowosc
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.Miejscowosc.toLocaleUpperCase()
                 )}</Miejscowosc>
                 <KodPocztowy>${entityEncode(
-                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.KodPocztowy
+                  data.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.KodPocztowy.toLocaleUpperCase()
                 )}</KodPocztowy>
             </AdresPol>
         </AdresZamieszkaniaSiedziby>

@@ -1,13 +1,10 @@
-import { AutonomousMessageGroup } from "../chat/MessageGroup";
-import DatePicker from "../ui/datepicker";
-import { Input } from "../ui/input";
-import { produce } from "immer";
-import { miasta } from "@/mocks/miasta";
-import Combobox from "../ui/combobox";
-import { powiaty } from "@/mocks/powiaty";
-import { wojewodztwa } from "@/mocks/wojewodztwa";
 import { urzedySkarboweNazwy } from "@/mocks/urzedy-skarbowe-id";
+import { produce } from "immer";
+import { AutonomousMessageGroup } from "../chat/MessageGroup";
+import Combobox from "../ui/combobox";
+import DatePicker from "../ui/datepicker";
 import { useLocationOptions } from "../ui/hooks/useLocationOptions";
+import { Input } from "../ui/input";
 
 export interface OsobaFizyczna {
   PESEL: string;
