@@ -1,32 +1,31 @@
-import React, { createContext } from 'react';
+import { NewForm } from '../form/PCC3';
 import IndexLink from './IndexLink/IndexLink';
 import { RenderNodesParams, TreeNode } from './IndexTree.types';
-import { NewForm } from '../form/PCC3';
 
 const nodes: TreeNode[] = [
   {
     title: 'B: Dane podatnika dokonującego zapłaty',
     children: [
-      { title: 'Imię' },
-      { title: 'Nazwisko' },
-      { title: 'PESEL' },
-      { title: 'Data urodzenia' },
-      { title: 'Województwo' },
-      { title: 'Powiat' },
-      { title: 'Gmina' },
-      { title: 'Nr domu' },
-      { title: 'Nr lokalu' },
-      { title: 'Miejscowość' },
-      { title: 'Opis' },
-      { title: "Kod pocztowy" },
+      { isLeaf: true, title: 'Imię' },
+      { isLeaf: true, title: 'Nazwisko' },
+      { isLeaf: true, title: 'PESEL' },
+      { isLeaf: true, title: 'Data urodzenia' },
+      { isLeaf: true, title: 'Województwo' },
+      { isLeaf: true, title: 'Powiat' },
+      { isLeaf: true, title: 'Gmina' },
+      { isLeaf: true, title: 'Nr domu' },
+      { isLeaf: true, title: 'Nr lokalu' },
+      { isLeaf: true, title: 'Miejscowość' },
+      { isLeaf: true, title: 'Opis' },
+      { isLeaf: true, title: "Kod pocztowy" },
 
     ]
   },
   {
     title: 'D: Obliczenie należnego podatku',
     children: [
-      { title: 'Stawka Podatku 1%' },
-      { title: 'Stawka Podatku 2%' },
+      { isLeaf: true, title: 'Stawka Podatku 1%' },
+      { isLeaf: true, title: 'Stawka Podatku 2%' },
     ]
   }
 ]
@@ -40,9 +39,14 @@ const IndexTree = ({ formData }: { formData: NewForm }) => {
   );
 };
 
+// abandon hope all ye who enter here
 const renderNodes = ({ nodes, parentKey, formData }: RenderNodesParams) =>
   nodes.map((node, index) => {
     const key = `${parentKey}-${index}`;
+
+    // Kiedyś zapytano mnie, czy to działa.
+    // Odpowiedziałem, że tak.
+    // Nie powiedziałem im jednak jakim kosztem.
 
     let value = ""
     const indicator = node.title
@@ -72,10 +76,12 @@ const renderNodes = ({ nodes, parentKey, formData }: RenderNodesParams) =>
       value = formData.kwotaPodatek1Proc
     } else if (indicator === "Stawka Podatku 2%") {
       value = formData.kwotaPodatek2Proc
+    } else if (indicator === "Kod pocztowy") {
+      value = formData.Podmiot.AdresZamieszkaniaSiedziby.AdresPol.KodPocztowy
     }
 
     return (
-      <IndexLink key={key} title={node.title} value={value}>
+      <IndexLink key={key} title={node.title} value={value} isLeaf={node.isLeaf ?? false}>
         {node.children && (
           <div className="ml-4">
             {renderNodes({ nodes: node.children, parentKey: key, formData })}
