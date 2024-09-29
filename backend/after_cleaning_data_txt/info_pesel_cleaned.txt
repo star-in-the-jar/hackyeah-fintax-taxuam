@@ -1,0 +1,89 @@
+Numer PESEL to jedenastocyfrowy symbol numeryczny, który pozwala na łatwą identyfikację osoby, która go posiada. Numer PESEL zawiera datę urodzenia, numer porządkowy, oznaczenie płci oraz liczbę kontrolną.
+
+Każda z 11 cyfr w numerze PESEL ma swoje znaczenie. Można je podzielić następująco:
+
+RRMMDDPPPPK
+
+RR – to 2 ostanie cyfry roku urodzenia,
+
+MM – to miesiąc urodzenia (zapoznaj się z sekcją  "Dlaczego osoby urodzone po 1999 roku mają inne oznaczenie miesiąca urodzenia", która znajduje się poniżej),
+
+DD – to dzień urodzenia,
+
+PPPP – to liczba porządkowa oznaczająca płeć. U kobiety ostatnia cyfra tej liczby jest parzysta (0, 2, 4, 6, 8), a u mężczyzny - nieparzysta (1, 3, 5, 7, 9),
+
+K – to cyfra kontrolna.
+
+Przykład: PESEL 810203 PPP 6 K należy do kobiety, która urodziła się 3 lutego 1981 roku, a PESEL 761115 PPP 3 K - do mężczyzny, który urodził się 15 listopada 1976 roku.
+
+W 3 prostych krokach opiszemy poniżej, w jaki sposób można obliczyć cyfrę kontrolną w numerze PESEL. Jako przykład posłuży nam numer 0207080362.
+
+0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6
+
+Aby odróżnić od siebie numery PESEL z różnych stuleci, przyjęto następującą metodę oznaczania miesiąca urodzenia:
+
+Dlatego osoba urodzona 12 stycznia 1914 roku będzie miała PESEL 140112PPPPK, a osoba urodzona 12 stycznia 2014 roku – 142112PPPPK. Dzięki tej metodzie dwie różne osoby na pewno nie będą posiadały tego samego numeru PESEL w tym samym czasie.
+
+Numer PESEL nadaje Minister właściwy do spraw informatyzacji.
+
+Nadanie numeru PESEL następuje z urzędu (to znaczy automatycznie) lub na wniosek osoby.
+
+Numer PESEL nadawany jest z urzędu w następujących sytuacjach:
+
+Cudzoziemcy również mogą dostać numer PESEL z urzędu. Aby dowiedzieć się więcej na ten temat, zapoznaj się z usługą .
+
+W innych przypadkach numer PESEL można dostać na wniosek:
+
+Ostatnia aktualizacja: 18.10.2021 14:01
+
+Instytucja odpowiedzialna za usługę: Kancelaria Prezesa Rady Ministrów
+
+Czym jest numer PESEL
+
+Każda z 11 cyfr w numerze PESEL ma swoje znaczenie. Można je podzielić następująco: RRMMDDPPPPK RR – to 2 ostanie cyfry roku urodzenia, MM – to miesiąc urodzenia (zapoznaj się z sekcją  "Dlaczego osoby urodzone po 1999 roku mają inne oznaczenie miesiąca urodzenia", która znajduje się poniżej), DD – to dzień urodzenia, PPPP – to liczba porządkowa oznaczająca płeć. U kobiety ostatnia cyfra tej liczby jest parzysta (0, 2, 4, 6, 8), a u mężczyzny - nieparzysta (1, 3, 5, 7, 9), K – to cyfra kontrolna. Przykład: PESEL 810203 PPP 6 K należy do kobiety, która urodziła się 3 lutego 1981 roku, a PESEL 761115 PPP 3 K - do mężczyzny, który urodził się 15 listopada 1976 roku. Każda z 11 cyfr w numerze PESEL ma swoje znaczenie. Można je podzielić następująco: RRMMDDPPPPK RR – to 2 ostanie cyfry roku urodzenia, MM – to miesiąc urodzenia (zapoznaj się z sekcją  "Dlaczego osoby urodzone po 1999 roku mają inne oznaczenie miesiąca urodzenia", która znajduje się poniżej), DD – to dzień urodzenia, PPPP – to liczba porządkowa oznaczająca płeć. U kobiety ostatnia cyfra tej liczby jest parzysta (0, 2, 4, 6, 8), a u mężczyzny - nieparzysta (1, 3, 5, 7, 9), K – to cyfra kontrolna. Przykład: PESEL 810203 PPP 6 K należy do kobiety, która urodziła się 3 lutego 1981 roku, a PESEL 761115 PPP 3 K - do mężczyzny, który urodził się 15 listopada 1976 roku.
+
+W 3 prostych krokach opiszemy poniżej, w jaki sposób można obliczyć cyfrę kontrolną w numerze PESEL. Jako przykład posłuży nam numer 0207080362. 0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6 W 3 prostych krokach opiszemy poniżej, w jaki sposób można obliczyć cyfrę kontrolną w numerze PESEL. Jako przykład posłuży nam numer 0207080362. Pomnóż każdą cyfrę z numeru PESEL przez odpowiednią wagę: 1-3-7-9-1-3-7-9-1-3. 0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6 Dodaj do siebie otrzymane wyniki. Uwaga, jeśli w trakcie mnożenia otrzymasz liczbę dwucyfrową, należy dodać tylko ostatnią cyfrę (na przykład zamiast 63 dodaj 3). 0 + 6 + 0 + 3 + 0 + 4 + 0 + 7 +6 + 6 = 32 Odejmij uzyskany wynik od 10. Uwaga: jeśli w trakcie dodawania otrzymasz liczbę dwucyfrową, należy odjąć tylko ostatnią cyfrę (na przykład zamiast 32 odejmij 2). Cyfra, która uzyskasz, to cyfra kontrolna. 10 - 2 = 8 pełny numer PESEL: 0207080362 8 Pomnóż każdą cyfrę z numeru PESEL przez odpowiednią wagę: 1-3-7-9-1-3-7-9-1-3. 0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6 Dodaj do siebie otrzymane wyniki. Uwaga, jeśli w trakcie mnożenia otrzymasz liczbę dwucyfrową, należy dodać tylko ostatnią cyfrę (na przykład zamiast 63 dodaj 3). 0 + 6 + 0 + 3 + 0 + 4 + 0 + 7 +6 + 6 = 32 Odejmij uzyskany wynik od 10. Uwaga: jeśli w trakcie dodawania otrzymasz liczbę dwucyfrową, należy odjąć tylko ostatnią cyfrę (na przykład zamiast 32 odejmij 2). Cyfra, która uzyskasz, to cyfra kontrolna. 10 - 2 = 8 pełny numer PESEL: 0207080362 8
+
+0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6 Pomnóż każdą cyfrę z numeru PESEL przez odpowiednią wagę: 1-3-7-9-1-3-7-9-1-3. 0 * 1 = 0 2 * 3 = 6 0 * 7 = 0 7 * 9 = 63 0 * 1 = 0 8 * 3 = 24 0 * 7 = 0 3 * 9 = 27 6 * 1 = 6 2 * 3 = 6
+
+Dodaj do siebie otrzymane wyniki. Uwaga, jeśli w trakcie mnożenia otrzymasz liczbę dwucyfrową, należy dodać tylko ostatnią cyfrę (na przykład zamiast 63 dodaj 3). 0 + 6 + 0 + 3 + 0 + 4 + 0 + 7 +6 + 6 = 32
+
+Odejmij uzyskany wynik od 10. Uwaga: jeśli w trakcie dodawania otrzymasz liczbę dwucyfrową, należy odjąć tylko ostatnią cyfrę (na przykład zamiast 32 odejmij 2). Cyfra, która uzyskasz, to cyfra kontrolna. 10 - 2 = 8 pełny numer PESEL: 0207080362 8
+
+Aby odróżnić od siebie numery PESEL z różnych stuleci, przyjęto następującą metodę oznaczania miesiąca urodzenia:   Dlatego osoba urodzona 12 stycznia 1914 roku będzie miała PESEL 140112PPPPK, a osoba urodzona 12 stycznia 2014 roku – 142112PPPPK. Dzięki tej metodzie dwie różne osoby na pewno nie będą posiadały tego samego numeru PESEL w tym samym czasie. Aby odróżnić od siebie numery PESEL z różnych stuleci, przyjęto następującą metodę oznaczania miesiąca urodzenia: Miesiąc Stulecie 1800-1899 1900-1999 2000-2099 2100-2199 2200-2299 Styczeń 81 01 21 41 61 Luty 82 02 22 42 62 Marzec 83 03 23 43 63 Kwiecień 84 04 24 44 64 Maj 85 05 25 45 65 Czerwiec 86 06 26 46 66 Lipiec 87 07 27 47 67 Sierpień 88 08 28 48 68 Wrzesień 89 09 29 49 69 Październik 90 10 30 50 70 Listopad 91 11 31 51 71 Grudzień 92 12 32 52 72 Dlatego osoba urodzona 12 stycznia 1914 roku będzie miała PESEL 140112PPPPK, a osoba urodzona 12 stycznia 2014 roku – 142112PPPPK. Dzięki tej metodzie dwie różne osoby na pewno nie będą posiadały tego samego numeru PESEL w tym samym czasie.
+
+Numer PESEL nadaje Minister właściwy do spraw informatyzacji. Numer PESEL nadaje Minister właściwy do spraw informatyzacji.
+
+Nadanie numeru PESEL następuje z urzędu (to znaczy automatycznie) lub na wniosek osoby. Numer PESEL nadawany jest z urzędu w następujących sytuacjach: Cudzoziemcy również mogą dostać numer PESEL z urzędu. Aby dowiedzieć się więcej na ten temat, zapoznaj się z usługą . W innych przypadkach numer PESEL można dostać na wniosek: Nadanie numeru PESEL następuje z urzędu (to znaczy automatycznie) lub na wniosek osoby. Numer PESEL nadawany jest z urzędu w następujących sytuacjach: przez polski urząd stanu cywilnego przy sporządzaniu aktu urodzenia dla dziecka urodzonego na terytorium Polski. Dotyczy to dzieci obywateli polskich, obywateli Unii Europejskiej i członków ich rodzin, którzy mieszkają w Polsce, w związku z tym, że uzyskali prawo stałego pobytu oraz cudzoziemców, którzy uzyskali: prawo stałego pobytu lub zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej, status uchodźcy, ochronę uzupełniającą albo azyl, zgodę na pobyt tolerowany, ochronę czasową, zgodę na pobyt ze względów humanitarnych, przez urząd gminy przy zameldowaniu na pobyt stały lub czasowy – dla obywateli Polski, którzy nie mają numeru PESEL, przez urząd gminy przy ubieganiu się o dowód osobisty – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL, przez krajowy urząd paszportowy przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL, przez konsula RP przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą, nie mają numeru PESEL i składają wniosek o wydanie paszportu w konsulacie. Cudzoziemcy również mogą dostać numer PESEL z urzędu. Aby dowiedzieć się więcej na ten temat, zapoznaj się z usługą . W innych przypadkach numer PESEL można dostać na wniosek: taki wniosek należy złożyć w urzędzie gminy, który dokonał zameldowania na pobyt czasowy, a w przypadku braku miejsca zameldowania - w urzędzie gminy, na terenie którego znajduje się siedziba pracodawcy. W innych przypadkach – w urzędzie dzielnicy Śródmieście miasta stołecznego Warszawy, osoba lub jej przedstawiciel ustawowy składa umotywowany pisemny wniosek wraz z dokumentami potwierdzającymi dane we wniosku (na przykład: paszport, akty stanu cywilnego) do właściwego urzędu. We wniosku należy podać faktyczną podstawę prawną, z której wynika obowiązek posiadania numeru PESEL. W przypadku, gdy jakiś urząd (na przykład: ZUS czy Urząd Skarbowy) wymaga podania numeru PESEL, to powinien wskazać również przepis prawa, z którego wynika obowiązek posiadania tego numeru. przez polski urząd stanu cywilnego przy sporządzaniu aktu urodzenia dla dziecka urodzonego na terytorium Polski. Dotyczy to dzieci obywateli polskich, obywateli Unii Europejskiej i członków ich rodzin, którzy mieszkają w Polsce, w związku z tym, że uzyskali prawo stałego pobytu oraz cudzoziemców, którzy uzyskali: prawo stałego pobytu lub zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej, status uchodźcy, ochronę uzupełniającą albo azyl, zgodę na pobyt tolerowany, ochronę czasową, zgodę na pobyt ze względów humanitarnych, prawo stałego pobytu lub zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej, status uchodźcy, ochronę uzupełniającą albo azyl, zgodę na pobyt tolerowany, ochronę czasową, zgodę na pobyt ze względów humanitarnych, przez urząd gminy przy zameldowaniu na pobyt stały lub czasowy – dla obywateli Polski, którzy nie mają numeru PESEL, przez urząd gminy przy ubieganiu się o dowód osobisty – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL, przez krajowy urząd paszportowy przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL, przez konsula RP przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą, nie mają numeru PESEL i składają wniosek o wydanie paszportu w konsulacie. taki wniosek należy złożyć w urzędzie gminy, który dokonał zameldowania na pobyt czasowy, a w przypadku braku miejsca zameldowania - w urzędzie gminy, na terenie którego znajduje się siedziba pracodawcy. W innych przypadkach – w urzędzie dzielnicy Śródmieście miasta stołecznego Warszawy, osoba lub jej przedstawiciel ustawowy składa umotywowany pisemny wniosek wraz z dokumentami potwierdzającymi dane we wniosku (na przykład: paszport, akty stanu cywilnego) do właściwego urzędu. We wniosku należy podać faktyczną podstawę prawną, z której wynika obowiązek posiadania numeru PESEL. W przypadku, gdy jakiś urząd (na przykład: ZUS czy Urząd Skarbowy) wymaga podania numeru PESEL, to powinien wskazać również przepis prawa, z którego wynika obowiązek posiadania tego numeru.
+
+przez polski urząd stanu cywilnego przy sporządzaniu aktu urodzenia dla dziecka urodzonego na terytorium Polski. Dotyczy to dzieci obywateli polskich, obywateli Unii Europejskiej i członków ich rodzin, którzy mieszkają w Polsce, w związku z tym, że uzyskali prawo stałego pobytu oraz cudzoziemców, którzy uzyskali: prawo stałego pobytu lub zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej, status uchodźcy, ochronę uzupełniającą albo azyl, zgodę na pobyt tolerowany, ochronę czasową, zgodę na pobyt ze względów humanitarnych, prawo stałego pobytu lub zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej, status uchodźcy, ochronę uzupełniającą albo azyl, zgodę na pobyt tolerowany, ochronę czasową, zgodę na pobyt ze względów humanitarnych,
+
+prawo stałego pobytu lub zezwolenie na pobyt stały,
+
+zezwolenie na pobyt rezydenta długoterminowego Unii Europejskiej,
+
+status uchodźcy, ochronę uzupełniającą albo azyl,
+
+zgodę na pobyt tolerowany,
+
+ochronę czasową,
+
+zgodę na pobyt ze względów humanitarnych,
+
+przez urząd gminy przy zameldowaniu na pobyt stały lub czasowy – dla obywateli Polski, którzy nie mają numeru PESEL,
+
+przez urząd gminy przy ubieganiu się o dowód osobisty – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL,
+
+przez krajowy urząd paszportowy przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą i nie mają numeru PESEL,
+
+przez konsula RP przy ubieganiu się o paszport – dla obywateli Polski, którzy mieszkają za granicą, nie mają numeru PESEL i składają wniosek o wydanie paszportu w konsulacie.
+
+taki wniosek należy złożyć w urzędzie gminy, który dokonał zameldowania na pobyt czasowy, a w przypadku braku miejsca zameldowania - w urzędzie gminy, na terenie którego znajduje się siedziba pracodawcy. W innych przypadkach – w urzędzie dzielnicy Śródmieście miasta stołecznego Warszawy,
+
+osoba lub jej przedstawiciel ustawowy składa umotywowany pisemny wniosek wraz z dokumentami potwierdzającymi dane we wniosku (na przykład: paszport, akty stanu cywilnego) do właściwego urzędu. We wniosku należy podać faktyczną podstawę prawną, z której wynika obowiązek posiadania numeru PESEL. W przypadku, gdy jakiś urząd (na przykład: ZUS czy Urząd Skarbowy) wymaga podania numeru PESEL, to powinien wskazać również przepis prawa, z którego wynika obowiązek posiadania tego numeru.
+
+Ustawa z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2015 r. poz. 388) Rozporządzenie Ministra Spraw Wewnętrznych z dnia 4 stycznia 2012 r. w sprawie nadania lub zmiany numeru PESEL (Dz. U. z 2015 r. poz. 1984) Ustawa z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2015 r. poz. 388) Rozporządzenie Ministra Spraw Wewnętrznych z dnia 4 stycznia 2012 r. w sprawie nadania lub zmiany numeru PESEL (Dz. U. z 2015 r. poz. 1984)
+
+Ustawa z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2015 r. poz. 388)
+
+Rozporządzenie Ministra Spraw Wewnętrznych z dnia 4 stycznia 2012 r. w sprawie nadania lub zmiany numeru PESEL (Dz. U. z 2015 r. poz. 1984)
