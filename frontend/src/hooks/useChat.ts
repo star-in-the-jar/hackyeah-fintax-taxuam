@@ -1,18 +1,20 @@
+import { fetchChatStream } from "@/api";
 import { Message } from "@/types";
 
 export const useChat = () => {
-  const sendMessage = async (messages: Message[]): Promise<Message> => {
+  const sendMessage = async (
+    messages: Message[],
+    cb: (text: string) => void
+  ): Promise<Message> => {
     // PRZEMEK JEBNIJ TO POTEM
     // const response = await fetch('http://localhost:3001/messages', {
 
-    return new Promise<Message>((resolve) => {
-      setTimeout(() => {
-        resolve({
-          role: "assistant",
-          content: "Response from the server",
-        } as Message);
-      }, 200);
-    });
+    return fetchChatStream(
+      {
+        elements: messages,
+      },
+      cb
+    );
   };
 
   return {

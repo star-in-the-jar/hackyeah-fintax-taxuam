@@ -26,7 +26,7 @@ export const fetchChatCompletion = async (
 export const fetchChatStream = async (
   data: ChatFetchCompletion,
   onNewData: (totalText: string) => void | Promise<void>
-) => {
+): Promise<Message> => {
   const res = await fetch(endpointBase + "/chat-complete-stream", {
     method: "post",
     body: JSON.stringify(data),
@@ -41,4 +41,8 @@ export const fetchChatStream = async (
     sum += part;
     await onNewData(sum);
   }
+  return {
+    role: "assistant",
+    content: sum,
+  };
 };
