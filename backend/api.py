@@ -50,15 +50,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-front_path = "../frontend/dist"
-app.mount("/", StaticFiles(directory=front_path, html = True), name="dist")
-
-@app.exception_handler(404)
-def on_not_found(x, y):
-    return HTMLResponse(
-        content=open(front_path + "/index.html", "rt").read()
-    )
     
 prolog_prompt = [
     {
@@ -89,8 +80,9 @@ async def chat_complete_stream(req: Req):
     ]
 
     declaration = req.declaration or ""
-    declaration = declaration or "n/a"
-    declaration = f"Obecnie wypełniana deklaracja: {declaration}"
+    if declaration: 
+        declaration = declaration or "n/a"
+        declaration = f"Obecnie wypełniana deklaracja: {declaration}"
 
     res = query_llm(
         stream=True,
@@ -111,38 +103,6 @@ async def chat_complete_stream(req: Req):
     return StreamingResponse(res, media_type="text/plain", headers={
         "Content-Encoding": "utf8"
     })
-
-@app.post("/chat-complete")
-async def chat_complete(req: Req):
-    ctx = ""
-    if len(req.elements) > 0:
-        last_message = req.elements[-1].content
-        ctx = query_rag(last_message)
-
-    user_stuff = [
-        {
-            "role": e.role,
-            "content": e.content
-        } for e in req.elements
-    ]
-
-    res = query_llm(
-        prolog_prompt + [{
-            "role": "assistant",
-            "content": "\n".join([
-                "Kontekst:",
-                "---",
-                ctx,
-                "---",
-            ])
-        }] + user_stuff
-    )
-
-    return JSONResponse(content={
-        "role": "assistant",
-        "content": res,
-    })
-
 
 @app.post("/main-page-complete")
 async def chat_complete(req: Req):
@@ -174,3 +134,11 @@ async def chat_complete(req: Req):
         "role": "assistant",
         "content": res,
     })
+front_path = "../frontend/dist"
+app.mount("/", StaticFiles(directory=front_path, html = True), name="dist")
+
+@app.exception_handler(404)
+def on_not_found(x, y):
+    return HTMLResponse(
+        content=open(front_path + "/index.html", "rt").read()
+    )

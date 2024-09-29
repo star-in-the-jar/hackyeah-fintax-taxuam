@@ -33,25 +33,25 @@ export const download = (content: string, fileName: string) => {
 };
 
 const renderKwotaPodatkow = (data: NewForm) => {
-  let res = ``;
+  let res = [];
   let sum = 0
   if (data.kwotaPodatek1Proc && data.kwotaPodatek1Proc !== "") {
     const val = Math.ceil(parseFloat(data.kwotaPodatek1Proc) * 0.01)
     sum += val
-    res += `<P_24>${entityEncode(data.kwotaPodatek1Proc)}</P_24>
+    res.push(`<P_24>${entityEncode(data.kwotaPodatek1Proc)}</P_24>
         <P_25>${entityEncode(
           val.toString()
-        )}</P_25>`;
+        )}</P_25>`);
   }
   if (data.kwotaPodatek2Proc && data.kwotaPodatek2Proc !== "") {
     const val = Math.ceil(parseFloat(data.kwotaPodatek2Proc) * 0.02)
     sum += val
-    res += `<P_26>${entityEncode(data.kwotaPodatek2Proc)}</P_26>
+    res.push(`<P_26>${entityEncode(data.kwotaPodatek2Proc)}</P_26>
         <P_27>${entityEncode(
           val.toString()
-        )}</P_27>`;
+        )}</P_27>`);
   }
-  return res;
+  return res.join("\n");
 };
 
 export const renderXML = (data: NewForm) => {
