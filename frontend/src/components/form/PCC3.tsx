@@ -89,8 +89,7 @@ interface FormDisplay {
 }
 
 export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
-  const { selected, setSelected, cities, districts, voivodeships } =
-    useLocationOptions();
+  const { setSelected, gminy, districts, voivodeships } = useLocationOptions();
 
   return (
     <div id="form-display">
@@ -177,25 +176,7 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
           }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup label="Miejscowość">
-        <Combobox
-          placeholder="Miejscowosc"
-          options={cities}
-          onChange={(newValue) => {
-            onChange(
-              produce(formData, (draft) => {
-                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Miejscowosc"
-                ] = newValue;
-              })
-            );
-            setSelected({
-              type: "setCity",
-              payload: newValue,
-            });
-          }}
-        />
-      </AutonomousMessageGroup>
+
       <AutonomousMessageGroup label="Powiat">
         <Combobox
           placeholder="Powiat"
@@ -216,17 +197,36 @@ export const FormDisplay = ({ formData, onChange }: FormDisplay) => {
         />
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="Gmina">
+        <Combobox
+          placeholder="Gmina"
+          options={gminy}
+          onChange={(newValue) => {
+            onChange(
+              produce(formData, (draft) => {
+                draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
+                  "Gmina"
+                ] = newValue;
+              })
+            );
+            setSelected({
+              type: "setGmina",
+              payload: newValue,
+            });
+          }}
+        />
+      </AutonomousMessageGroup>
+      <AutonomousMessageGroup label="Miejscowość">
         <Input
           value={
             formData["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-              "Gmina"
+              "Miejscowosc"
             ]
           }
           onChange={(e) => {
             onChange(
               produce(formData, (draft) => {
                 draft["Podmiot"]["AdresZamieszkaniaSiedziby"]["AdresPol"][
-                  "Gmina"
+                  "Miejscowosc"
                 ] = e.target.value;
               })
             );

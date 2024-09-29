@@ -19,10 +19,10 @@ export const useLocationOptions = () => {
           ...state,
           voivodeship: location,
         };
-      case "setCity":
+      case "setGmina":
         return {
           ...state,
-          city: location,
+          gmina: location,
         };
       case "setDistrict":
         return {
@@ -36,7 +36,7 @@ export const useLocationOptions = () => {
 
   const [state, setState] = useReducer(reducer, {
     voivodeship: null,
-    city: null,
+    gmina: null,
     district: null,
   });
 
@@ -44,34 +44,35 @@ export const useLocationOptions = () => {
     .filter((location) => location.NAZWA_DOD === "województwo")
     .map((location) => location.NAZWA);
 
-  const cities = useMemo(() => {
+  const districts = useMemo(() => {
     if (!state.voivodeship) return [];
 
     return prawdziweDaneLokacji
       .filter(
         (location) =>
-          location.NAZWA_DOD.includes("miasto") &&
+          location.NAZWA_DOD === "powiat" &&
           location.WOJ === state.voivodeship.WOJ
       )
-      .map((location) => location.NAZWA);
+      .map((district) => district.NAZWA);
   }, [state.voivodeship]);
 
-  const districts = useMemo(() => {
-    if (!state.city) return [];
+  const gminy = useMemo(() => {
+    if (!state.district || !state.voivodeship) return [];
 
     return prawdziweDaneLokacji
       .filter(
         (location) =>
-          location.NAZWA_DOD === "powiat" && location.WOJ === state.city.WOJ
+          location.NAZWA_DOD.includes("gmina") &&
+          location.WOJ === state.voivodeship.WOJ
       )
-      .map((district) => district.NAZWA);
-  }, [state.city]);
+      .map((gmina) => gmina.NAZWA);
+  }, [state.voivodeship, state.district]);
 
   return {
     selected: state,
     setSelected: setState,
     voivodeships,
-    cities,
+    gminy,
     districts,
   };
 };
