@@ -11,25 +11,31 @@ urls = {
     "sd_inny_majatek": "https://www.podatki.gov.pl/pcc-sd/rozliczenie-podatku-sd-od-innego-sposobu-nabycia-majatku/",
     "info_podstawa_opodatkowania": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/przedmiot-opodatkowania-pcc/",
     "info_organy_podatkowe": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/organy-podatkowe-pcc/",
-    "info_czynnosci_nieopodatkowane" : "https://www.podatki.gov.pl/pcc-sd/abc-pcc/czynnosci-cywilnoprawne-nieopodatkowane-pcc/",
-    "info_obowiazek_podatkowy" : "https://www.podatki.gov.pl/pcc-sd/abc-pcc/obowiazek-podatkowy-pcc/",
-    "info_podatnik_i_platnik_pcc" : "https://www.podatki.gov.pl/pcc-sd/abc-pcc/kto-jest-podatnikiem-a-kto-platnikiem-pcc/",
-    "info_kto_zwolniony_pcc" : "https://www.podatki.gov.pl/pcc-sd/abc-pcc/zwolnienia-pcc/",
-    "info_stawki_podatkowe_sd" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/stawki-podatkowe-sd/",
-    "info_obowiazek_podatkowy_w_podatku_sd" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/obowiazek-podatkowy-sd/",
-    "info_sd_zwolnienie_dla_rodziny" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-dla-najblizszej-rodziny-sd/",
-    "info_sd_ulga_mieszkaniowa" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/ulga-mieszkaniowa/",
-    "info_sd_zwolniene_nabycie_gospodarstwa_rolnego" : "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/",
-    "info_pesel" : "https://www.gov.pl/web/gov/czym-jest-numer-pesel",
-    "info_nip" : "https://www.biznes.gov.pl/pl/portal/001406"
+    "info_czynnosci_nieopodatkowane": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/czynnosci-cywilnoprawne-nieopodatkowane-pcc/",
+    "info_obowiazek_podatkowy": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/obowiazek-podatkowy-pcc/",
+    "info_podatnik_i_platnik_pcc": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/kto-jest-podatnikiem-a-kto-platnikiem-pcc/",
+    "info_kto_zwolniony_pcc": "https://www.podatki.gov.pl/pcc-sd/abc-pcc/zwolnienia-pcc/",
+    "info_stawki_podatkowe_sd": "https://www.podatki.gov.pl/pcc-sd/abc-sd/stawki-podatkowe-sd/",
+    "info_obowiazek_podatkowy_w_podatku_sd": "https://www.podatki.gov.pl/pcc-sd/abc-sd/obowiazek-podatkowy-sd/",
+    "info_sd_zwolnienie_dla_rodziny": "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-dla-najblizszej-rodziny-sd/",
+    "info_sd_ulga_mieszkaniowa": "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/ulga-mieszkaniowa/",
+    "info_sd_zwolniene_nabycie_gospodarstwa_rolnego": "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/",
+    "info_pesel": "https://www.gov.pl/web/gov/czym-jest-numer-pesel",
+    "info_nip": "https://www.biznes.gov.pl/pl/portal/001406",
+    "info_slownik_pojec": "https://www.podatki.gov.pl/e-deklaracje/jak-zlozyc-e-deklaracje/slownik-pojec/",
+    "info_inne_podatki": "https://www.gov.pl/web/finanse/podatki"
 }
 
 current_dir = os.path.dirname(__file__)
 input_folder = os.path.join(current_dir, "scraped_data")
 output_folder = os.path.join(current_dir, "after_cleaning_data_txt")
+output_inne_podatki_folder = os.path.join(current_dir, "after_cleaning_podatki_data_txt")
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
+
+if not os.path.exists(output_inne_podatki_folder):
+    os.makedirs(output_inne_podatki_folder)
 
 def clean_html_and_save_as_txt(json_file, key):
     with open(json_file, 'r', encoding='utf-8') as file:
@@ -47,7 +53,11 @@ def clean_html_and_save_as_txt(json_file, key):
             if cleaned_paragraph:
                 cleaned_text.append(cleaned_paragraph)
 
-    output_file = os.path.join(output_folder, f"{key}_cleaned.txt")
+    if key == "info_inne_podatki":
+        output_file = os.path.join(output_inne_podatki_folder, "inne_podatki_txt.txt")
+    else:
+        output_file = os.path.join(output_folder, f"{key}_cleaned.txt")
+
     with open(output_file, 'w', encoding='utf-8') as out_file:
         out_file.write("\n\n".join(cleaned_text))
 

@@ -26,7 +26,8 @@ urls = {
     "info_sd_zwolniene_nabycie_gospodarstwa_rolnego": "https://www.podatki.gov.pl/pcc-sd/abc-sd/ulgi-i-zwolnienia-sd/zwolnienie-z-tytulu-nabycia-gospodarstwa-rolnego/",
     "info_pesel" : "https://www.gov.pl/web/gov/czym-jest-numer-pesel",
     "info_nip" : "https://www.biznes.gov.pl/pl/portal/001406",
-    "info_slownik_pojec": "https://www.podatki.gov.pl/e-deklaracje/jak-zlozyc-e-deklaracje/slownik-pojec/"
+    "info_slownik_pojec": "https://www.podatki.gov.pl/e-deklaracje/jak-zlozyc-e-deklaracje/slownik-pojec/",
+    "info_inne_podatki" : "https://www.gov.pl/web/finanse/podatki"
 }
 
 def fetch_content(url):
