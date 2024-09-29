@@ -7,7 +7,6 @@ import { FormDisplay, NewForm, pcc3 } from "../form/implement";
 import { download, renderXML } from "../form/xmlRender";
 import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
-import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
@@ -15,14 +14,8 @@ const DocumentChatContent = () => {
   const [formData, setFormData] = useState<NewForm>(() => pcc3);
   const { id } = useParams();
 
-  // TODO: POTEM PODPIAC
-  const [samplePart, setSamplePart] = useState({
-    totalStepsAmount: 27,
-    completedStepsAmount: 2,
-  });
-
   return (
-    <Chat title={id} partDetails={samplePart}>
+    <Chat title={id} formData={formData}>
       <div className="space-y-4 flex justify-between">
         <div className="">
           <FormDisplay
@@ -32,17 +25,19 @@ const DocumentChatContent = () => {
             }}
             key={id}
           />
-          <button
-            onClick={() => {
-              download(renderXML(formData), "file.xml");
-            }}
-          >
-            EXPORT XML
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={() => {
+                download(renderXML(formData), "file.xml");
+              }}
+            >
+              EXPORT XML
+            </button>
+          </div>
         </div>
         <div className="sticky top-0 h-full overflow-y-auto">
-            <IndexTree />
-          </div>
+          <IndexTree />
+        </div>
       </div>
     </Chat>
   );
