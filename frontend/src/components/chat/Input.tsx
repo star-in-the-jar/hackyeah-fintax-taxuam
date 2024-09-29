@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 interface ChatProps {
   onSend: (value: string) => void;
@@ -35,6 +35,7 @@ const ChatInput = (props: ChatProps) => {
             handleOnSend();
           }
         }}
+        ref={inputRef}
         placeholder={memoInputPlaceholder}
       />
       <Button

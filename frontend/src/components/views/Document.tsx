@@ -1,7 +1,7 @@
 import Chat from "@/components/chat";
 import DocumentFormPreview from "@/components/document/FormPreview";
 import { StateManagerContext, useCreateStateManager } from "@/state";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
@@ -75,6 +75,8 @@ const TabChatContent = ({
   const [isLoading, setIsLoading] = useState(false);
   const { sendMessage } = useChat();
 
+  const formRef = useRef<HTMLDivElement>(null);
+
   const onSend = async (value: string) => {
     const obj = {
       role: "user",
@@ -97,19 +99,25 @@ const TabChatContent = ({
     setIsLoading(false);
 
     setDocumentChatMessages([...documentChatMessages, obj, res]);
+
+    if (formRef.current) {
+      formRef.current.scrollTop = formRef.current.scrollHeight;
+    }
   };
 
   return (
     <div
       className={[
-        "w-full flex-col flex-grow h-[90%]",
+        "w-full flex-col flex-grow h-full",
         isSelected ? "flex" : "hidden",
       ].join(" ")}
     >
-      {documentChatMessages?.map((message, messageIdx) => {
-        return <ChatMessageBubble key={messageIdx} message={message} />;
-      })}
-      {isLoading ? <Loader /> : null}
+      <div className="overflow-y-auto pb-10" ref={formRef}>
+        {documentChatMessages?.map((message, messageIdx) => {
+          return <ChatMessageBubble key={messageIdx} message={message} />;
+        })}
+        {isLoading ? <Loader /> : null}
+      </div>
       <div className="mt-auto">
         <ChatInput isLoading={isLoading} onSend={onSend} />
       </div>
@@ -124,17 +132,22 @@ const DocumentChatContent = () => {
   const [selected, setSelected] = useState<"chat" | "form">("form");
 
   return (
-    <Chat title={id} formData={formData}>
-      <DocumentTabs onChange={(newTab) => setSelected(newTab)} />
-      <TabFormContent
-        isSelected={selected === "form"}
-        formData={formData}
-        onChange={(e) => {
-          setFormData(e);
-        }}
-      />
-      <TabChatContent isSelected={selected === "chat"} />
-    </Chat>
+    <>
+      <div className="mb-4">
+        <DocumentTabs onChange={(newTab) => setSelected(newTab)} />
+      </div>
+
+      <Chat title={id} formData={formData}>
+        <TabFormContent
+          isSelected={selected === "form"}
+          formData={formData}
+          onChange={(e) => {
+            setFormData(e);
+          }}
+        />
+        <TabChatContent isSelected={selected === "chat"} />
+      </Chat>
+    </>
   );
 };
 

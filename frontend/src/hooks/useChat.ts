@@ -8,13 +8,23 @@ export const useChat = () => {
   ): Promise<Message> => {
     // PRZEMEK JEBNIJ TO POTEM
     // const response = await fetch('http://localhost:3001/messages', {
-    if(!cb) throw new Error("NIE DZIALA")
-    return fetchChatStream(
-      {
-        elements: messages,
-      },
-      cb
-    );
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          role: "assistant",
+          content: "Return from server",
+        });
+      }, 200);
+    });
+
+    // if(!cb) throw new Error("NIE DZIALA")
+    // return fetchChatStream(
+    //   {
+    //     elements: messages,
+    //   },
+    //   cb
+    // );
   };
 
   return {

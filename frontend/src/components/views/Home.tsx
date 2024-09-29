@@ -2,7 +2,7 @@ import DocumentButtonOptions from "@/components/document/ButtonOptions";
 import Chat from "@/components/chat";
 import ChatInput from "@/components/chat/Input";
 import ChatMessageBubble from "@/components/chat/MessageBubble";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Message } from "@/types";
 import { useChat } from "@/hooks/useChat";
 import Loader from "@/components/ui/loader";
@@ -18,6 +18,8 @@ const HomeChatContent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { sendMessage } = useChat();
 
+  const formRef = useRef<HTMLDivElement>(null);
+
   const onSend = async (value: string) => {
     const obj = {
       role: "user",
@@ -28,23 +30,33 @@ const HomeChatContent = () => {
 
     setIsLoading(true);
     const res = await sendMessage(homeChatMessages, (text) => {
-      setHomeChatMessages([...homeChatMessages, obj, {
-        role: "user",
-        content: text,
-      }]);
+      setHomeChatMessages([
+        ...homeChatMessages,
+        obj,
+        {
+          role: "user",
+          content: text,
+        },
+      ]);
     });
     setIsLoading(false);
 
     setHomeChatMessages([...homeChatMessages, obj, res]);
+
+    if (formRef.current) {
+      formRef.current.scrollTop = formRef.current.scrollHeight;
+    }
   };
 
   return (
     <Chat>
       <div className="w-full flex flex-col h-full">
-        {homeChatMessages?.map((message, messageIdx) => {
-          return <ChatMessageBubble key={messageIdx} message={message} />;
-        })}
-        {isLoading ? <Loader /> : null}
+        <div ref={formRef} className="pb-10 overflow-y-auto">
+          {homeChatMessages?.map((message, messageIdx) => {
+            return <ChatMessageBubble key={messageIdx} message={message} />;
+          })}
+          {isLoading ? <Loader /> : null}
+        </div>
         <div className="mt-auto">
           <ChatInput isLoading={isLoading} onSend={onSend} />
         </div>

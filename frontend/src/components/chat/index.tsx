@@ -70,8 +70,8 @@ const Chat = (props: ChatProps) => {
         ) : null}
       </div>
 
-      <div className="flex flex-col flex-grow overflow-y-scroll mb-5">
-        <div className="px-2 h-full space-y-5">{props.children}</div>
+      <div className="flex flex-col flex-grow overflow-y-auto">
+        <div className="px-2 h-full pb-1">{props.children}</div>
       </div>
     </div>
   );
