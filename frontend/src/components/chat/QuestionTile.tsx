@@ -7,7 +7,6 @@ interface QuestionTileProps {
 
 const QuestionTile = (props: QuestionTileProps) => {
   const onSend = (value: string) => {
-    console.log(value);
   };
   return (
     <div className="mb-4">

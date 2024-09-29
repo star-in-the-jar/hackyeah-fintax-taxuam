@@ -32,7 +32,7 @@ const nodes: TreeNode[] = [
 ]
 
 const IndexTree = ({ formData }: { formData: NewForm }) => {
-  console.log("Form data", formData)
+
   return (
     <div>
       {renderNodes({ nodes, parentKey: 'tree', formData })}

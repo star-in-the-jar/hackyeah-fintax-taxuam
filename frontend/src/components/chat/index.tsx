@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { Progress } from "@/components/ui/progress";
-import { NewForm } from "@/components/form/implement";
+import { NewForm } from "../form/PCC3";
 
 interface PartDetails {
   totalStepsAmount: number;
@@ -34,7 +34,6 @@ const Chat = (props: ChatProps) => {
 
   useEffect(() => {
     if (!props.formData) return;
-    console.log(props.formData);
     setTotalCounter(0);
     setCompletedCounter(0);
 
