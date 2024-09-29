@@ -3,11 +3,11 @@ import DocumentFormPreview from "@/components/document/FormPreview";
 import { StateManagerContext, useCreateStateManager } from "@/state";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FormDisplay, NewForm, pcc3 } from "../form/PCC3";
+import { FormDisplay, NewForm, pcc3, pd } from "../form/PCC3";
 import { download, renderXML } from "../form/xmlRender";
 import { constants } from "@/constants";
 import IndexTree from "../IndexTree/IndexTree";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 const DocumentChatContent = () => {
@@ -31,18 +31,20 @@ const DocumentChatContent = () => {
             }}
             key={id}
           />
-          <button
-            onClick={() => {
-              download(renderXML(formData), "file.xml");
-            }}
-          >
-            EXPORT XML
-          </button>
+
         </div>
         <div className="sticky top-0 h-full overflow-y-auto">
             <IndexTree />
           </div>
       </div>
+      <Button
+            disabled
+            onClick={() => {
+              download(renderXML(formData), "file.xml");
+            }}
+          >
+            EXPORT XML
+          </Button>
     </Chat>
   );
 };
@@ -78,7 +80,6 @@ const Document = () => {
           <div className="col-span-1"></div>
         </div>
         <DocumentChatContent />
-
         <DocumentFormPreview />
       </div>
     </StateManagerContext.Provider>

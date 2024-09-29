@@ -78,7 +78,7 @@ const MessageGroup = ({
         variant="ghost"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <div className="flex justify-between w-full pr-5">
+        <div className="flex justify-between w-full pr-5 gap-5">
           <h2 id={label} className="text-2xl font-medium">
             {label}
           </h2>
