@@ -14,14 +14,14 @@ export const AutonomousMessageGroup = ({
   label: string;
   children?: ReactNode;
 }) => {
-  const [tempMessage, setTempMessage] = useState<Message | null>(null)
+  const [tempMessage, setTempMessage] = useState<Message | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const currentMessagesRef = useRef<Message[]>();
 
   const realMessages = useMemo(() => {
-    if (!tempMessage) return messages
-    return [...messages, tempMessage]
-  }, [messages, tempMessage])
+    if (!tempMessage) return messages;
+    return [...messages, tempMessage];
+  }, [messages, tempMessage]);
 
   return (
     <MessageGroup
@@ -29,7 +29,7 @@ export const AutonomousMessageGroup = ({
       messages={realMessages}
       children={children}
       onTempMessage={(msg) => {
-        setTempMessage(msg)
+        setTempMessage(msg);
       }}
       onNewMessage={(msg) => {
         if (!currentMessagesRef.current) {
@@ -53,7 +53,7 @@ const MessageGroup = ({
 }: {
   messages: Message[];
   onNewMessage: (message: Message) => void;
-  onTempMessage: (message: Message | null) => void,
+  onTempMessage: (message: Message | null) => void;
   children?: ReactNode;
   label: string;
 }) => {
@@ -68,20 +68,26 @@ const MessageGroup = ({
       content: value,
     });
 
-    chatSendMessage([...messages, {
-      role: "user",
-      content: value,
-    }], (text) => {
-      onTempMessage({
-        role: "assistant",
-        content: text,
-      })
-    })
+    chatSendMessage(
+      [
+        ...messages,
+        {
+          role: "user",
+          content: value,
+        },
+      ],
+      (text) => {
+        onTempMessage({
+          role: "assistant",
+          content: text,
+        });
+      }
+    )
       .then((newMessage) => {
         onNewMessage(newMessage);
       })
       .finally(() => {
-        onTempMessage(null)
+        onTempMessage(null);
         setIsLoading(false);
       });
   };
