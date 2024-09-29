@@ -172,7 +172,9 @@ const DocumentChatContent = () => {
   return (
     <>
       <div className="mb-4">
-        <DocumentTabs onChange={(newTab) => setSelected(newTab)} />
+        <DocumentTabs
+        selected={selected}
+        onChange={(newTab) => setSelected(newTab)} />
       </div>
 
       <Chat title={id} formData={formData}>

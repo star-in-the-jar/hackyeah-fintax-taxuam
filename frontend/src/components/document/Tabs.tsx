@@ -1,17 +1,13 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface TabsProps {
   onChange: (selected: "form" | "chat") => void;
+  selected: "form" | "chat"
 }
 
-const DocumentTabs = ({ onChange }: TabsProps) => {
-  const [selected, setSelected] = useState<"form" | "chat">("form");
-
+const DocumentTabs = ({ onChange, selected }: TabsProps) => {
   const handleOnChange = (newSelected: "form" | "chat") => {
     if (newSelected === selected) return;
-
-    setSelected(newSelected);
     onChange(newSelected);
   };
   return (

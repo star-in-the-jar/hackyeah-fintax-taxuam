@@ -1,12 +1,12 @@
 import { urzedySkarboweNazwy } from "@/mocks/urzedy-skarbowe-id";
 import { produce } from "immer";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import { Message } from "../../types";
 import { AutonomousMessageGroup } from "../chat/MessageGroup";
 import Combobox from "../ui/combobox";
 import DatePicker from "../ui/datepicker";
 import { useLocationOptions } from "../ui/hooks/useLocationOptions";
 import { Input } from "../ui/input";
-import { AiFillQuestionCircle } from "react-icons/ai";
-import { Message } from "../../types";
 
 export interface OsobaFizyczna {
   PESEL: string;
@@ -93,7 +93,21 @@ export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
 
   return (
     <div id="form-display">
-      <AutonomousMessageGroup label="Urząd skarbowy">
+      <AutonomousMessageGroup label="Urząd skarbowy"
+        labelExt={
+          <AiFillQuestionCircle
+            className="text-primary cursor-pointer"
+            style={{
+              fontSize: "1.8rem"
+            }}
+            onClick={() => {
+              goAi({
+                role: "user",
+                content: "Który urząd skarbowy powinienem wybrać?"
+              })
+            }} />
+        }
+      >
         <Combobox
           placeholder="Urząd skarbowy"
           options={urzedySkarboweNazwy}
@@ -133,16 +147,16 @@ export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
       </AutonomousMessageGroup>
       <AutonomousMessageGroup label="PESEL" labelExt={
         <AiFillQuestionCircle
-        className="text-primary cursor-pointer"
-        style={{
-          fontSize: "1.8rem"
-        }}
-        onClick={() => {
-          goAi({
-            role: "user",
-            content: "Czym jest numer PESEL i gdzie mogę go znaleźć?"
-          })
-        }} />
+          className="text-primary cursor-pointer"
+          style={{
+            fontSize: "1.8rem"
+          }}
+          onClick={() => {
+            goAi({
+              role: "user",
+              content: "Czym jest numer PESEL i gdzie mogę go znaleźć?"
+            })
+          }} />
       }>
         <Input
           value={formData.Podmiot.OsobaFizyczna.PESEL}
@@ -317,7 +331,21 @@ export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
           }}
         />
       </AutonomousMessageGroup>
-      <AutonomousMessageGroup label="Stawka Podatku 1%">
+      <AutonomousMessageGroup label="Stawka Podatku 1%"
+        labelExt={
+          <AiFillQuestionCircle
+            className="text-primary cursor-pointer"
+            style={{
+              fontSize: "1.8rem"
+            }}
+            onClick={() => {
+              goAi({
+                role: "user",
+                content: "Co podlega stawce podatku PCC równej 1%?"
+              })
+            }} />
+        }
+      >
         {" "}
         <Input
           value={formData.kwotaPodatek1Proc}
@@ -332,7 +360,21 @@ export const FormDisplay = ({ formData, onChange, goAi }: FormDisplay) => {
         />
       </AutonomousMessageGroup>
 
-      <AutonomousMessageGroup label="Stawka podatku 2%">
+      <AutonomousMessageGroup label="Stawka podatku 2%"
+        labelExt={
+          <AiFillQuestionCircle
+            className="text-primary cursor-pointer"
+            style={{
+              fontSize: "1.8rem"
+            }}
+            onClick={() => {
+              goAi({
+                role: "user",
+                content: "Co podlega stawce podatku PCC równej 2%?"
+              })
+            }} />
+        }
+      >
         <Input
           value={formData.kwotaPodatek2Proc}
           pattern="\d+"
