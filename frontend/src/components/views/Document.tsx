@@ -86,12 +86,12 @@ const TabChatContent = ({
     setDocumentChatMessages([...documentChatMessages, obj]);
 
     setIsLoading(true);
-    const res = await sendMessage(documentChatMessages, (text) => {
+    const res = await sendMessage([...documentChatMessages, obj], (text) => {
       setDocumentChatMessages([
         ...documentChatMessages,
         obj,
         {
-          role: "user",
+          role: "assistant",
           content: text,
         },
       ]);
